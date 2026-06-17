@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avalokana - Exclusive Screenings & Ticket Booking</title>
+  <meta name="description" content="Book tickets for Avalokana, a contemplative and spiritual cinematic journey exploring purity, temptation, and self-realization. Watch trailer and view schedules.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Ambient Soundtrack Controller -->
+  <div class="audio-controller" id="audioController">
+    <button class="audio-toggle-btn" id="audioToggleBtn" title="Toggle Spiritual Ambience" aria-label="Toggle spiritual ambience sound">
+      <!-- Mute Icon -->
+      <svg id="audioIconMute" viewBox="0 0 24 24" style="display: block;">
+        <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+      </svg>
+      <!-- Playing Speaker Icon -->
+      <svg id="audioIconPlay" viewBox="0 0 24 24" style="display: none;">
+        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+      </svg>
+    </button>
+    <div class="audio-panel">
+      <span class="audio-label">Ambience</span>
+      <div class="sound-waves">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <!-- Spiritual Lotus Logo SVG -->
+        <svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12,2A10,10,0,0,0,3.65,7.62a1,1,0,0,0,.68,1.26A1,1,0,0,0,5.59,8.2,8,8,0,0,1,12,4a8,8,0,0,1,6.41,4.2,1,1,0,0,0,1.26.68,1,1,0,0,0,.68-1.26A10,10,0,0,0,12,2Zm0,7a3,3,0,1,0,3,3A3,3,0,0,0,12,9Zm0,4.5A1.5,1.5,0,1,1,13.5,12,1.5,1.5,0,0,1,12,13.5Zm7.35.88a1,1,0,0,0-1.26.68,8,8,0,0,1-12.18,0,1,1,0,0,0-1.26-.68,1,1,0,0,0-.68,1.26A10,10,0,0,0,12,22a10,10,0,0,0,9.35-6.38A1,1,0,0,0,19.35,14.38ZM12,16.5A4.5,4.5,0,0,1,8,12a4.5,4.5,0,0,1,8,0A4.5,4.5,0,0,1,12,16.5Z"/>
+        </svg>
+        <span>Avalokana</span>
+      </a>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#synopsis" class="nav-link">Synopsis</a></li>
+        <li><a href="#trailer" class="nav-link">Trailer</a></li>
+        <li><a href="#cast" class="nav-link">Team</a></li>
+        <li><a href="#booking" class="nav-link">Screenings</a></li>
+        <li><a href="#booking" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem; margin-left: 10px;">Book Tickets</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-tagline reveal">An Experiential Journey of Awareness</p>
+      <h1 class="hero-title reveal">Avalokana</h1>
+      <p class="hero-description reveal">
+        A curious spiritual journey tracing a seeker named Madana, sent on a barefoot pilgrimage by his Swamiji to seek divine permission. Explore his internal struggle with purity, moral pitfalls, and self-realization.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#booking" class="btn btn-primary">Book Screening</a>
+        <a href="#trailer" class="btn btn-secondary">Watch Trailer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Marquee Banner -->
+  <section class="awards-marquee" style="background: #0b1410; padding: 25px 0; border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1); overflow: hidden;">
+    <div class="awards-container" style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <img src="assets/award-logo.jpg" alt="iDEAL Winner" style="height: 65px; width: auto; border-radius: 4px; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="assets/award1.jpg" alt="Award Laurels 1" style="height: 65px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="assets/award2.jpg" alt="Award Laurels 2" style="height: 65px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="assets/award3.jpg" alt="Cinemaking Dhaka Selection" style="height: 65px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="assets/award4.jpg" alt="JIFF Jaipur Nominated" style="height: 65px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="assets/award5.jpg" alt="Award Laurels 5" style="height: 65px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+  </section>
+
+  <!-- Synopsis Section -->
+  <section class="synopsis" id="synopsis">
+    <div class="container">
+      <h2 class="section-title reveal">The Journey</h2>
+      <p class="section-subtitle reveal">"What you seek is also seeking you." — Rumi</p>
+      
+      <div class="synopsis-grid">
+        <div class="synopsis-text reveal">
+          <p>
+            This cultural philosophy narrates the journey of a hero named Madana (meaning "king of lust"), chosen by a monk (Swamiji) to succeed him as the next head of a monastery. Swamiji gave him a task to prove his worthiness: he must undertake a barefoot pilgrimage to a distant temple to seek divine permission for his next big initiation.
+          </p>
+          <p>
+            The Swamiji imposes the significant responsibility on him to maintain purity and avoid moral pitfalls (Arishadvargas = Lust, Anger, Greed, Infatuation, Self-Pride, Jealousy) during his journey. As a man who has sheltered like a frog in a well for so many years, the unfamiliar characters and experiences of the outside world begin to open up.
+          </p>
+          <div class="synopsis-quote">
+            This curious spiritual journey explores Madana's internal struggle with purity, responsibility, cognitive transformation, and self-discovery.
+          </div>
+          <p>
+            Facing the challenge of maintaining his integrity, the narrative questions whether he will retain control or succumb to temptations, ultimately reflecting on the lessons learned. That is <strong>Avalokana</strong>, meaning <strong>"Self Realization"</strong>.
+          </p>
+        </div>
+        
+        <div class="synopsis-image-container reveal" style="transition-delay: 0.2s;">
+          <img src="assets/poster.jpg" alt="Avalokana Movie Poster" class="synopsis-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trailer Section -->
+  <section class="trailer-section" id="trailer">
+    <div class="container">
+      <h2 class="section-title reveal">Watch the Trailer</h2>
+      <p class="section-subtitle reveal">Immerse yourself in a landscape of silence and light.</p>
+      
+      <div class="trailer-wrapper reveal">
+        <div class="trailer-cover" id="trailerCover">
+          <div class="trailer-poster-frame" style="width: 170px; height: 240px; border-radius: 8px; border: 1.5px solid var(--accent-gold); box-shadow: 0 10px 25px rgba(0,0,0,0.6); overflow: hidden; margin-bottom: 25px; transition: var(--transition-smooth); transform: scale(1);">
+            <img src="assets/poster.jpg" alt="Avalokana Movie Trailer Poster" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div class="play-btn-circle pulse" id="playBtn">
+            <!-- Play Arrow SVG -->
+            <svg viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <span class="trailer-title" style="margin-top: 15px;">Experience the Silence</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cast & Crew Section -->
+  <section class="cast-crew" id="cast">
+    <div class="container">
+      <h2 class="section-title reveal">The Creators</h2>
+      <p class="section-subtitle reveal">The minds behind the meditative vision</p>
+      
+      <div class="team-grid">
+        
+        <!-- Profile 1: Hero -->
+        <div class="profile-card glass-card reveal">
+          <div class="profile-header">
+            <div class="profile-image-frame">
+              <img src="assets/hero.png" alt="Vishal Kampli - Madana" class="profile-image">
+            </div>
+            <div class="profile-title-block">
+              <h3>Vishal Kampli</h3>
+              <span class="profile-role">Madana (The Seeker)</span>
+            </div>
+          </div>
+          <p class="profile-bio">
+            In a highly demanding spiritual role, Vishal Kampli portrays Madana (meaning "king of lust"), a sheltered young man chosen by his Swamiji to succeed him. Vishal delivers a powerful performance detailing Madana's internal cognitive struggle against the Arishadvargas (the six moral pitfalls) in the outside world, making his path of self-discovery feel deeply relatable.
+          </p>
+          <div class="profile-quote">
+            "Embodying Madana's transition from a naive monk-in-training to a man facing the temptations of the real world was a profound spiritual journey for me."
+          </div>
+        </div>
+
+        <!-- Profile 2: Director -->
+        <div class="profile-card glass-card reveal" style="transition-delay: 0.2s;">
+          <div class="profile-header">
+            <div class="profile-image-frame">
+              <img src="assets/director.jpg" alt="Rakshith Shivakumar - Director" class="profile-image">
+            </div>
+            <div class="profile-title-block">
+              <h3>Rakshith Shivakumar</h3>
+              <span class="profile-role">Writer & Director</span>
+            </div>
+          </div>
+          <p class="profile-bio">
+            "Avalokana is my soul project. Obviously it is my first, but I will definitely bring a creative transformational wave in my future movies." Rakshith Shivakumar infuses his debut feature with intense philosophical depth, exploring cognitive transformation and self-realization with a fresh, visionary approach to Indian art cinema.
+          </p>
+          <div class="profile-quote">
+            "Avalokana is a mirror of self-realization. The journey is not outward, but inward."
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenings & Seat Selector Section -->
+  <section class="screening-section" id="booking">
+    <div class="container">
+      <h2 class="section-title reveal">Experience it Live</h2>
+      <p class="section-subtitle reveal">Select a serene screening location and reserve your sacred space.</p>
+      
+      <div class="booking-panel reveal">
+        <!-- Interactive Left Side: Options & Seat Grid -->
+        <div class="glass-card">
+          <!-- Fixed Screening Location Display (No Search Select Option) -->
+          <div class="select-group">
+            <label class="select-label" style="display: block;">Screening Sanctuary</label>
+            <div class="glass-card" style="padding: 20px; border-color: rgba(212, 175, 55, 0.25); background: rgba(7, 13, 10, 0.4); border-radius: 10px; margin-top: 5px;">
+              <h4 style="font-family: var(--font-title); font-size: 1rem; color: var(--text-primary); margin-bottom: 8px; letter-spacing: 0.5px;">Suchitra Cinema & Cultural Academy</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 12px;">
+                Karanth Road, 36, 9th Main Rd, near Post Office, Banashankari 2nd Stage, Bengaluru, Karnataka 560070
+              </p>
+              <a href="https://maps.google.com/?q=Suchitra+Cinema+and+Cultural+Academy,+Banashankari,+Bengaluru" target="_blank" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.75rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px;">
+                <span>📍 View Location on Google Maps</span>
+              </a>
+            </div>
+            <!-- Hidden container for JS compatibility -->
+            <div id="locationSelector" style="display: none;">
+              <span class="pill-option active" data-value="Suchitra Cinema & Cultural Academy, Bengaluru">Suchitra Cinema & Cultural Academy, Bengaluru</span>
+            </div>
+          </div>
+
+          <!-- Selection 2: Date & Time -->
+          <div class="select-group">
+            <label class="select-label">Select Showtime (05th July)</label>
+            <div class="pills-container" id="timeSelector">
+              <span class="pill-option active" data-value="July 05 - 4:00 PM">July 05 - 4:00 PM</span>
+              <span class="pill-option" data-value="July 05 - 6:00 PM">July 05 - 6:00 PM</span>
+            </div>
+          </div>
+
+          <!-- Seating Area -->
+          <div class="select-group">
+            <label class="select-label">Choose Seating Space</label>
+            <div class="theater-card glass-card">
+              <div class="screen-container">
+                <div class="screen-curve"></div>
+                <div class="screen-text">The Screen / River Flow</div>
+              </div>
+              
+              <!-- Seat layout (6 rows, 8 seats per row) -->
+              <div class="seating-grid" id="seatingGrid">
+                <!-- Javascript will populate this with seats -->
+              </div>
+              
+              <div class="seating-legend">
+                <div class="legend-item">
+                  <span class="legend-color available"></span>
+                  <span>Available</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color selected"></span>
+                  <span>Selected</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color reserved"></span>
+                  <span>Reserved</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Booking Summary & Details -->
+        <div class="glass-card checkout-box">
+          <div class="ticket-summary-info">
+            <h3 style="margin-bottom: 25px; border-bottom: 1px solid rgba(212,175,55,0.1); padding-bottom: 10px;">Booking Details</h3>
+            
+            <div class="summary-row">
+              <span class="summary-label">Selected Sanctuary</span>
+              <span class="summary-value" id="summaryLocation">Suchitra Cinema & Cultural Academy, Bengaluru</span>
+            </div>
+            
+            <div class="summary-row">
+              <span class="summary-label">Show Date & Time</span>
+              <span class="summary-value" id="summaryTime">July 05 - 4:00 PM</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-label">Reserved Seats</span>
+              <span class="summary-value" id="summarySeats">None selected</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-label">Seat Count</span>
+              <span class="summary-value" id="summaryCount">0</span>
+            </div>
+
+            <div class="summary-row total">
+              <span class="summary-label">Total Amount</span>
+              <span class="summary-value" id="summaryTotal">₹0</span>
+            </div>
+          </div>
+
+          <!-- Booking Input Form -->
+          <form class="booking-form" id="bookingForm">
+            <input type="text" class="form-input" id="userName" placeholder="Your Name" required>
+            <input type="email" class="form-input" id="userEmail" placeholder="Email Address" required>
+            <input type="tel" class="form-input" id="userPhone" placeholder="Mobile Number" required>
+            
+            <button type="submit" class="btn btn-primary" id="bookBtn" style="margin-top: 15px; width: 100%;" disabled>Confirm Reservation</button>
+            <p class="booking-disabled-message" id="formNotice">Please select at least one seat to proceed.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quotes Carousel Section -->
+  <section class="quotes-banner">
+    <div class="quote-carousel" id="quoteCarousel">
+      <!-- Quote 1 -->
+      <div class="quote-slide active">
+        <blockquote>"The quieter you become, the more you are able to hear."</blockquote>
+        <cite>Ram Dass</cite>
+      </div>
+      <!-- Quote 2 -->
+      <div class="quote-slide">
+        <blockquote>"Water does not struggle to flow. It simply surrenders to the valley."</blockquote>
+        <cite>Avalokana, Act II</cite>
+      </div>
+      <!-- Quote 3 -->
+      <div class="quote-slide">
+        <blockquote>"Destiny is not a roadmap; it is the ripple of a pebble already thrown."</blockquote>
+        <cite>Avalokana, Act III</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Avalokana Screenings</h4>
+          <p>
+            Dedicated to presenting meditative, philosophical, and spiritually-aligned independent cinema that challenges, heals, and elevates the human consciousness.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Navigation</h5>
+          <ul>
+            <li><a href="#hero">Return to Silence (Home)</a></li>
+            <li><a href="#synopsis">The Journey (Synopsis)</a></li>
+            <li><a href="#trailer">Watch Trailer</a></li>
+            <li><a href="#cast">The Creators</a></li>
+            <li><a href="#booking">Reserve Tickets</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h5>Connect with us</h5>
+          <p>Email: silence@avalokana-screenings.org</p>
+          <p>Location: Netravati Ashram, Western Ghats, Karnataka</p>
+          <p>Contact: +91 80 2345 6789</p>
+        </div>
+      </div>
+      <div class="footer-copyright" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+        <span>&copy; 2026 Avalokana Productions. All rights reserved. Made in deep contemplation.</span>
+        <a href="#" id="organizerConsoleLink" style="font-size: 0.75rem; color: var(--accent-gold); opacity: 0.7; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: underline; margin-top: 5px;">🔑 Sanctuary Console (Organizer Panel)</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 1. Trailer Fullscreen Video Modal -->
+  <div class="trailer-modal" id="trailerModal">
+    <div class="trailer-modal-content">
+      <!-- YouTube trailer container -->
+      <div id="trailerVideoContainer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; display: none;"></div>
+      <!-- HTML5 Canvas for peaceful particles and river ripple visuals -->
+      <canvas class="trailer-canvas-placeholder" id="trailerCanvas"></canvas>
+      
+      <!-- Overlaid Player Controls & Info -->
+      <div class="trailer-overlay-ui">
+        <button class="trailer-close-btn" id="closeTrailerBtn" title="Close Theater">&times;</button>
+        
+        <div class="trailer-soundtrack-info">
+          <!-- Small equalizer anim -->
+          <div class="sound-waves" style="height: 15px;">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span class="soundtrack-note">Track: "River Contemplation" (Sitar & Stream Synth)</span>
+        </div>
+
+        <div class="trailer-subtitles" id="subtitles">
+          [Sound of river flowing softly]
+        </div>
+
+        <div class="trailer-controls">
+          <div class="trailer-controls-left">
+            <button class="control-btn" id="modalPlayBtn">
+              <!-- Play / Pause Icon -->
+              <svg id="controlPlayIcon" viewBox="0 0 24 24" style="display: none;"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="controlPauseIcon" viewBox="0 0 24 24" style="display: block;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <span class="time-readout" id="timeReadout" style="font-size: 0.85rem; opacity: 0.8;">0:00 / 0:45</span>
+          </div>
+          <span style="font-family: var(--font-title); font-size: 0.8rem; letter-spacing: 1.5px; color: var(--accent-gold);">Avalokana - Trailer</span>
+        </div>
+      </div>
+      
+      <!-- Progress Bar at bottom of screen -->
+      <div class="trailer-progress-bar-container" id="progressBarContainer">
+        <div class="trailer-progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Spiritual E-Ticket Modal -->
+  <div class="ticket-modal" id="ticketModal">
+    <div class="ticket-card-outer">
+      <div class="spiritual-ticket">
+        <!-- Ticket punch holes -->
+        <div class="ticket-cut-left"></div>
+        <div class="ticket-cut-right"></div>
+        
+        <div class="ticket-main">
+          <div class="ticket-header">
+            <div class="ticket-logo">Avalokana</div>
+            <div class="ticket-subtitle">Spiritual Cinema E-Ticket</div>
+          </div>
+          
+          <div class="ticket-body">
+            <div class="ticket-detail-item">
+              <h5>Seeker Name</h5>
+              <p id="ticketSeekerName">Sharath Prasad</p>
+            </div>
+            <div class="ticket-detail-item">
+              <h5>Reservation Code</h5>
+              <p style="color: var(--accent-saffron); font-weight: 700;" id="ticketCode">AVK-9812-SRT</p>
+            </div>
+            <div class="ticket-detail-item">
+              <h5>Sanctuary Hall</h5>
+              <p id="ticketLocation">Suchitra Cinema & Cultural Academy, Bengaluru</p>
+            </div>
+            <div class="ticket-detail-item">
+              <h5>Show Date & Time</h5>
+              <p id="ticketTime">July 05 - 4:00 PM</p>
+            </div>
+            <div class="ticket-detail-item">
+              <h5>Reserved Seats</h5>
+              <p id="ticketSeats">A3, A4</p>
+            </div>
+            <div class="ticket-detail-item">
+              <h5>Total Amount</h5>
+              <p id="ticketTotal">₹150</p>
+            </div>
+            
+            <div class="ticket-detail-item full-width" style="margin-top: 10px; border-top: 1px solid rgba(212,175,55,0.1); padding-top: 15px;">
+              <h5>Sanctuary Entry Note</h5>
+              <p style="font-size: 0.85rem; font-weight: 300; line-height: 1.4; color: var(--text-secondary);">
+                Please arrive 15 minutes before dusk. Remove footwear outside the hall. Maintain complete silence upon entry.
+              </p>
+            </div>
+          </div>
+          
+          <div class="ticket-footer">
+            <!-- Simulated QR Code SVG -->
+            <svg class="ticket-qr" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="#ffffff"/>
+              <!-- Corner markers -->
+              <rect x="10" y="10" width="20" height="20" fill="#000000"/>
+              <rect x="13" y="13" width="14" height="14" fill="#ffffff"/>
+              <rect x="15" y="15" width="10" height="10" fill="#000000"/>
+
+              <rect x="70" y="10" width="20" height="20" fill="#000000"/>
+              <rect x="73" y="13" width="14" height="14" fill="#ffffff"/>
+              <rect x="75" y="15" width="10" height="10" fill="#000000"/>
+
+              <rect x="10" y="70" width="20" height="20" fill="#000000"/>
+              <rect x="13" y="73" width="14" height="14" fill="#ffffff"/>
+              <rect x="15" y="75" width="10" height="10" fill="#000000"/>
+              
+              <!-- Random QR blocks for visual fidelity -->
+              <rect x="40" y="15" width="5" height="10" fill="#000000"/>
+              <rect x="45" y="25" width="10" height="5" fill="#000000"/>
+              <rect x="50" y="10" width="5" height="5" fill="#000000"/>
+              <rect x="60" y="20" width="5" height="10" fill="#000000"/>
+              
+              <rect x="15" y="40" width="10" height="5" fill="#000000"/>
+              <rect x="25" y="45" width="5" height="10" fill="#000000"/>
+              <rect x="10" y="55" width="5" height="5" fill="#000000"/>
+              <rect x="20" y="60" width="5" height="5" fill="#000000"/>
+              
+              <rect x="40" y="40" width="15" height="15" fill="#000000"/>
+              <rect x="45" y="45" width="5" height="5" fill="#ffffff"/>
+              <rect x="60" y="45" width="5" height="5" fill="#000000"/>
+              <rect x="60" y="55" width="10" height="5" fill="#000000"/>
+              
+              <rect x="40" y="70" width="5" height="10" fill="#000000"/>
+              <rect x="45" y="80" width="10" height="5" fill="#000000"/>
+              <rect x="50" y="65" width="5" height="5" fill="#000000"/>
+              <rect x="60" y="75" width="5" height="10" fill="#000000"/>
+              
+              <rect x="75" y="40" width="10" height="5" fill="#000000"/>
+              <rect x="80" y="50" width="5" height="15" fill="#000000"/>
+              <rect x="70" y="60" width="5" height="5" fill="#000000"/>
+              
+              <rect x="70" y="75" width="15" height="5" fill="#000000"/>
+              <rect x="80" y="80" width="5" height="10" fill="#000000"/>
+              <rect x="75" y="85" width="10" height="5" fill="#000000"/>
+            </svg>
+            <div class="ticket-blessing">
+              "Blessings on your journey into the flow."<br>
+              <span style="font-size: 0.7rem; opacity: 0.6; font-family: var(--font-body); letter-spacing: 0.5px;">TICKET ID: #AVK-897-BKG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ticket-actions">
+        <button class="btn btn-secondary" id="closeTicketBtn">Return to Site</button>
+        <button class="btn btn-primary" onclick="window.print()">Print Ticket</button>
+      </div>
+    </div>
+  <!-- 3. Organizer Dashboard Modal -->
+  <div class="ticket-modal" id="organizerModal" style="overflow-y: auto;">
+    <div class="glass-card" style="max-width: 900px; width: 95%; margin: 40px auto; padding: 30px; border: 1.5px solid var(--accent-gold); position: relative;">
+      
+      <!-- Close Dashboard Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 15px; margin-bottom: 20px;">
+        <h3 style="color: var(--accent-gold); font-family: var(--font-title); font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px;">Sanctuary Console</h3>
+        <button class="trailer-close-btn" id="closeOrganizerBtn" style="width:35px; height:35px; font-size:1.2rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); cursor:pointer; display:flex; align-items:center; justify-content:center; border-radius:50%; color:#fff;">&times;</button>
+      </div>
+
+      <!-- Password Lock Screen -->
+      <div id="organizerLockScreen" style="text-align: center; padding: 40px 10px;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--accent-gold); margin-bottom: 20px;">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <h4 style="margin-bottom: 10px; font-size: 1.1rem; letter-spacing: 1px; font-family: var(--font-title);">Access Restricted</h4>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 25px;">Please enter the sanctuary administrator passcode.</p>
+        <div style="max-width: 320px; margin: 0 auto; display: flex; gap: 10px; flex-direction: column;">
+          <input type="password" class="form-input" id="organizerPassword" placeholder="Passcode (e.g. avalokana2026)" style="padding: 10px 15px; text-align:center;">
+          <button class="btn btn-primary" id="loginOrganizerBtn" style="padding: 10px 20px; border-radius: 8px; width:100%;">Unlock Console</button>
+        </div>
+        <p id="organizerErrorMsg" style="color: #ff4d4d; font-size: 0.85rem; margin-top: 12px; display: none;">Invalid passcode.</p>
+      </div>
+
+      <!-- Dashboard Contents (Hidden by default) -->
+      <div id="organizerDashboard" style="display: none;">
+        <!-- Metrics Row -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px;">
+          <div class="glass-card" style="padding: 15px; background: rgba(7, 13, 10, 0.4); text-align: center; border-color: rgba(255,255,255,0.05); border-radius: 12px;">
+            <h5 style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Total Bookings</h5>
+            <p id="totalBookingsMetric" style="font-size: 1.8rem; font-weight: 700; color: var(--text-primary); margin-top: 5px;">0</p>
+          </div>
+          <div class="glass-card" style="padding: 15px; background: rgba(7, 13, 10, 0.4); text-align: center; border-color: rgba(255,255,255,0.05); border-radius: 12px;">
+            <h5 style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Revenue Generated</h5>
+            <p id="totalRevenueMetric" style="font-size: 1.8rem; font-weight: 700; color: var(--accent-gold); margin-top: 5px;">₹0</p>
+          </div>
+          <div class="glass-card" style="padding: 15px; background: rgba(7, 13, 10, 0.4); text-align: center; border-color: rgba(255,255,255,0.05); border-radius: 12px;">
+            <h5 style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">4:00 PM Seats</h5>
+            <p id="fourPmMetric" style="font-size: 1.8rem; font-weight: 700; color: var(--accent-saffron); margin-top: 5px;">0/100</p>
+          </div>
+          <div class="glass-card" style="padding: 15px; background: rgba(7, 13, 10, 0.4); text-align: center; border-color: rgba(255,255,255,0.05); border-radius: 12px;">
+            <h5 style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">6:00 PM Seats</h5>
+            <p id="sixPmMetric" style="font-size: 1.8rem; font-weight: 700; color: var(--accent-saffron); margin-top: 5px;">0/100</p>
+          </div>
+        </div>
+
+        <!-- Bookings Table -->
+        <h4 style="margin-bottom: 12px; color: var(--accent-gold); text-transform: uppercase; font-size: 0.95rem; letter-spacing: 0.5px; font-family: var(--font-title);">Reservation Records</h4>
+        <div style="overflow-x: auto; border: 1px solid var(--glass-border); border-radius: 8px; margin-bottom: 25px;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.8rem; min-width: 700px;">
+            <thead>
+              <tr style="background: rgba(212, 175, 55, 0.08); border-bottom: 1px solid var(--glass-border);">
+                <th style="padding: 10px 12px; color: var(--accent-gold);">Code</th>
+                <th style="padding: 10px 12px;">Seeker</th>
+                <th style="padding: 10px 12px;">Contact</th>
+                <th style="padding: 10px 12px;">Showtime</th>
+                <th style="padding: 10px 12px;">Seats</th>
+                <th style="padding: 10px 12px;">Total Price</th>
+                <th style="padding: 10px 12px;">Status</th>
+                <th style="padding: 10px 12px; text-align: center;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="bookingsTableBody">
+              <!-- JS will inject booking rows here -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Dashboard Actions -->
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap;">
+          <button class="btn btn-secondary" id="exportCsvBtn" style="padding: 8px 16px; font-size: 0.75rem; border-radius: 6px;">📥 Export Bookings to CSV</button>
+          <button class="btn btn-secondary" id="clearAllBookingsBtn" style="padding: 8px 16px; font-size: 0.75rem; border-radius: 6px; border-color: #ff4d4d; color: #ff4d4d;">⚠️ Reset All Reservations</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "avalokana-anireekshithaa",
+  "version": "1.0.0",
+  "description": "Movie screening and ticket booking website for Anireekshithaa",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "contemplative",
+    "cinema",
+    "spiritual",
+    "booking",
+    "theater"
+  ],
+  "author": "Antigravity",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
