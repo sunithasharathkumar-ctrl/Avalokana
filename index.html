@@ -5,32 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Avalokana - Exclusive Screenings & Ticket Booking</title>
   <meta name="description" content="Book tickets for Avalokana, a contemplative and spiritual cinematic journey exploring purity, temptation, and self-realization. Watch trailer and view schedules.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <!-- Floating Ambient Soundtrack Controller -->
-  <div class="audio-controller" id="audioController">
-    <button class="audio-toggle-btn" id="audioToggleBtn" title="Toggle Spiritual Ambience" aria-label="Toggle spiritual ambience sound">
-      <!-- Mute Icon -->
-      <svg id="audioIconMute" viewBox="0 0 24 24" style="display: block;">
-        <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
-      </svg>
-      <!-- Playing Speaker Icon -->
-      <svg id="audioIconPlay" viewBox="0 0 24 24" style="display: none;">
-        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-      </svg>
-    </button>
-    <div class="audio-panel">
-      <span class="audio-label">Ambience</span>
-      <div class="sound-waves">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
+  <!-- Ambient Controller Removed -->
 
   <!-- Navbar -->
   <header class="navbar" id="navbar">
@@ -51,9 +30,11 @@
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#synopsis" class="nav-link">Synopsis</a></li>
+        <li><a href="#awards" class="nav-link">Accolades</a></li>
         <li><a href="#trailer" class="nav-link">Trailer</a></li>
         <li><a href="#cast" class="nav-link">Team</a></li>
-        <li><a href="#booking" class="nav-link">Screenings</a></li>
+        <li><a href="#booking" class="nav-link">Book Seats</a></li>
+        <li><a href="#" id="navLinkOrganizer" class="nav-link">Console</a></li>
         <li><a href="#booking" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem; margin-left: 10px;">Book Tickets</a></li>
       </ul>
     </div>
@@ -68,23 +49,13 @@
         A curious spiritual journey tracing a seeker named Madana, sent on a barefoot pilgrimage by his Swamiji to seek divine permission. Explore his internal struggle with purity, moral pitfalls, and self-realization.
       </p>
       <div class="hero-actions reveal">
-        <a href="#booking" class="btn btn-primary">Book Screening</a>
+        <a href="#booking" class="btn btn-primary">Book Seats</a>
         <a href="#trailer" class="btn btn-secondary">Watch Trailer</a>
       </div>
     </div>
   </section>
 
-  <!-- Awards Marquee Banner -->
-  <section class="awards-marquee" style="background: #0b1410; padding: 25px 0; border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1); overflow: hidden;">
-    <div class="awards-container" style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-      <img src="assets/award-logo.jpg" alt="iDEAL Winner" style="height: 65px; width: auto; border-radius: 4px; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="assets/award1.jpg" alt="Award Laurels 1" style="height: 65px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="assets/award2.jpg" alt="Award Laurels 2" style="height: 65px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="assets/award3.jpg" alt="Cinemaking Dhaka Selection" style="height: 65px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="assets/award4.jpg" alt="JIFF Jaipur Nominated" style="height: 65px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="assets/award5.jpg" alt="Award Laurels 5" style="height: 65px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); transition: var(--transition-fast);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-    </div>
-  </section>
+
 
   <!-- Synopsis Section -->
   <section class="synopsis" id="synopsis">
@@ -133,6 +104,76 @@
             </svg>
           </div>
           <span class="trailer-title" style="margin-top: 15px;">Experience the Silence</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Category Section -->
+  <section class="awards-section" id="awards">
+    <div class="container">
+      <h2 class="section-title reveal">Official Accolades</h2>
+      <p class="section-subtitle reveal">Celebrating international recognition for its meditative cinematography and depth</p>
+      
+      <div class="awards-grid reveal">
+        <!-- Card 1 (Critics' Choice Selection) -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="assets/critics-choice-logo.jpg" alt="Critics' Choice Selection" class="award-badge-img">
+          </div>
+          <h4 class="award-card-title">Official Selection</h4>
+          <h5 class="award-card-festival">Critics' Choice International Film Festival 2025</h5>
+          <p class="award-card-desc">Honored with official laurels for its deep narrative insight, spiritual atmosphere, and meditative pacing.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="assets/award3.jpg" alt="Cinemaking Dhaka Selection" class="award-badge-img">
+          </div>
+          <h4 class="award-card-title">Official Selection</h4>
+          <h5 class="award-card-festival">Cinemaking International Film Festival - Dhaka</h5>
+          <p class="award-card-desc">Celebrating the visual mastery and spiritual narrative flow on a global stage in 2025.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="assets/jiff-logo.jpg" alt="JIFF Jaipur Nominated" class="award-badge-img">
+          </div>
+          <h4 class="award-card-title">Official Nomination</h4>
+          <h5 class="award-card-festival">18th Jaipur International Film Festival</h5>
+          <p class="award-card-desc">Nominated in the art cinema category for the director's unique vision of self-realization in 2026.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="assets/riff-logo.png" alt="RIFF Winner" class="award-badge-img">
+          </div>
+          <h4 class="award-card-title">Winner - Best Feature Film</h4>
+          <h5 class="award-card-festival">Rameshwaram International Film Festival</h5>
+          <p class="award-card-desc">Winner of the prestigious Best Feature Film Award at the Rameshwaram International Film Festival 2026.</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="assets/award-logo.jpg" alt="iDEAL Winner" class="award-badge-img">
+          </div>
+          <h4 class="award-card-title">Jury Special Winner</h4>
+          <h5 class="award-card-festival">iDEAL International Film Festival</h5>
+          <p class="award-card-desc">Distinguished award winner for its philosophical depths and experimental execution.</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="assets/mifa-logo.jpg" alt="MIFA Winner" class="award-badge-img">
+          </div>
+          <h4 class="award-card-title">Award Winner</h4>
+          <h5 class="award-card-festival">Mumbai International Film Awards (MIFA)</h5>
+          <p class="award-card-desc">Award winner for narrative excellence and contemplative storytelling at the Mumbai International Film Awards.</p>
         </div>
       </div>
     </div>
@@ -188,114 +229,91 @@
     </div>
   </section>
 
-  <!-- Screenings & Seat Selector Section -->
-  <section class="screening-section" id="booking">
-    <div class="container">
-      <h2 class="section-title reveal">Experience it Live</h2>
-      <p class="section-subtitle reveal">Select a serene screening location and reserve your sacred space.</p>
-      
-      <div class="booking-panel reveal">
-        <!-- Interactive Left Side: Options & Seat Grid -->
-        <div class="glass-card">
-          <!-- Fixed Screening Location Display (No Search Select Option) -->
-          <div class="select-group">
-            <label class="select-label" style="display: block;">Screening Sanctuary</label>
-            <div class="glass-card" style="padding: 20px; border-color: rgba(212, 175, 55, 0.25); background: rgba(7, 13, 10, 0.4); border-radius: 10px; margin-top: 5px;">
-              <h4 style="font-family: var(--font-title); font-size: 1rem; color: var(--text-primary); margin-bottom: 8px; letter-spacing: 0.5px;">Suchitra Cinema & Cultural Academy</h4>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 12px;">
-                Karanth Road, 36, 9th Main Rd, near Post Office, Banashankari 2nd Stage, Bengaluru, Karnataka 560070
-              </p>
-              <a href="https://maps.google.com/?q=Suchitra+Cinema+and+Cultural+Academy,+Banashankari,+Bengaluru" target="_blank" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.75rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px;">
-                <span>📍 View Location on Google Maps</span>
-              </a>
+  <!-- Book Seats Section -->
+  <section class="booking-section" id="booking" style="background: var(--bg-primary); padding: 80px 0; border-top: 1px solid rgba(212,175,55,0.05);">
+    <div class="container" style="max-width: 1000px;">
+      <h2 class="section-title reveal">🎬 Book Your Seat</h2>
+      <p class="section-subtitle reveal">"Reserve your seat for the exclusive screening of Avalokana."</p>
+
+      <div class="booking-container reveal" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; margin-top: 40px; align-items: start;">
+        <!-- Left: Form and Seat Counter -->
+        <div class="glass-card" style="padding: 30px; border-radius: 16px;">
+          <h3 style="font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px;">1. Select Tickets</h3>
+          
+          <!-- Seats Availability & Counter -->
+          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); padding: 15px 20px; border-radius: 8px; margin-bottom: 25px;">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; display: block; letter-spacing: 0.5px;">Available Seats</span>
+              <strong id="availableSeatsDisplay" style="font-size: 1.3rem; color: var(--accent-gold);">100 / 100</strong>
             </div>
-            <!-- Hidden container for JS compatibility -->
-            <div id="locationSelector" style="display: none;">
-              <span class="pill-option active" data-value="Suchitra Cinema & Cultural Academy, Bengaluru">Suchitra Cinema & Cultural Academy, Bengaluru</span>
+            
+            <div style="display: flex; align-items: center; gap: 15px;">
+              <button type="button" class="counter-btn" id="btnBookMinus" style="width: 36px; height: 36px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--text-secondary); background: none; color: #fff; cursor: pointer; transition: var(--transition-fast);">&minus;</button>
+              <span id="bookingQtyValue" style="font-size: 1.4rem; font-weight: 700; color: #fff; min-width: 20px; text-align: center;">1</span>
+              <button type="button" class="counter-btn" id="btnBookPlus" style="width: 36px; height: 36px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--text-secondary); background: none; color: #fff; cursor: pointer; transition: var(--transition-fast);">&plus;</button>
             </div>
           </div>
 
-          <!-- Selection 2: Date & Time -->
-          <div class="select-group">
-            <label class="select-label">Select Showtime (05th July)</label>
-            <div class="pills-container" id="timeSelector">
-              <span class="pill-option active" data-value="July 05 - 4:00 PM">July 05 - 4:00 PM</span>
-              <span class="pill-option" data-value="July 05 - 6:00 PM">July 05 - 6:00 PM</span>
+          <h3 style="font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px;">2. Audience Information</h3>
+          <form id="bookingDetailsForm" style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="bookingName" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Full Name *</label>
+              <input type="text" id="bookingName" class="form-input" placeholder="Enter your full name" required autocomplete="name">
             </div>
-          </div>
 
-          <!-- Seating Area -->
-          <div class="select-group">
-            <label class="select-label">Choose Seating Space</label>
-            <div class="theater-card glass-card">
-              <div class="screen-container">
-                <div class="screen-curve"></div>
-                <div class="screen-text">The Screen / River Flow</div>
-              </div>
-              
-              <!-- Seat layout (6 rows, 8 seats per row) -->
-              <div class="seating-grid" id="seatingGrid">
-                <!-- Javascript will populate this with seats -->
-              </div>
-              
-              <div class="seating-legend">
-                <div class="legend-item">
-                  <span class="legend-color available"></span>
-                  <span>Available</span>
-                </div>
-                <div class="legend-item">
-                  <span class="legend-color selected"></span>
-                  <span>Selected</span>
-                </div>
-                <div class="legend-item">
-                  <span class="legend-color reserved"></span>
-                  <span>Reserved</span>
-                </div>
-              </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="bookingPhone" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Mobile Number *</label>
+              <input type="tel" id="bookingPhone" class="form-input" placeholder="Enter 10-digit mobile number" pattern="[0-9]{10}" required autocomplete="tel">
             </div>
-          </div>
+
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="bookingMessage" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Optional Message</label>
+              <textarea id="bookingMessage" class="form-input" rows="3" placeholder="Any special requests or notes..." style="resize: none;"></textarea>
+            </div>
+          </form>
         </div>
 
-        <!-- Right Side: Booking Summary & Details -->
-        <div class="glass-card checkout-box">
-          <div class="ticket-summary-info">
-            <h3 style="margin-bottom: 25px; border-bottom: 1px solid rgba(212,175,55,0.1); padding-bottom: 10px;">Booking Details</h3>
+        <!-- Right: Summary Card -->
+        <div class="glass-card" style="padding: 30px; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(212, 175, 55, 0.25);">
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 1px dashed rgba(212, 175, 55, 0.2); padding-bottom: 10px;">Booking Summary</h3>
             
-            <div class="summary-row">
-              <span class="summary-label">Selected Sanctuary</span>
-              <span class="summary-value" id="summaryLocation">Suchitra Cinema & Cultural Academy, Bengaluru</span>
-            </div>
-            
-            <div class="summary-row">
-              <span class="summary-label">Show Date & Time</span>
-              <span class="summary-value" id="summaryTime">July 05 - 4:00 PM</span>
-            </div>
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--text-secondary);">Movie</span>
+                <span style="font-weight: 600; color: #fff; text-align: right;">Avalokana</span>
+              </div>
+              
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--text-secondary);">Venue</span>
+                <span style="font-weight: 600; color: #fff; text-align: right;">Natana Rangashale</span>
+              </div>
 
-            <div class="summary-row">
-              <span class="summary-label">Reserved Seats</span>
-              <span class="summary-value" id="summarySeats">None selected</span>
-            </div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--text-secondary);">Date & Time</span>
+                <span style="font-weight: 600; color: #fff; text-align: right;">Saturday, July 4th, 2026<br><span style="font-size:0.8rem; color: var(--accent-gold);">5:00 PM onwards</span></span>
+              </div>
 
-            <div class="summary-row">
-              <span class="summary-label">Seat Count</span>
-              <span class="summary-value" id="summaryCount">0</span>
-            </div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+                <span style="color: var(--text-secondary);">Tickets Count</span>
+                <span id="summaryTicketsCount" style="font-weight: 600; color: #fff;">1 Ticket</span>
+              </div>
 
-            <div class="summary-row total">
-              <span class="summary-label">Total Amount</span>
-              <span class="summary-value" id="summaryTotal">₹0</span>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--text-secondary);">Price per Ticket</span>
+                <span style="font-weight: 600; color: #fff;">₹100</span>
+              </div>
             </div>
           </div>
 
-          <!-- Booking Input Form -->
-          <form class="booking-form" id="bookingForm">
-            <input type="text" class="form-input" id="userName" placeholder="Your Name" required>
-            <input type="email" class="form-input" id="userEmail" placeholder="Email Address" required>
-            <input type="tel" class="form-input" id="userPhone" placeholder="Mobile Number" required>
+          <div style="border-top: 1px dashed rgba(212,175,55,0.25); padding-top: 20px; margin-top: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+              <span style="font-family: var(--font-title); font-size: 1.1rem; color: #fff;">Total Amount</span>
+              <span id="summaryTotalAmount" style="font-size: 1.5rem; font-weight: 700; color: var(--accent-saffron);">₹100</span>
+            </div>
             
-            <button type="submit" class="btn btn-primary" id="bookBtn" style="margin-top: 15px; width: 100%;" disabled>Confirm Reservation</button>
-            <p class="booking-disabled-message" id="formNotice">Please select at least one seat to proceed.</p>
-          </form>
+            <button type="button" class="btn btn-primary" id="btnTriggerPayment" style="width: 100%; border-radius: 8px; padding: 15px;">Proceed to Payment</button>
+          </div>
         </div>
       </div>
     </div>
@@ -339,7 +357,8 @@
             <li><a href="#synopsis">The Journey (Synopsis)</a></li>
             <li><a href="#trailer">Watch Trailer</a></li>
             <li><a href="#cast">The Creators</a></li>
-            <li><a href="#booking">Reserve Tickets</a></li>
+            <li><a href="#booking">Book Tickets</a></li>
+            <li><a href="#" id="footerLinkOrganizer" style="color: var(--accent-gold);">🔑 Organizer Console</a></li>
           </ul>
         </div>
         <div class="footer-contact">
@@ -351,7 +370,6 @@
       </div>
       <div class="footer-copyright" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
         <span>&copy; 2026 Avalokana Productions. All rights reserved. Made in deep contemplation.</span>
-        <a href="#" id="organizerConsoleLink" style="font-size: 0.75rem; color: var(--accent-gold); opacity: 0.7; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: underline; margin-top: 5px;">🔑 Sanctuary Console (Organizer Panel)</a>
       </div>
     </div>
   </footer>
@@ -403,191 +421,392 @@
     </div>
   </div>
 
-  <!-- 2. Spiritual E-Ticket Modal -->
-  <div class="ticket-modal" id="ticketModal">
-    <div class="ticket-card-outer">
-      <div class="spiritual-ticket">
-        <!-- Ticket punch holes -->
-        <div class="ticket-cut-left"></div>
-        <div class="ticket-cut-right"></div>
-        
-        <div class="ticket-main">
-          <div class="ticket-header">
-            <div class="ticket-logo">Avalokana</div>
-            <div class="ticket-subtitle">Spiritual Cinema E-Ticket</div>
-          </div>
-          
-          <div class="ticket-body">
-            <div class="ticket-detail-item">
-              <h5>Seeker Name</h5>
-              <p id="ticketSeekerName">Sharath Prasad</p>
-            </div>
-            <div class="ticket-detail-item">
-              <h5>Reservation Code</h5>
-              <p style="color: var(--accent-saffron); font-weight: 700;" id="ticketCode">AVK-9812-SRT</p>
-            </div>
-            <div class="ticket-detail-item">
-              <h5>Sanctuary Hall</h5>
-              <p id="ticketLocation">Suchitra Cinema & Cultural Academy, Bengaluru</p>
-            </div>
-            <div class="ticket-detail-item">
-              <h5>Show Date & Time</h5>
-              <p id="ticketTime">July 05 - 4:00 PM</p>
-            </div>
-            <div class="ticket-detail-item">
-              <h5>Reserved Seats</h5>
-              <p id="ticketSeats">A3, A4</p>
-            </div>
-            <div class="ticket-detail-item">
-              <h5>Total Amount</h5>
-              <p id="ticketTotal">₹150</p>
-            </div>
-            
-            <div class="ticket-detail-item full-width" style="margin-top: 10px; border-top: 1px solid rgba(212,175,55,0.1); padding-top: 15px;">
-              <h5>Sanctuary Entry Note</h5>
-              <p style="font-size: 0.85rem; font-weight: 300; line-height: 1.4; color: var(--text-secondary);">
-                Please arrive 15 minutes before dusk. Remove footwear outside the hall. Maintain complete silence upon entry.
-              </p>
-            </div>
-          </div>
-          
-          <div class="ticket-footer">
-            <!-- Simulated QR Code SVG -->
-            <svg class="ticket-qr" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <rect width="100" height="100" fill="#ffffff"/>
-              <!-- Corner markers -->
-              <rect x="10" y="10" width="20" height="20" fill="#000000"/>
-              <rect x="13" y="13" width="14" height="14" fill="#ffffff"/>
-              <rect x="15" y="15" width="10" height="10" fill="#000000"/>
 
-              <rect x="70" y="10" width="20" height="20" fill="#000000"/>
-              <rect x="73" y="13" width="14" height="14" fill="#ffffff"/>
-              <rect x="75" y="15" width="10" height="10" fill="#000000"/>
 
-              <rect x="10" y="70" width="20" height="20" fill="#000000"/>
-              <rect x="13" y="73" width="14" height="14" fill="#ffffff"/>
-              <rect x="15" y="75" width="10" height="10" fill="#000000"/>
-              
-              <!-- Random QR blocks for visual fidelity -->
-              <rect x="40" y="15" width="5" height="10" fill="#000000"/>
-              <rect x="45" y="25" width="10" height="5" fill="#000000"/>
-              <rect x="50" y="10" width="5" height="5" fill="#000000"/>
-              <rect x="60" y="20" width="5" height="10" fill="#000000"/>
-              
-              <rect x="15" y="40" width="10" height="5" fill="#000000"/>
-              <rect x="25" y="45" width="5" height="10" fill="#000000"/>
-              <rect x="10" y="55" width="5" height="5" fill="#000000"/>
-              <rect x="20" y="60" width="5" height="5" fill="#000000"/>
-              
-              <rect x="40" y="40" width="15" height="15" fill="#000000"/>
-              <rect x="45" y="45" width="5" height="5" fill="#ffffff"/>
-              <rect x="60" y="45" width="5" height="5" fill="#000000"/>
-              <rect x="60" y="55" width="10" height="5" fill="#000000"/>
-              
-              <rect x="40" y="70" width="5" height="10" fill="#000000"/>
-              <rect x="45" y="80" width="10" height="5" fill="#000000"/>
-              <rect x="50" y="65" width="5" height="5" fill="#000000"/>
-              <rect x="60" y="75" width="5" height="10" fill="#000000"/>
-              
-              <rect x="75" y="40" width="10" height="5" fill="#000000"/>
-              <rect x="80" y="50" width="5" height="15" fill="#000000"/>
-              <rect x="70" y="60" width="5" height="5" fill="#000000"/>
-              
-              <rect x="70" y="75" width="15" height="5" fill="#000000"/>
-              <rect x="80" y="80" width="5" height="10" fill="#000000"/>
-              <rect x="75" y="85" width="10" height="5" fill="#000000"/>
-            </svg>
-            <div class="ticket-blessing">
-              "Blessings on your journey into the flow."<br>
-              <span style="font-size: 0.7rem; opacity: 0.6; font-family: var(--font-body); letter-spacing: 0.5px;">TICKET ID: #AVK-897-BKG</span>
-            </div>
-          </div>
+  <!-- UPI Payment Checkout Modal -->
+  <div class="ticket-modal" id="paymentCheckoutModal" style="display: none;">
+    <div class="glass-card" style="max-width: 480px; width: 95%; padding: 25px; border-radius: 16px; border: 1.5px solid var(--accent-gold); background: #0c0f0e;">
+      
+      <!-- Modal Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="font-size: 1.1rem;">📱</span>
+          <span style="font-family: var(--font-title); color: #fff; font-size: 1.1rem; font-weight: 600; letter-spacing:0.5px;">UPI Secure Payment</span>
         </div>
-      </div>
-      
-      <div class="ticket-actions">
-        <button class="btn btn-secondary" id="closeTicketBtn">Return to Site</button>
-        <button class="btn btn-primary" onclick="window.print()">Print Ticket</button>
-      </div>
-    </div>
-  <!-- 3. Organizer Dashboard Modal -->
-  <div class="ticket-modal" id="organizerModal" style="overflow-y: auto;">
-    <div class="glass-card" style="max-width: 900px; width: 95%; margin: 40px auto; padding: 30px; border: 1.5px solid var(--accent-gold); position: relative;">
-      
-      <!-- Close Dashboard Header -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 15px; margin-bottom: 20px;">
-        <h3 style="color: var(--accent-gold); font-family: var(--font-title); font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px;">Sanctuary Console</h3>
-        <button class="trailer-close-btn" id="closeOrganizerBtn" style="width:35px; height:35px; font-size:1.2rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); cursor:pointer; display:flex; align-items:center; justify-content:center; border-radius:50%; color:#fff;">&times;</button>
+        <button id="closePaymentModalBtn" style="background:none; border:none; color:rgba(255,255,255,0.5); font-size:1.5rem; cursor:pointer;">&times;</button>
       </div>
 
-      <!-- Password Lock Screen -->
-      <div id="organizerLockScreen" style="text-align: center; padding: 40px 10px;">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--accent-gold); margin-bottom: 20px;">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      <!-- Payment Summary Row -->
+      <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 12px 15px; border-radius: 8px; margin-bottom: 20px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:0.75rem; color:var(--text-secondary); display:block;">Amount to Pay</span>
+          <strong id="checkoutPayingAmount" style="font-size: 1.2rem; color: var(--accent-gold);">₹100.00</strong>
+        </div>
+        <span style="font-size: 0.75rem; color: rgba(255,255,255,0.4);" id="checkoutOrderId">Order ID: pay_order_9981</span>
+      </div>
+
+      <!-- UPI QR Code Scanner -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 25px; text-align:center;">
+        <div style="background:#fff; padding:12px; border-radius:12px; display:inline-block; border: 2.5px solid var(--accent-gold); box-shadow: 0 0 15px rgba(212,175,55,0.2);">
+          <img src="assets/phonepe-qr.png" alt="PhonePe Pay QR" style="width:160px; height:auto; display:block;">
+        </div>
+        <div>
+          <strong style="color:#fff; font-size: 0.95rem; display:block; margin-bottom: 4px;">UPI ID: <span style="color:var(--accent-saffron);">9964115521@ybl</span></strong>
+          <span style="font-size:0.8rem; color:var(--text-secondary);">Payee Name: <strong>RAKSHITH A S</strong></span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; max-width: 320px; margin-top: 5px;">
+          Scan the QR code with your UPI app (PhonePe, GPay, Paytm) and pay the exact amount. Once paid, click the confirm button below.
+        </p>
+      </div>
+
+      <!-- Bottom Payment Button with Spinner -->
+      <button type="button" class="btn btn-primary" id="btnExecutePayment" style="width:100%; border-radius:8px; padding:12px; font-size:0.95rem; font-weight:600; display:flex; align-items:center; justify-content:center; gap:10px;">
+        <span>I Have Paid - Proceed</span>
+        <!-- Spinner SVG -->
+        <svg id="paymentLoadingSpinner" width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none; animation: spin 1s linear infinite; fill: none; stroke: currentColor; stroke-width: 3;">
+          <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.2)"/>
+          <path d="M12 2a10 10 0 0 1 10 10" stroke="#fff"/>
         </svg>
-        <h4 style="margin-bottom: 10px; font-size: 1.1rem; letter-spacing: 1px; font-family: var(--font-title);">Access Restricted</h4>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 25px;">Please enter the sanctuary administrator passcode.</p>
-        <div style="max-width: 320px; margin: 0 auto; display: flex; gap: 10px; flex-direction: column;">
-          <input type="password" class="form-input" id="organizerPassword" placeholder="Passcode (e.g. avalokana2026)" style="padding: 10px 15px; text-align:center;">
-          <button class="btn btn-primary" id="loginOrganizerBtn" style="padding: 10px 20px; border-radius: 8px; width:100%;">Unlock Console</button>
+      </button>
+
+    </div>
+  </div>
+
+
+  <!-- Premium Digital Ticket / Booking Confirmed Page -->
+  <div id="bookingConfirmedPage" style="display: none; position: fixed; inset: 0; background: #050807; overflow-y: auto; z-index: 2000; padding: 40px 20px; font-family: var(--font-body); scrollbar-width: thin;">
+    
+    <!-- Background Spotlight Glow -->
+    <div class="spotlight-glow" style="position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(255, 115, 0, 0.02) 50%, transparent 70%); pointer-events: none; z-index: 1;"></div>
+
+    <div class="confirmed-container" style="max-width: 800px; margin: 0 auto; position: relative; z-index: 2; display: flex; flex-direction: column; gap: 40px; align-items: center; padding-bottom: 80px;">
+      
+      <!-- 1. Hero Confirmation Section -->
+      <div style="text-align: center; margin-bottom: 10px; width: 100%;">
+        <div class="success-ringpulse" style="width: 80px; height: 80px; background: rgba(38, 223, 152, 0.1); border: 2px solid #26df98; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; box-shadow: 0 0 25px rgba(38, 223, 152, 0.4); aria-hidden: true;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#26df98" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
         </div>
-        <p id="organizerErrorMsg" style="color: #ff4d4d; font-size: 0.85rem; margin-top: 12px; display: none;">Invalid passcode.</p>
+        <h1 style="font-family: var(--font-title); font-size: 2.2rem; color: #fff; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 20px rgba(255,255,255,0.15); margin-bottom: 8px;">🎉 Booking Confirmed</h1>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto; font-family: var(--font-quote); font-style: italic;">
+          Your seat has been reserved for the exclusive screening of Avalokana.
+        </p>
       </div>
 
-      <!-- Dashboard Contents (Hidden by default) -->
-      <div id="organizerDashboard" style="display: none;">
-        <!-- Metrics Row -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px;">
-          <div class="glass-card" style="padding: 15px; background: rgba(7, 13, 10, 0.4); text-align: center; border-color: rgba(255,255,255,0.05); border-radius: 12px;">
-            <h5 style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Total Bookings</h5>
-            <p id="totalBookingsMetric" style="font-size: 1.8rem; font-weight: 700; color: var(--text-primary); margin-top: 5px;">0</p>
+      <!-- 2. Main Premium Film Pass Layout -->
+      <div class="premium-cinema-pass" id="printableTicketPass" style="width: 100%; max-width: 450px; background: #0c0f0e; border: 2.5px solid var(--accent-gold); border-radius: 20px; box-shadow: 0 25px 60px rgba(0,0,0,0.9); overflow: hidden; position: relative; display: flex; flex-direction: column;">
+        
+        <!-- Pass Inner Spotlights & Laurel Ornaments -->
+        <div style="position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 300px; height: 300px; background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 60%); pointer-events: none;"></div>
+        
+        <!-- Ticket notches (cuts) -->
+        <div class="pass-notch-left" style="position: absolute; top: 68%; left: -14px; width: 28px; height: 28px; background: #050807; border-radius: 50%; border-right: 2.5px solid var(--accent-gold); z-index: 10; transform: translateY(-50%);"></div>
+        <div class="pass-notch-right" style="position: absolute; top: 68%; right: -14px; width: 28px; height: 28px; background: #050807; border-radius: 50%; border-left: 2.5px solid var(--accent-gold); z-index: 10; transform: translateY(-50%);"></div>
+
+        <!-- Upper Pass Header -->
+        <div style="padding: 30px 30px 20px 30px; text-align: center; border-bottom: 1.5px dashed rgba(212,175,55,0.25); position: relative;">
+          <!-- SVG Laurels -->
+          <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 8px;">
+            <svg width="40" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85;">
+              <path d="M4 19c1.5-1.5 3-1.5 5-1.5M4 15c2-1 3.5-1 5.5-1M4 11c2.5-.5 4.5-.5 6-.5M4 7c3 0 5 .5 6.5.5M12 2v20"></path>
+            </svg>
+            <h2 style="font-family: var(--font-title); font-size: 1.8rem; letter-spacing: 4px; font-weight: 700; color: #fff; margin: 0;">AVALOKANA</h2>
+            <svg width="40" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85; transform: scaleX(-1);">
+              <path d="M4 19c1.5-1.5 3-1.5 5-1.5M4 15c2-1 3.5-1 5.5-1M4 11c2.5-.5 4.5-.5 6-.5M4 7c3 0 5 .5 6.5.5M12 2v20"></path>
+            </svg>
           </div>
-          <div class="glass-card" style="padding: 15px; background: rgba(7, 13, 10, 0.4); text-align: center; border-color: rgba(255,255,255,0.05); border-radius: 12px;">
-            <h5 style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Revenue Generated</h5>
-            <p id="totalRevenueMetric" style="font-size: 1.8rem; font-weight: 700; color: var(--accent-gold); margin-top: 5px;">₹0</p>
+          <span style="font-family: var(--font-title); font-size: 0.75rem; letter-spacing: 3px; color: var(--accent-gold); text-transform: uppercase; font-weight: 600;">Special Screening Pass</span>
+        </div>
+
+        <!-- Upper Info Grid -->
+        <div style="padding: 25px 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-bottom: 1.5px dashed rgba(212,175,55,0.25); position: relative;">
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Booking ID</span>
+            <strong id="ticketConfirmId" style="font-size: 1rem; color: var(--accent-saffron); font-family: var(--font-body); font-weight: 700;">AVA-000023</strong>
           </div>
-          <div class="glass-card" style="padding: 15px; background: rgba(7, 13, 10, 0.4); text-align: center; border-color: rgba(255,255,255,0.05); border-radius: 12px;">
-            <h5 style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">4:00 PM Seats</h5>
-            <p id="fourPmMetric" style="font-size: 1.8rem; font-weight: 700; color: var(--accent-saffron); margin-top: 5px;">0/100</p>
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Guest Name</span>
+            <strong id="ticketConfirmName" style="font-size: 0.95rem; color: #fff; font-weight: 600;">Vishal Kampli</strong>
           </div>
-          <div class="glass-card" style="padding: 15px; background: rgba(7, 13, 10, 0.4); text-align: center; border-color: rgba(255,255,255,0.05); border-radius: 12px;">
-            <h5 style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">6:00 PM Seats</h5>
-            <p id="sixPmMetric" style="font-size: 1.8rem; font-weight: 700; color: var(--accent-saffron); margin-top: 5px;">0/100</p>
+          <div style="grid-column: 1 / span 2;">
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Venue</span>
+            <strong id="ticketConfirmVenue" style="font-size: 0.95rem; color: #fff; font-weight: 600; line-height: 1.4;">Natana Rangashale</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Date</span>
+            <strong id="ticketConfirmDate" style="font-size: 0.95rem; color: #fff; font-weight: 600;">July 4, 2026</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Time</span>
+            <strong id="ticketConfirmTime" style="font-size: 0.95rem; color: #fff; font-weight: 600;">5:00 PM onwards</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Tickets Count</span>
+            <strong id="ticketConfirmCount" style="font-size: 0.95rem; color: #fff; font-weight: 600;">2 Tickets</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Seat Type</span>
+            <strong style="font-size: 0.95rem; color: var(--accent-gold); font-weight: 600;">General Admission</strong>
+          </div>
+          <div style="grid-column: 1 / span 2; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: var(--font-title); font-size: 0.85rem; color: #fff; letter-spacing: 0.5px;">Amount Paid</span>
+            <strong id="ticketConfirmAmount" style="font-size: 1.25rem; color: var(--accent-saffron); font-weight: 700;">₹200</strong>
           </div>
         </div>
 
-        <!-- Bookings Table -->
-        <h4 style="margin-bottom: 12px; color: var(--accent-gold); text-transform: uppercase; font-size: 0.95rem; letter-spacing: 0.5px; font-family: var(--font-title);">Reservation Records</h4>
-        <div style="overflow-x: auto; border: 1px solid var(--glass-border); border-radius: 8px; margin-bottom: 25px;">
-          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.8rem; min-width: 700px;">
-            <thead>
-              <tr style="background: rgba(212, 175, 55, 0.08); border-bottom: 1px solid var(--glass-border);">
-                <th style="padding: 10px 12px; color: var(--accent-gold);">Code</th>
-                <th style="padding: 10px 12px;">Seeker</th>
-                <th style="padding: 10px 12px;">Contact</th>
-                <th style="padding: 10px 12px;">Showtime</th>
-                <th style="padding: 10px 12px;">Seats</th>
-                <th style="padding: 10px 12px;">Total Price</th>
-                <th style="padding: 10px 12px;">Status</th>
-                <th style="padding: 10px 12px; text-align: center;">Actions</th>
-              </tr>
-            </thead>
-            <tbody id="bookingsTableBody">
-              <!-- JS will inject booking rows here -->
-            </tbody>
-          </table>
+        <!-- Lower QR Barcode Section -->
+        <div style="padding: 30px; text-align: center; background: rgba(7, 13, 10, 0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1;">
+          
+          <!-- Animated QR Wrapper -->
+          <div class="qr-glow-wrap" style="position: relative; padding: 12px; background: #fff; border-radius: 12px; border: 2.5px solid var(--accent-gold); display: inline-block; box-shadow: 0 0 20px var(--accent-gold-glow); overflow: hidden; margin-bottom: 15px;">
+            <img id="ticketConfirmQrImage" src="" alt="Ticket QR Code" style="width: 140px; height: 140px; display: block; border-radius: 6px;">
+            <!-- Laser scanning animation line -->
+            <div class="qr-scanner-line" style="position: absolute; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #26df98, transparent); box-shadow: 0 0 10px #26df98; pointer-events: none;"></div>
+          </div>
+          
+          <p style="font-family: var(--font-title); font-size: 0.75rem; letter-spacing: 1.5px; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 5px;">Present this QR code at the entrance.</p>
+          <span style="font-family: var(--font-quote); font-style: italic; font-size: 0.75rem; color: var(--text-secondary); opacity: 0.75;">"Blessings on your journey into the flow."</span>
         </div>
 
-        <!-- Dashboard Actions -->
-        <div style="display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap;">
-          <button class="btn btn-secondary" id="exportCsvBtn" style="padding: 8px 16px; font-size: 0.75rem; border-radius: 6px;">📥 Export Bookings to CSV</button>
-          <button class="btn btn-secondary" id="clearAllBookingsBtn" style="padding: 8px 16px; font-size: 0.75rem; border-radius: 6px; border-color: #ff4d4d; color: #ff4d4d;">⚠️ Reset All Reservations</button>
+      </div>
+
+      <!-- 3. Ticket Status Steps Tracker -->
+      <div class="glass-card" style="width: 100%; max-width: 450px; padding: 20px 25px; border-radius: 12px; border-color: rgba(255,255,255,0.04);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; font-size: 0.8rem;">
+          <div style="display: flex; align-items: center; gap: 6px; color: #26df98;">
+            <span>✓</span>
+            <span>Payment Successful</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; color: #26df98;">
+            <span>✓</span>
+            <span>Ticket Generated</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; color: #26df98;">
+            <span>✓</span>
+            <span>Email Sent</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; color: #26df98;">
+            <span>✓</span>
+            <span>WhatsApp Sent</span>
+          </div>
         </div>
+      </div>
+
+      <!-- 4. Live Countdown Timer -->
+      <div class="glass-card" style="width: 100%; max-width: 450px; padding: 25px; border-radius: 12px; text-align: center; border-color: rgba(212,175,55,0.2);">
+        <span style="font-family: var(--font-title); font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-gold); text-transform: uppercase; display: block; margin-bottom: 15px;">Screening Starts In</span>
+        
+        <div id="screeningCountdownTimer" style="display: flex; justify-content: center; gap: 15px; align-items: center;">
+          <div style="min-width: 70px;">
+            <strong id="timerDays" style="display: block; font-size: 1.8rem; color: #fff; font-weight: 700; font-family: var(--font-body);">00</strong>
+            <span style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Days</span>
+          </div>
+          <span style="font-size: 1.5rem; color: var(--accent-gold); font-weight: 300; margin-top: -15px;">:</span>
+          <div style="min-width: 70px;">
+            <strong id="timerHours" style="display: block; font-size: 1.8rem; color: #fff; font-weight: 700; font-family: var(--font-body);">00</strong>
+            <span style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Hours</span>
+          </div>
+          <span style="font-size: 1.5rem; color: var(--accent-gold); font-weight: 300; margin-top: -15px;">:</span>
+          <div style="min-width: 70px;">
+            <strong id="timerMinutes" style="display: block; font-size: 1.8rem; color: #fff; font-weight: 700; font-family: var(--font-body);">00</strong>
+            <span style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Minutes</span>
+          </div>
+          <span style="font-size: 1.5rem; color: var(--accent-gold); font-weight: 300; margin-top: -15px;">:</span>
+          <div style="min-width: 70px;">
+            <strong id="timerSeconds" style="display: block; font-size: 1.8rem; color: #fff; font-weight: 700; font-family: var(--font-body);">00</strong>
+            <span style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Seconds</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Download Options & Wallet Actions -->
+      <div style="width: 100%; max-width: 450px; display: flex; flex-direction: column; gap: 15px;">
+        <button type="button" class="btn btn-primary" id="btnDownloadPassPdf" style="width: 100%; padding: 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <span>Download Ticket (PDF)</span>
+        </button>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+          <button type="button" class="btn btn-secondary" id="btnSaveQrImageOnly" style="padding: 12px; border-radius: 8px; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            <span>Save QR Image</span>
+          </button>
+          
+          <button type="button" class="btn btn-secondary" id="btnSendWhatsAppDelivery" style="padding: 12px; border-radius: 8px; border-color: #25d366; color: #25d366; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            <span>WhatsApp Delivery</span>
+          </button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+          <button type="button" class="btn btn-secondary" id="btnAddToGoogleWallet" style="padding: 10px 15px; border-radius: 6px; font-size: 0.7rem; background: #000; border-color: #333; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Wallet_Icon_%282022%29.svg" alt="Google Wallet" style="height: 16px;">
+            <span>Google Wallet</span>
+          </button>
+          
+          <button type="button" class="btn btn-secondary" id="btnAddToAppleWallet" style="padding: 10px 15px; border-radius: 6px; font-size: 0.7rem; background: #000; border-color: #333; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Apple_Wallet_Icon.svg" alt="Apple Wallet" style="height: 16px;">
+            <span>Apple Wallet</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 6. Important Information Card -->
+      <div class="glass-card" style="width: 100%; max-width: 450px; padding: 25px; border-radius: 12px; border-color: rgba(255, 51, 68, 0.1); background: rgba(255, 51, 68, 0.015);">
+        <h4 style="font-family: var(--font-title); font-size: 0.85rem; color: var(--accent-saffron); margin-bottom: 12px; letter-spacing: 1px; display: flex; align-items: center; gap: 6px;">
+          <span>ℹ️</span> Important Information
+        </h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.8rem; color: var(--text-secondary); text-align: left; line-height: 1.5;">
+          <li style="display: flex; gap: 8px;">• <span>Please arrive 30 minutes early at the venue.</span></li>
+          <li style="display: flex; gap: 8px;">• <span>Carry your QR ticket (digital or printed) for entry verification.</span></li>
+          <li style="display: flex; gap: 8px;">• <span>Entry gates will close strictly after the screening begins.</span></li>
+          <li style="display: flex; gap: 8px;">• <span>Food and beverages are available for purchase at the venue.</span></li>
+        </ul>
+      </div>
+
+      <!-- 7. Social Sharing & Navigation Bar -->
+      <div style="width: 100%; max-width: 450px; text-align: center;">
+        <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 12px;">Share Your Journey</span>
+        
+        <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 30px;">
+          <button type="button" class="btn btn-secondary" id="btnShareStoryWhatsApp" style="padding: 10px 20px; font-size: 0.75rem; border-radius: 20px; border-color: rgba(255,255,255,0.15);">WhatsApp Share</button>
+          <button type="button" class="btn btn-secondary" id="btnShareStoryInsta" style="padding: 10px 20px; font-size: 0.75rem; border-radius: 20px; border-color: rgba(255,255,255,0.15);">Instagram Story</button>
+          <button type="button" class="btn btn-secondary" id="btnCopyEventLinkOnly" style="padding: 10px 20px; font-size: 0.75rem; border-radius: 20px; border-color: rgba(255,255,255,0.15);">Copy Link</button>
+        </div>
+
+        <button type="button" class="btn btn-secondary" id="btnReturnFromConfirmPage" style="border-radius: 30px; font-size: 0.8rem; padding: 10px 30px; border-color: var(--accent-gold); color: var(--accent-gold); background: none; letter-spacing: 1.5px;">Return to Silence</button>
       </div>
 
     </div>
   </div>
 
- </body>
+  <!-- Sanctuary Organizer Console Modal (Same Website Overlay Option) -->
+  <div class="ticket-modal" id="adminConsoleOverlay" style="display: none; justify-content: center; align-items: flex-start; overflow-y: auto; padding: 40px 20px; z-index: 2500;">
+    <div class="glass-card" style="max-width: 1000px; width: 100%; margin: 20px auto; padding: 30px; border-color: rgba(212,175,55,0.3); background: #070d0a; position: relative;">
+      
+      <!-- Close Console Button -->
+      <button id="closeAdminConsoleBtn" style="position: absolute; right: 25px; top: 25px; background:none; border:none; color:rgba(255,255,255,0.6); font-size:1.8rem; cursor:pointer;">&times;</button>
+      
+      <!-- Header -->
+      <div style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(212,175,55,0.15); padding-bottom: 15px; margin-bottom: 25px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: var(--accent-gold);">
+          <path d="M12,2A10,10,0,0,0,3.65,7.62a1,1,0,0,0,.68,1.26A1,1,0,0,0,5.59,8.2,8,8,0,0,1,12,4a8,8,0,0,1,6.41,4.2,1,1,0,0,0,1.26.68,1,1,0,0,0,.68-1.26A10,10,0,0,0,12,2Zm0,7a3,3,0,1,0,3,3A3,3,0,0,0,12,9Zm0,4.5A1.5,1.5,0,1,1,13.5,12,1.5,1.5,0,0,1,12,13.5Zm7.35.88a1,1,0,0,0-1.26.68,8,8,0,0,1-12.18,0,1,1,0,0,0-1.26-.68,1,1,0,0,0-.68,1.26A10,10,0,0,0,12,22a10,10,0,0,0,9.35-6.38A1,1,0,0,0,19.35,14.38ZM12,16.5A4.5,4.5,0,0,1,8,12a4.5,4.5,0,0,1,8,0A4.5,4.5,0,0,1,12,16.5Z"/>
+        </svg>
+        <span style="font-family: var(--font-title); font-size: 1.3rem; color: #fff; letter-spacing: 1.5px; font-weight: 700;">Sanctuary Console</span>
+      </div>
+
+      <!-- Lock Screen Panel -->
+      <div id="consoleLockScreen" style="max-width: 400px; margin: 40px auto; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--accent-gold);">🔑</div>
+        <h2 style="font-family: var(--font-title); font-size: 1.4rem; color: #fff; margin-bottom: 10px;">Access Restricted</h2>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 25px;">Enter the passcode to manage bookings and confirm tickets.</p>
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <input type="password" id="consolePasscode" class="form-input" placeholder="Enter Admin Passcode" style="text-align: center; font-size: 1.1rem; letter-spacing: 3px;">
+          <button type="button" id="btnUnlockConsole" class="btn btn-primary" style="width: 100%; padding: 12px; border-radius: 8px;">Unlock Console</button>
+          <p id="consoleLockErrorMsg" style="color: #ff3344; font-size: 0.8rem; margin: 0; display: none;">Invalid passcode. Please try again.</p>
+        </div>
+      </div>
+
+      <!-- Console Dashboard (Hidden by default) -->
+      <div id="consoleDashboard" style="display: none;">
+        
+        <!-- Metrics Row Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 30px;">
+          <div class="glass-card" style="padding: 20px; border-radius: 12px; text-align: center; border-color: rgba(255,255,255,0.04); background: rgba(7, 13, 10, 0.4);">
+            <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Total Bookings</span>
+            <strong id="consoleMetricTotalBookings" style="display: block; font-size: 2.2rem; color: #fff; margin-top: 10px; font-weight: 700;">0</strong>
+          </div>
+          <div class="glass-card" style="padding: 20px; border-radius: 12px; text-align: center; border-color: rgba(212, 175, 55, 0.2); background: rgba(7, 13, 10, 0.4);">
+            <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Total Revenue</span>
+            <strong id="consoleMetricTotalRevenue" style="display: block; font-size: 2.2rem; color: var(--accent-gold); margin-top: 10px; font-weight: 700;">₹0</strong>
+          </div>
+          <div class="glass-card" style="padding: 20px; border-radius: 12px; text-align: center; border-color: rgba(255, 255, 255, 0.04); background: rgba(7, 13, 10, 0.4);">
+            <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Tickets Sold</span>
+            <strong id="consoleMetricTicketsSold" style="display: block; font-size: 2.2rem; color: var(--accent-saffron); margin-top: 10px; font-weight: 700;">0 / 100</strong>
+          </div>
+        </div>
+
+        <!-- Search Bar and Refresh -->
+        <div style="display: flex; gap: 15px; margin-bottom: 25px; align-items: center; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 250px; position: relative;">
+            <input type="text" id="consoleSearchInput" class="form-input" placeholder="Search by Booking ID, Customer, or Phone..." style="padding-right: 40px; border-radius: 8px;">
+            <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); opacity: 0.4;">🔍</span>
+          </div>
+          <button type="button" id="consoleBtnOpenManualBooking" class="btn btn-primary" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 20px; background: linear-gradient(135deg, var(--accent-gold), #b38f24); box-shadow: 0 4px 10px rgba(212,175,55,0.2);">➕ Issue Instant Ticket</button>
+          <button type="button" id="consoleBtnRefresh" class="btn btn-secondary" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 20px;">🔄 Refresh Logs</button>
+        </div>
+
+        <!-- Bookings Log Table -->
+        <div class="glass-card" style="padding: 0; overflow: hidden; border-radius: 12px;">
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem; min-width: 800px;">
+              <thead>
+                <tr style="background: rgba(212, 175, 55, 0.08); border-bottom: 1px solid var(--glass-border);">
+                  <th style="padding: 15px 20px; color: var(--accent-gold); font-family: var(--font-title); letter-spacing: 1px;">Booking ID</th>
+                  <th style="padding: 15px 20px;">Customer Name</th>
+                  <th style="padding: 15px 20px;">Phone Number</th>
+                  <th style="padding: 15px 20px;">Tickets</th>
+                  <th style="padding: 15px 20px; color: var(--accent-gold);">Paid Amount</th>
+                  <th style="padding: 15px 20px;">Payment Status</th>
+                  <th style="padding: 15px 20px; text-align: center;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="consoleBookingsTableBody">
+                <!-- JS Inject rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Manual Walk-in Booking Modal -->
+  <div class="ticket-modal" id="manualBookingModal" style="display: none; z-index: 2600;">
+    <div class="glass-card" style="max-width: 480px; width: 95%; padding: 25px; border-radius: 16px; border: 1.5px solid var(--accent-gold); background: #0c0f0e;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="font-size: 1.1rem;">🎫</span>
+          <span style="font-family: var(--font-title); color: #fff; font-size: 1.1rem; font-weight: 600; letter-spacing:0.5px;">Issue Walk-in Ticket</span>
+        </div>
+        <button id="closeManualBookingModalBtn" style="background:none; border:none; color:rgba(255,255,255,0.5); font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
+
+      <form id="manualBookingForm" style="display: flex; flex-direction: column; gap: 18px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="manualName" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Customer Name *</label>
+          <input type="text" id="manualName" class="form-input" placeholder="Enter full name" required autocomplete="name">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="manualPhone" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Mobile Number *</label>
+          <input type="tel" id="manualPhone" class="form-input" placeholder="Enter 10-digit number" pattern="[0-9]{10}" required autocomplete="tel">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="manualTickets" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Number of Tickets *</label>
+          <div style="display: flex; align-items: center; gap: 15px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 8px 15px; border-radius: 8px;">
+            <button type="button" class="counter-btn" id="btnManualMinus" style="width: 30px; height: 30px; font-size: 1rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--text-secondary); background: none; color: #fff; cursor: pointer;">&minus;</button>
+            <span id="manualQtyValue" style="font-size: 1.25rem; font-weight: 700; color: #fff; min-width: 20px; text-align: center;">1</span>
+            <button type="button" class="counter-btn" id="btnManualPlus" style="width: 30px; height: 30px; font-size: 1rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--text-secondary); background: none; color: #fff; cursor: pointer;">&plus;</button>
+          </div>
+        </div>
+
+        <div style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--font-title); font-size: 1.1rem; color: #fff;">Amount to Pay (₹100/ea)</span>
+          <strong id="manualTotalAmount" style="font-size: 1.4rem; color: var(--accent-saffron);">₹100</strong>
+        </div>
+
+        <button type="button" id="btnConfirmManualBooking" class="btn btn-primary" style="width: 100%; border-radius: 8px; padding: 12px; margin-top: 10px; font-weight: 600; display:flex; align-items:center; justify-content:center; gap:8px;">
+          <span>Generate & Confirm Ticket</span>
+          <svg id="manualLoadingSpinner" width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none; animation: spin 1s linear infinite; fill: none; stroke: currentColor; stroke-width: 3;">
+            <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.2)"/>
+            <path d="M12 2a10 10 0 0 1 10 10" stroke="#fff"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
 </html>

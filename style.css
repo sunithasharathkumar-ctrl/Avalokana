@@ -297,6 +297,18 @@ p {
   transition: var(--transition-fast);
 }
 
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -860,404 +872,88 @@ p {
   background: var(--bg-primary);
 }
 
-.booking-panel {
+
+
+/* Awards Section Styles */
+.awards-section {
+  background: var(--bg-secondary);
+  padding: 80px 0;
+  position: relative;
+}
+
+.awards-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
-/* Form Selection elements */
-.select-group {
-  margin-bottom: 25px;
-}
-
-.select-label {
-  display: block;
-  font-family: var(--font-title);
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  color: var(--accent-gold);
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-/* Options selectors styled as pills */
-.pills-container {
+.award-card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.pill-option {
-  padding: 10px 20px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--glass-border);
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  transition: var(--transition-fast);
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  padding: 30px 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  transition: var(--transition-smooth);
 }
 
-.pill-option:hover {
+.award-card:hover {
+  transform: translateY(-5px);
   border-color: var(--accent-gold);
-  color: var(--text-primary);
-  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
 }
 
-.pill-option.active {
-  background: linear-gradient(135deg, var(--accent-saffron), var(--accent-saffron-dark));
-  color: #fff;
-  border-color: var(--accent-saffron);
-  box-shadow: 0 4px 15px var(--accent-saffron-glow);
-}
-
-/* Theater Seating Layout */
-.theater-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 10px;
-  background: rgba(10, 18, 14, 0.5);
-  border: 1px solid rgba(212, 175, 55, 0.08);
-}
-
-.screen-container {
-  width: 80%;
-  margin-bottom: 40px;
-  text-align: center;
-  position: relative;
-}
-
-.screen-curve {
-  height: 8px;
-  width: 100%;
-  background: linear-gradient(to bottom, var(--accent-gold), transparent);
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  box-shadow: 0 4px 15px var(--accent-gold-glow);
-}
-
-.screen-text {
-  font-family: var(--font-title);
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  color: var(--accent-gold);
-  margin-top: 10px;
-  text-transform: uppercase;
-}
-
-.seating-grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 8px;
-  margin-bottom: 30px;
-}
-
-/* Seat style */
-.seat {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  background: transparent;
-  border: 1.5px solid var(--text-secondary);
-  color: var(--text-secondary);
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 500;
+.award-badge-container {
+  width: 130px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
-
-.seat:hover:not(.reserved) {
-  border-color: var(--accent-saffron);
-  color: var(--accent-saffron);
-  background: rgba(255, 115, 0, 0.05);
-  transform: scale(1.05);
-}
-
-.seat.selected {
-  background: var(--accent-saffron);
-  border-color: var(--accent-saffron);
-  color: #fff;
-  box-shadow: 0 0 10px var(--accent-saffron-glow);
-}
-
-.seat.reserved {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.15);
-  cursor: not-allowed;
-}
-
-/* Seating Legend */
-.seating-legend {
-  display: flex;
-  gap: 25px;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  margin-top: 10px;
-  justify-content: center;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.legend-color {
-  width: 14px;
-  height: 14px;
-  border-radius: 3px;
-}
-
-.legend-color.available {
-  border: 1px solid var(--text-secondary);
-}
-
-.legend-color.selected {
-  background: var(--accent-saffron);
-}
-
-.legend-color.reserved {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Ticket Details Checkout Box */
-.checkout-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.ticket-summary-info {
-  margin-bottom: 30px;
-}
-
-.summary-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  font-size: 0.95rem;
-}
-
-.summary-row.total {
-  border-bottom: none;
-  padding-top: 20px;
-  font-family: var(--font-title);
-  font-size: 1.3rem;
-  color: var(--accent-gold);
-}
-
-.summary-value {
-  color: var(--text-primary);
-  font-weight: 500;
-}
-
-.summary-value span {
-  color: var(--accent-saffron);
-}
-
-.booking-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.form-input {
-  width: 100%;
-  padding: 12px 18px;
-  background: rgba(7, 13, 10, 0.5);
-  border: 1px solid var(--glass-border);
-  border-radius: 8px;
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  transition: var(--transition-fast);
-}
-
-.form-input::placeholder {
-  color: rgba(234, 227, 210, 0.3);
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: var(--accent-saffron);
-  box-shadow: 0 0 10px rgba(255, 115, 0, 0.15);
-}
-
-/* ticket booking success message style */
-.booking-disabled-message {
-  text-align: center;
-  font-family: var(--font-quote);
-  font-style: italic;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-top: 20px;
-}
-
-/* Ticket Modal (Ticket Presentation) */
-.ticket-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(7, 13, 10, 0.95);
-  z-index: 2100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-  backdrop-filter: blur(15px);
-}
-
-.ticket-modal.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.ticket-card-outer {
-  max-width: 550px;
-  width: 90%;
-  perspective: 1000px;
-}
-
-.spiritual-ticket {
-  background: linear-gradient(145deg, #0e1a14, #080f0c);
-  border: 2px solid var(--accent-gold);
-  border-radius: 20px;
-  position: relative;
+  margin-bottom: 20px;
   overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.8), 0 0 30px rgba(212, 175, 55, 0.2);
 }
 
-/* Gold foil decorations */
-.spiritual-ticket::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: linear-gradient(to right, var(--accent-gold), var(--accent-saffron), var(--accent-gold));
+.award-badge-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+  transition: var(--transition-fast);
 }
 
-.ticket-main {
-  padding: 40px;
+.award-card:hover .award-badge-img {
+  transform: scale(1.08);
 }
 
-.ticket-header {
-  text-align: center;
-  border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
-  padding-bottom: 20px;
-  margin-bottom: 25px;
-}
-
-.ticket-logo {
+.award-card-title {
   font-family: var(--font-title);
-  font-size: 1.4rem;
-  letter-spacing: 2px;
+  font-size: 1.1rem;
   color: var(--accent-gold);
   margin-bottom: 5px;
-}
-
-.ticket-subtitle {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-secondary);
-}
-
-.ticket-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 25px;
-}
-
-.ticket-detail-item h5 {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  margin-bottom: 3px;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
-.ticket-detail-item p {
-  font-size: 1rem;
+.award-card-festival {
+  font-size: 0.85rem;
   color: var(--text-primary);
   font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
-.ticket-detail-item.full-width {
-  grid-column: 1 / span 2;
+.award-card-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
-.ticket-footer {
-  border-top: 1px dashed rgba(212, 175, 55, 0.3);
-  padding-top: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
 
-.ticket-qr {
-  width: 100px;
-  height: 100px;
-  border: 1px solid var(--accent-gold);
-  border-radius: 8px;
-  padding: 5px;
-  background: #fff;
-}
 
-.ticket-blessing {
-  font-family: var(--font-quote);
-  font-style: italic;
-  font-size: 0.85rem;
-  color: var(--accent-gold);
-  line-height: 1.4;
-  text-align: right;
-}
 
-/* Ticket Side Circle Cuts (Ticket Punch look) */
-.ticket-cut-left, .ticket-cut-right {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  background: var(--bg-primary);
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-}
-
-.ticket-cut-left {
-  left: -12px;
-  border-right: 2px solid var(--accent-gold);
-}
-
-.ticket-cut-right {
-  right: -12px;
-  border-left: 2px solid var(--accent-gold);
-}
-
-/* Ticket Actions */
-.ticket-actions {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-}
 
 /* Quotes Banner Carousel Section */
 .quotes-banner {
@@ -1381,129 +1077,26 @@ p {
   color: rgba(176, 166, 149, 0.4);
 }
 
-/* Floating Audio / Theme Ambient Synth Controller */
-.audio-controller {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.audio-panel {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-radius: 20px;
-  padding: 8px 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(20px);
-  transition: var(--transition-smooth);
-}
-
-.audio-controller:hover .audio-panel {
-  opacity: 1;
-  pointer-events: all;
-  transform: translateX(0);
-}
-
-.audio-label {
-  font-size: 0.75rem;
-  font-family: var(--font-title);
-  color: var(--accent-gold);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.audio-toggle-btn {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
-  border: 1px solid var(--accent-gold);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  transition: var(--transition-smooth);
-  flex-shrink: 0;
-}
-
-.audio-toggle-btn svg {
-  fill: var(--accent-gold);
-  width: 18px;
-  height: 18px;
-  transition: var(--transition-fast);
-}
-
-.audio-toggle-btn:hover {
-  transform: scale(1.08);
-  border-color: var(--accent-saffron);
-}
-
-.audio-toggle-btn:hover svg {
-  fill: var(--accent-saffron);
-}
-
-.audio-toggle-btn.playing {
-  background: var(--accent-saffron);
-  border-color: var(--accent-saffron);
-  box-shadow: 0 0 15px var(--accent-saffron-glow);
-}
-
-.audio-toggle-btn.playing svg {
-  fill: #fff;
-}
-
-/* Sound wave animation */
-.sound-waves {
-  display: flex;
-  align-items: flex-end;
-  gap: 2.5px;
-  height: 13px;
-  width: 15px;
-}
-
-.sound-waves span {
-  display: block;
-  width: 2px;
-  background: var(--accent-saffron);
-  height: 2px;
-  border-radius: 1px;
-}
-
-.audio-toggle-btn.playing + .audio-panel .sound-waves span {
-  animation: bounceWaves 0.8s ease infinite alternate;
-}
-
-.audio-toggle-btn.playing + .audio-panel .sound-waves span:nth-child(2) {
-  animation-delay: 0.15s;
-}
-
-.audio-toggle-btn.playing + .audio-panel .sound-waves span:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.audio-toggle-btn.playing + .audio-panel .sound-waves span:nth-child(4) {
-  animation-delay: 0.45s;
-}
-
-@keyframes bounceWaves {
-  0% {
-    height: 2px;
+/* Responsive Desktop vs Mobile for Bookings Console */
+@media (min-width: 769px) {
+  .desktop-only-table {
+    display: block !important;
   }
-  100% {
-    height: 13px;
+  .mobile-only-cards {
+    display: none !important;
   }
 }
+
+@media (max-width: 768px) {
+  .desktop-only-table {
+    display: none !important;
+  }
+  .mobile-only-cards {
+    display: flex !important;
+  }
+}
+
+
 
 /* ==========================================================================
    Responsive Breakpoints
@@ -1568,15 +1161,35 @@ p {
   
   .hero {
     background-attachment: scroll; /* Disable parallax on mobile */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .hero-tagline {
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .hero-title {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
   
   .hero-actions {
     flex-direction: column;
     gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
   }
   
   .section-title {
@@ -1600,39 +1213,575 @@ p {
   .footer-brand {
     grid-column: 1;
   }
-  
-  .ticket-body {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  
-  .ticket-detail-item.full-width {
-    grid-column: 1;
-  }
-  
-  .ticket-footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .ticket-blessing {
-    text-align: center;
-  }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
   }
-  
-  .seating-grid {
-    gap: 6px;
+  .awards-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .seat {
-    width: 28px;
-    height: 28px;
-    font-size: 0.7rem;
+  .award-card {
+    padding: 25px 15px;
   }
 }
+
+
+
+/* ==========================================================================
+   Grand Screening & Step Checkout Modal Layout Styles
+   ========================================================================== */
+.grand-screening-card {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 40px;
+  background: #0f1211;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .grand-screening-card {
+    grid-template-columns: 1fr;
+    padding: 25px;
+    gap: 30px;
+  }
+}
+
+.premiere-tag {
+  color: #ff3344;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.red-dot {
+  font-size: 0.6rem;
+  animation: tagBlink 1.5s infinite;
+}
+
+@keyframes tagBlink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.screening-card-title {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.screening-info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.info-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 51, 68, 0.08);
+  border: 1px solid rgba(255, 51, 68, 0.15);
+  color: #ff3344;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-val {
+  font-size: 0.95rem;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.screening-map-side {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.map-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.map-grid-viewport {
+  position: relative;
+  height: 180px;
+  background-color: #0b0d0c;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.map-pin-container {
+  text-align: center;
+  position: relative;
+}
+
+.map-pin-icon {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+}
+
+.map-pin-label {
+  background: rgba(14, 17, 16, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@keyframes mapPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+
+.map-pin-pulse {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 51, 68, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: mapPulse 2s infinite ease-out;
+  pointer-events: none;
+}
+
+.btn-directions {
+  background: rgba(255, 51, 68, 0.08);
+  border: 1px solid rgba(255, 51, 68, 0.2);
+  color: #ff3344;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition-fast);
+}
+
+.btn-directions:hover {
+  background: #ff3344;
+  color: #fff;
+  border-color: #ff3344;
+  box-shadow: 0 4px 15px rgba(255, 51, 68, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   TICKET BOOKING & ADMIN DASHBOARD CORE STYLES
+   ========================================================================== */
+
+/* Form Input & Textareas */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--accent-saffron);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 8px rgba(255, 115, 0, 0.2);
+}
+
+.form-input::placeholder {
+  color: rgba(176, 166, 149, 0.4);
+}
+
+/* Booking Counter Buttons */
+.counter-btn {
+  transition: var(--transition-fast) !important;
+}
+
+.counter-btn:hover {
+  background: var(--accent-saffron) !important;
+  border-color: var(--accent-saffron) !important;
+  color: #fff !important;
+  transform: scale(1.1);
+}
+
+.counter-btn:active {
+  transform: scale(0.95);
+}
+
+/* Payment Checkout Modals */
+.ticket-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pay-method-row {
+  transition: var(--transition-fast);
+}
+
+.pay-method-row:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: var(--accent-gold) !important;
+}
+
+/* Spinner Keyframe */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* E-Ticket Styles (Spiritual Ticket Cut) */
+.ticket-card-outer {
+  max-width: 480px;
+  width: 100%;
+  perspective: 1000px;
+}
+
+.spiritual-ticket {
+  position: relative;
+  background: #0c0f0e;
+  border: 1.5px solid var(--accent-gold);
+  border-radius: 16px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  padding: 30px;
+}
+
+/* Negative notches (ticket cuts) on left and right edges */
+.ticket-cut-left, .ticket-cut-right {
+  position: absolute;
+  top: 70%;
+  width: 24px;
+  height: 24px;
+  background: var(--bg-primary);
+  border-radius: 50%;
+  z-index: 10;
+  transform: translateY(-50%);
+}
+
+.ticket-cut-left {
+  left: -13px;
+  border-right: 1.5px solid var(--accent-gold);
+}
+
+.ticket-cut-right {
+  right: -13px;
+  border-left: 1.5px solid var(--accent-gold);
+}
+
+.ticket-detail-item h5 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+/* Admin Lock screen passcode wrapper */
+#adminLockScreen {
+  transition: var(--transition-smooth);
+}
+
+/* Admin Tabs buttons */
+.admin-tab-btn {
+  font-family: var(--font-title);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.admin-tab-btn:hover {
+  color: #fff;
+}
+
+.admin-tab-btn.active {
+  color: var(--accent-gold);
+  border-bottom-color: var(--accent-gold);
+  font-weight: 600;
+}
+
+/* Table styling for Admin Console Log */
+table {
+  background: rgba(15, 24, 20, 0.4);
+}
+
+table th {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+table tr:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+table th, table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Webcam Reader styling */
+#qrReader {
+  position: relative;
+}
+
+#qrReader video {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  border-radius: 8px;
+}
+
+/* Custom scanner laser scan animation */
+#qrReader::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: var(--accent-saffron);
+  box-shadow: 0 0 10px var(--accent-saffron);
+  animation: qrLaser 3s infinite linear;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.4;
+}
+
+@keyframes qrLaser {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+
+/* Responsive elements */
+@media (max-width: 768px) {
+  .booking-container {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  
+  #tabContentCheckin > div {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
+
+/* ==========================================================================
+   PREMIUM CINEMA PASS & CONFIRMATION STYLES
+   ========================================================================== */
+
+/* Main cinema ticket animation and hover glow */
+.premium-cinema-pass {
+  transition: var(--transition-smooth) !important;
+}
+
+.premium-cinema-pass:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 70px rgba(212, 175, 55, 0.2), 0 0 40px rgba(255, 115, 0, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Vertical QR code laser scanner scanning line */
+.qr-scanner-line {
+  animation: scanLaser 2.2s infinite ease-in-out;
+}
+
+@keyframes scanLaser {
+  0% { top: 0%; opacity: 0.3; }
+  50% { top: 100%; opacity: 1; }
+  100% { top: 0%; opacity: 0.3; }
+}
+
+/* Hero success modal circular pulse animation */
+.success-ringpulse {
+  animation: ringPulse 2s infinite ease-in-out;
+}
+
+@keyframes ringPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(38, 223, 152, 0.5);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(38, 223, 152, 0);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(38, 223, 152, 0);
+    transform: scale(1);
+  }
+}
+
+/* Spotlights and glow animations */
+.spotlight-glow {
+  filter: blur(100px);
+  animation: breatheGlow 10s infinite alternate ease-in-out;
+}
+
+@keyframes breatheGlow {
+  0% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.15); }
+}
+
+/* Print Rules - Prints ONLY the card pass cleanly */
+@media print {
+  /* Hide all main elements of the page except the confirmation overlay */
+  body > *:not(#bookingConfirmedPage) {
+    display: none !important;
+  }
+  
+  /* Reset the bookingConfirmedPage so it occupies the full print viewport */
+  #bookingConfirmedPage {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    z-index: 99999 !important;
+  }
+
+  /* Hide all buttons, timers, lists, and extra headers */
+  #bookingConfirmedPage .confirmed-container > *:not(#printableTicketPass) {
+    display: none !important;
+  }
+
+  #bookingConfirmedPage .confirmed-container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Optimize pass card positioning and styling for printing */
+  #printableTicketPass {
+    display: flex !important;
+    margin: 40px auto !important;
+    border: 3px solid #d4af37 !important;
+    box-shadow: none !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    width: 450px !important;
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  
+  /* Retain grid styling for details */
+  #printableTicketPass > div[style*="display: grid"],
+  #printableTicketPass > div[style*="grid-template-columns"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+    background: #000000 !important;
+  }
+
+  /* Ensure text colors are printed as specified */
+  #printableTicketPass * {
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Hide laser scanning line and spotlight decorations on paper */
+  .qr-scanner-line, 
+  .spotlight-glow {
+    display: none !important;
+  }
+
+  /* Hide notches borders so they blend in print */
+  .pass-notch-left, 
+  .pass-notch-right {
+    background: #000000 !important;
+    border-color: #d4af37 !important;
+  }
+}
+
+
+
+

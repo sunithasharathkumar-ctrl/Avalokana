@@ -19,5 +19,9 @@
   "license": "ISC",
   "devDependencies": {
     "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.108.2",
+    "html5-qrcode": "^2.3.8"
   }
 }
