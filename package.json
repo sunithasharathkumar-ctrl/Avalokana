@@ -1,13 +1,27 @@
 {
-  "name": "anireekshithaa-promotion",
+  "name": "avalokana-anireekshithaa",
   "version": "1.0.0",
-  "description": "Cinematic promotional and ticketing website for Anireekshithaa short film",
+  "description": "Movie screening and ticket booking website for Anireekshithaa",
   "main": "index.html",
   "scripts": {
-    "dev": "npx -y http-server . -p 3000 -c-1",
-    "build": "mkdir -p public && cp index.html styles.css app.js public/ && cp -r assets public/"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "Aantharya Creations",
-  "license": "ISC"
+  "keywords": [
+    "contemplative",
+    "cinema",
+    "spiritual",
+    "booking",
+    "theater"
+  ],
+  "author": "Antigravity",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.108.2",
+    "html5-qrcode": "^2.3.8"
+  }
 }

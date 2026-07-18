@@ -1,1051 +1,824 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anireekshithaa - The Unexpected | Psychological Thriller Film</title>
-    <meta name="description" content="Official promotion and ticketing site for Anireekshithaa, a psychological thriller film. Watch the teaser, meet the crew, and book your premiere tickets.">
-    
-    <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://anireekshithaa-final.vercel.app/">
-    <meta property="og:title" content="Anireekshithaa - The Unexpected | Premiere Booking">
-    <meta property="og:description" content="Watch the teaser and book tickets for the premier show of Anireekshithaa, a psychological thriller film at Chamundeshwari Studios.">
-    <meta property="og:image" content="https://anireekshithaa-final.vercel.app/assets/share_preview_v3.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://anireekshithaa-final.vercel.app/">
-    <meta property="twitter:title" content="Anireekshithaa - The Unexpected | Premiere Booking">
-    <meta property="twitter:description" content="Watch the teaser and book tickets for the premier show of Anireekshithaa, a psychological thriller film at Chamundeshwari Studios.">
-    <meta property="twitter:image" content="https://anireekshithaa-final.vercel.app/assets/share_preview_v3.jpg">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Styling -->
-    <link rel="stylesheet" href="styles.css?v=1.0.5">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avalokana - Exclusive Screenings & Ticket Booking</title>
+  <meta name="description" content="Book tickets for Avalokana, a contemplative and spiritual cinematic journey exploring purity, temptation, and self-realization. Watch trailer and view schedules.">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./src/styles/style.css">
 </head>
 <body>
-    <!-- Background Cinematic Overlay Particles/Glows -->
-    <div class="cinematic-background">
-        <div class="ambient-glow glow-red"></div>
-        <div class="ambient-glow glow-blue"></div>
-    </div>
 
-    <!-- Header Navigation -->
-    <header class="header">
-        <div class="logo">
-            <a href="#hero" style="display: flex; align-items: center; text-decoration: none;">
-                <img src="assets/title_logo.png" alt="Anireekshithaa Logo" style="height: 38px; width: auto; max-width: 100%; filter: drop-shadow(0 0 10px rgba(217, 35, 42, 0.3));">
-            </a>
+  <!-- Ambient Controller Removed -->
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" style="display: flex; align-items: center; gap: 10px;">
+        <img src="/logos/logo.jfif" alt="Avalokana Logo" style="height: 34px; width: 34px; border-radius: 50%; border: 1px solid var(--accent-gold); object-fit: cover;" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0c0f0e/d4af37?text=A';">
+        <span>Avalokana</span>
+      </a>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#synopsis" class="nav-link">Synopsis</a></li>
+        <li><a href="#awards" class="nav-link">Accolades</a></li>
+        <li><a href="#trailer" class="nav-link">Trailer</a></li>
+        <li><a href="#cast" class="nav-link">Team</a></li>
+        <li><a href="#booking" class="nav-link">Book Seats</a></li>
+        <li><a href="#" id="navLinkOrganizer" class="nav-link">Console</a></li>
+        <li><a href="#booking" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem; margin-left: 10px;">Book Tickets</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-tagline reveal">An Experiential Journey of Awareness</p>
+      <h1 class="hero-title reveal">Avalokana</h1>
+      <p class="hero-description reveal">
+        A curious spiritual journey tracing a seeker named Madana, sent on a barefoot pilgrimage by his Swamiji to seek divine permission. Explore his internal struggle with purity, moral pitfalls, and self-realization.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#booking" class="btn btn-primary">Book Seats</a>
+        <a href="#trailer" class="btn btn-secondary">Watch Trailer</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Synopsis Section -->
+  <section class="synopsis" id="synopsis">
+    <div class="container">
+      <h2 class="section-title reveal">The Journey</h2>
+      <p class="section-subtitle reveal">"What you seek is also seeking you." — Rumi</p>
+      
+      <div class="synopsis-grid">
+        <div class="synopsis-text reveal">
+          <p>
+            This cultural philosophy narrates the journey of a hero named Madana (meaning "king of lust"), chosen by a monk (Swamiji) to succeed him as the next head of a monastery. Swamiji gave him a task to prove his worthiness: he must undertake a barefoot pilgrimage to a distant temple to seek divine permission for his next big initiation.
+          </p>
+          <p>
+            The Swamiji imposes the significant responsibility on him to maintain purity and avoid moral pitfalls (Arishadvargas = Lust, Anger, Greed, Infatuation, Self-Pride, Jealousy) during his journey. As a man who has sheltered like a frog in a well for so many years, the unfamiliar characters and experiences of the outside world begin to open up.
+          </p>
+          <div class="synopsis-quote">
+            This curious spiritual journey explores Madana's internal struggle with purity, responsibility, cognitive transformation, and self-discovery.
+          </div>
+          <p>
+            Facing the challenge of maintaining his integrity, the narrative questions whether he will retain control or succumb to temptations, ultimately reflecting on the lessons learned. That is <strong>Avalokana</strong>, meaning <strong>"Self Realization"</strong>.
+          </p>
         </div>
-        <nav class="nav-links">
-            <a href="#hero" class="nav-item active">Home</a>
-            <a href="#teaser" class="nav-item">Teaser</a>
-            <a href="#synopsis" class="nav-item">Synopsis</a>
-            <a href="#crew" class="nav-item">Creative Vision</a>
-            <a href="#feedback" class="nav-item">Review Corner</a>
-            <a href="#screening" class="nav-item">Premiere</a>
-            <a href="#booking-section" class="nav-btn">Book Tickets</a>
-        </nav>
-        <!-- Mobile Menu Trigger -->
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
-            <i class="fa-solid fa-bars-staggered"></i>
+        
+        <div class="synopsis-image-container reveal" style="transition-delay: 0.2s;">
+          <img src="/images/poster.png" alt="Avalokana Movie Poster" class="synopsis-image" onerror="this.onerror=null; this.src='https://placehold.co/600x900/0f1814/eae3d2?text=Poster+Unavailable';">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trailer Section -->
+  <section class="trailer-section" id="trailer">
+    <div class="container">
+      <h2 class="section-title reveal">Watch the Trailer</h2>
+      <p class="section-subtitle reveal">Immerse yourself in a landscape of silence and light.</p>
+      
+      <div class="trailer-wrapper reveal">
+        <div class="trailer-cover" id="trailerCover">
+          <div class="play-btn-circle pulse" id="playBtn">
+            <!-- Play Arrow SVG -->
+            <svg viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <span class="trailer-title" style="margin-top: 15px;">Experience the Silence</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Category Section -->
+  <section class="awards-section" id="awards">
+    <div class="container">
+      <h2 class="section-title reveal">Official Accolades</h2>
+      <p class="section-subtitle reveal">Celebrating international recognition for its meditative cinematography and depth</p>
+      
+      <div class="awards-grid reveal">
+        <!-- Card 1 (Critics' Choice Selection) -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="/awards/critics-choice-logo.jpg" alt="Critics' Choice Selection" class="award-badge-img" onerror="this.onerror=null; this.src='https://placehold.co/200x200/0f1814/eae3d2?text=Laurels';">
+          </div>
+          <h4 class="award-card-title">Official Selection</h4>
+          <h5 class="award-card-festival">Critics' Choice International Film Festival 2025</h5>
+          <p class="award-card-desc">Honored with official laurels for its deep narrative insight, spiritual atmosphere, and meditative pacing.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="/awards/award3.jpg" alt="Cinemaking Dhaka Selection" class="award-badge-img" onerror="this.onerror=null; this.src='https://placehold.co/200x200/0f1814/eae3d2?text=Laurels';">
+          </div>
+          <h4 class="award-card-title">Official Selection</h4>
+          <h5 class="award-card-festival">Cinemaking International Film Festival - Dhaka</h5>
+          <p class="award-card-desc">Celebrating the visual mastery and spiritual narrative flow on a global stage in 2025.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="/awards/jiff-logo.jpg" alt="JIFF Jaipur Nominated" class="award-badge-img" onerror="this.onerror=null; this.src='https://placehold.co/200x200/0f1814/eae3d2?text=Laurels';">
+          </div>
+          <h4 class="award-card-title">Official Nomination</h4>
+          <h5 class="award-card-festival">18th Jaipur International Film Festival</h5>
+          <p class="award-card-desc">Nominated in the art cinema category for the director's unique vision of self-realization in 2026.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="/awards/riff-logo.png" alt="RIFF Winner" class="award-badge-img" onerror="this.onerror=null; this.src='https://placehold.co/200x200/0f1814/eae3d2?text=Winner';">
+          </div>
+          <h4 class="award-card-title">Winner - Best Feature Film</h4>
+          <h5 class="award-card-festival">Rameshwaram International Film Festival</h5>
+          <p class="award-card-desc">Winner of the prestigious Best Feature Film Award at the Rameshwaram International Film Festival 2026.</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="/awards/award-logo.jpg" alt="iDEAL Winner" class="award-badge-img" onerror="this.onerror=null; this.src='https://placehold.co/200x200/0f1814/eae3d2?text=Winner';">
+          </div>
+          <h4 class="award-card-title">Jury Special Winner</h4>
+          <h5 class="award-card-festival">iDEAL International Film Festival</h5>
+          <p class="award-card-desc">Distinguished award winner for its philosophical depths and experimental execution.</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="award-card glass-card">
+          <div class="award-badge-container">
+            <img src="/awards/mifa-logo.png" alt="MIFA Winner" class="award-badge-img" onerror="this.onerror=null; this.src='https://placehold.co/200x200/0f1814/eae3d2?text=Winner';">
+          </div>
+          <h4 class="award-card-title">Award Winner</h4>
+          <h5 class="award-card-festival">Mumbai International Film Awards (MIFA)</h5>
+          <p class="award-card-desc">Award winner for narrative excellence and contemplative storytelling at the Mumbai International Film Awards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cast & Crew Section -->
+  <section class="cast-crew" id="cast">
+    <div class="container">
+      <h2 class="section-title reveal">The Creators</h2>
+      <p class="section-subtitle reveal">The minds behind the meditative vision</p>
+      
+      <div class="team-grid">
+        
+        <!-- Profile 1: Hero -->
+        <div class="profile-card glass-card reveal">
+          <div class="profile-header">
+            <div class="profile-image-frame">
+              <img src="/images/vishal.jpg" alt="Vishal Kampli - Madana" class="profile-image" onerror="this.onerror=null; this.src='https://placehold.co/300x300/0f1814/eae3d2?text=Vishal+Kampli';">
+            </div>
+            <div class="profile-title-block">
+              <h3>Vishal Kampli</h3>
+              <span class="profile-role">Madana (The Seeker)</span>
+            </div>
+          </div>
+          <p class="profile-bio">
+            In a highly demanding spiritual role, Vishal Kampli portrays Madana (meaning "king of lust"), a sheltered young man chosen by his Swamiji to succeed him. Vishal delivers a powerful performance detailing Madana's internal cognitive struggle against the Arishadvargas (the six moral pitfalls) in the outside world, making his path of self-discovery feel deeply relatable.
+          </p>
+          <div class="profile-quote">
+            "Embodying Madana's transition from a naive monk-in-training to a man facing the temptations of the real world was a profound spiritual journey for me."
+          </div>
+        </div>
+
+        <!-- Profile 2: Director -->
+        <div class="profile-card glass-card reveal" style="transition-delay: 0.2s;">
+          <div class="profile-header">
+            <div class="profile-image-frame">
+              <img src="/images/director.jpg" alt="Rakshith Shivakumar - Director" class="profile-image" onerror="this.onerror=null; this.src='https://placehold.co/300x300/0f1814/eae3d2?text=Director';">
+            </div>
+            <div class="profile-title-block">
+              <h3>Rakshith Shivakumar</h3>
+              <span class="profile-role">Writer & Director</span>
+            </div>
+          </div>
+          <p class="profile-bio">
+            "Avalokana is my soul project. Obviously it is my first, but I will definitely bring a creative transformational wave in my future movies." Rakshith Shivakumar infuses his debut feature with intense philosophical depth, exploring cognitive transformation and self-realization with a fresh, visionary approach to Indian art cinema.
+          </p>
+          <div class="profile-quote">
+            "Avalokana is a mirror of self-realization. The journey is not outward, but inward."
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Seats Section -->
+  <section class="booking-section" id="booking" style="background: var(--bg-primary); padding: 80px 0; border-top: 1px solid rgba(212,175,55,0.05);">
+    <div class="container" style="max-width: 1000px;">
+      <h2 class="section-title reveal">🎬 Book Your Seat</h2>
+      <p class="section-subtitle reveal">"Reserve your seat for the exclusive screening of Avalokana."</p>
+
+      <div class="booking-container reveal" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; margin-top: 40px; align-items: start;">
+        <!-- Left: Form and Seat Counter -->
+        <div class="glass-card" style="padding: 30px; border-radius: 16px;">
+          <h3 style="font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px;">1. Select Tickets</h3>
+          
+          <!-- Seats Availability & Counter -->
+          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); padding: 15px 20px; border-radius: 8px; margin-bottom: 25px;">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; display: block; letter-spacing: 0.5px;">Available Seats</span>
+              <strong id="availableSeatsDisplay" style="font-size: 1.3rem; color: var(--accent-gold);">100 / 100</strong>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 15px;">
+              <button type="button" class="counter-btn" id="btnBookMinus" style="width: 36px; height: 36px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--text-secondary); background: none; color: #fff; cursor: pointer; transition: var(--transition-fast);">&minus;</button>
+              <span id="bookingQtyValue" style="font-size: 1.4rem; font-weight: 700; color: #fff; min-width: 20px; text-align: center;">1</span>
+              <button type="button" class="counter-btn" id="btnBookPlus" style="width: 36px; height: 36px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--text-secondary); background: none; color: #fff; cursor: pointer; transition: var(--transition-fast);">&plus;</button>
+            </div>
+          </div>
+
+          <h3 style="font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px;">2. Audience Information</h3>
+          <form id="bookingDetailsForm" style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="bookingName" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Full Name *</label>
+              <input type="text" id="bookingName" class="form-input" placeholder="Enter your full name" required autocomplete="name">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="bookingPhone" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Mobile Number *</label>
+              <input type="tel" id="bookingPhone" class="form-input" placeholder="Enter 10-digit mobile number" pattern="[0-9]{10}" required autocomplete="tel">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="bookingShowTime" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Select Show Time *</label>
+              <select id="bookingShowTime" class="form-input" required style="background: rgba(15, 24, 20, 0.9); color: #fff; border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 8px; padding: 12px 16px; font-family: var(--font-body); outline: none;">
+                <option value="3:30 PM">1st Show - 3:30 PM</option>
+                <option value="6:00 PM">2nd Show - 6:00 PM</option>
+              </select>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="bookingMessage" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Optional Message</label>
+              <textarea id="bookingMessage" class="form-input" rows="3" placeholder="Any special requests or notes..." style="resize: none;"></textarea>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Summary Card -->
+        <div class="glass-card" style="padding: 30px; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(212, 175, 55, 0.25);">
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 1px dashed rgba(212, 175, 55, 0.2); padding-bottom: 10px;">Booking Summary</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--text-secondary);">Movie</span>
+                <span style="font-weight: 600; color: #fff; text-align: right;">Avalokana</span>
+              </div>
+              
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--text-secondary);">Venue</span>
+                <span style="font-weight: 600; color: #fff; text-align: right;">Suchitra Cinema and Cultural Academy</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--text-secondary);">Date & Time</span>
+                <span style="font-weight: 600; color: #fff; text-align: right;" id="summaryDateTime">Sunday, August 2nd, 2026<br><span style="font-size:0.8rem; color: var(--accent-gold);">3:30 PM (1st Show)</span></span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+                <span style="color: var(--text-secondary);">Tickets Count</span>
+                <span id="summaryTicketsCount" style="font-weight: 600; color: #fff;">1 Ticket</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--text-secondary);">Price per Ticket</span>
+                <span style="font-weight: 600; color: #fff;">₹200</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="border-top: 1px dashed rgba(212,175,55,0.25); padding-top: 20px; margin-top: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+              <span style="font-family: var(--font-title); font-size: 1.1rem; color: #fff;">Total Amount</span>
+              <span id="summaryTotalAmount" style="font-size: 1.5rem; font-weight: 700; color: var(--accent-saffron);">₹200</span>
+            </div>
+            
+            <button type="button" class="btn btn-primary" id="btnTriggerPayment" style="width: 100%; border-radius: 8px; padding: 15px;">Proceed to Payment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quotes Carousel Section -->
+  <section class="quotes-banner">
+    <div class="quote-carousel" id="quoteCarousel">
+      <!-- Quote 1 -->
+      <div class="quote-slide active">
+        <blockquote>"The quieter you become, the more you are able to hear."</blockquote>
+        <cite>Ram Dass</cite>
+      </div>
+      <!-- Quote 2 -->
+      <div class="quote-slide">
+        <blockquote>"Water does not struggle to flow. It simply surrenders to the valley."</blockquote>
+        <cite>Avalokana, Act II</cite>
+      </div>
+      <!-- Quote 3 -->
+      <div class="quote-slide">
+        <blockquote>"Destiny is not a roadmap; it is the ripple of a pebble already thrown."</blockquote>
+        <cite>Avalokana, Act III</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Avalokana Screenings</h4>
+          <p>
+            Dedicated to presenting meditative, philosophical, and spiritually-aligned independent cinema that challenges, heals, and elevates the human consciousness.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Navigation</h5>
+          <ul>
+            <li><a href="#hero">Return to Silence (Home)</a></li>
+            <li><a href="#synopsis">The Journey (Synopsis)</a></li>
+            <li><a href="#trailer">Watch Trailer</a></li>
+            <li><a href="#cast">The Creators</a></li>
+            <li><a href="#booking">Book Tickets</a></li>
+            <li><a href="#" id="footerLinkOrganizer" style="color: var(--accent-gold);">🔑 Organizer Console</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h5>Connect with us</h5>
+          <p>Email: silence@avalokana-screenings.org</p>
+          <p>Location: Netravati Ashram, Western Ghats, Karnataka</p>
+          <p>Contact: +91 80 2345 6789</p>
+        </div>
+      </div>
+      <div class="footer-copyright" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+        <span>&copy; 2026 Avalokana Productions. All rights reserved. Made in deep contemplation.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 1. Trailer Fullscreen Video Modal -->
+  <div class="trailer-modal" id="trailerModal">
+    <div class="trailer-modal-content">
+      <!-- YouTube trailer container -->
+      <div id="trailerVideoContainer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; display: none;"></div>
+      <!-- HTML5 Canvas for peaceful particles and river ripple visuals -->
+      <canvas class="trailer-canvas-placeholder" id="trailerCanvas"></canvas>
+      
+      <!-- Overlaid Player Controls & Info -->
+      <div class="trailer-overlay-ui">
+        <button class="trailer-close-btn" id="closeTrailerBtn" title="Close Theater">&times;</button>
+        
+        <div class="trailer-soundtrack-info">
+          <!-- Small equalizer anim -->
+          <div class="sound-waves" style="height: 15px;">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span class="soundtrack-note">Track: "River Contemplation" (Sitar & Stream Synth)</span>
+        </div>
+
+        <div class="trailer-subtitles" id="subtitles">
+          [Sound of river flowing softly]
+        </div>
+
+        <div class="trailer-controls">
+          <div class="trailer-controls-left">
+            <button class="control-btn" id="modalPlayBtn">
+              <!-- Play / Pause Icon -->
+              <svg id="controlPlayIcon" viewBox="0 0 24 24" style="display: none;"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="controlPauseIcon" viewBox="0 0 24 24" style="display: block;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <span class="time-readout" id="timeReadout" style="font-size: 0.85rem; opacity: 0.8;">0:00 / 0:45</span>
+          </div>
+          <span style="font-family: var(--font-title); font-size: 0.8rem; letter-spacing: 1.5px; color: var(--accent-gold);">Avalokana - Trailer</span>
+        </div>
+      </div>
+      
+      <!-- Progress Bar at bottom of screen -->
+      <div class="trailer-progress-bar-container" id="progressBarContainer">
+        <div class="trailer-progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- UPI Payment Checkout Modal -->
+  <div class="ticket-modal" id="paymentCheckoutModal" style="display: none;">
+    <div class="glass-card" style="max-width: 480px; width: 95%; padding: 25px; border-radius: 16px; border: 1.5px solid var(--accent-gold); background: #0c0f0e;">
+      
+      <!-- Modal Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="font-size: 1.1rem;">📱</span>
+          <span style="font-family: var(--font-title); color: #fff; font-size: 1.1rem; font-weight: 600; letter-spacing:0.5px;">UPI Secure Payment</span>
+        </div>
+        <button id="closePaymentModalBtn" style="background:none; border:none; color:rgba(255,255,255,0.5); font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
+
+      <!-- Payment Summary Row -->
+      <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 12px 15px; border-radius: 8px; margin-bottom: 20px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:0.75rem; color:var(--text-secondary); display:block;">Amount to Pay</span>
+          <strong id="checkoutPayingAmount" style="font-size: 1.2rem; color: var(--accent-gold);">₹200.00</strong>
+        </div>
+        <span style="font-size: 0.75rem; color: rgba(255,255,255,0.4);" id="checkoutOrderId">Order ID: pay_order_9981</span>
+      </div>
+
+      <!-- UPI QR Code Scanner -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 25px; text-align:center;">
+        <div style="background:#fff; padding:12px; border-radius:12px; display:inline-block; border: 2.5px solid var(--accent-gold); box-shadow: 0 0 15px rgba(212,175,55,0.2);">
+          <img src="/images/phonepe-qr.png" alt="PhonePe Pay QR" style="width:160px; height:auto; display:block;" onerror="this.onerror=null; this.src='https://placehold.co/250x250/ffffff/000000?text=Scan+UPI+9964115521@ybl';">
+        </div>
+        <div>
+          <strong style="color:#fff; font-size: 0.95rem; display:block; margin-bottom: 4px;">UPI ID: <span style="color:var(--accent-saffron);">9964115521@ybl</span></strong>
+          <span style="font-size:0.8rem; color:var(--text-secondary);">Payee Name: <strong>RAKSHITH A S</strong></span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; max-width: 320px; margin-top: 5px;">
+          Scan the QR code with your UPI app (PhonePe, GPay, Paytm) and pay the exact amount. Once paid, click the confirm button below.
+        </p>
+      </div>
+
+      <!-- Bottom Payment Button with Spinner -->
+      <button type="button" class="btn btn-primary" id="btnExecutePayment" style="width:100%; border-radius:8px; padding:12px; font-size:0.95rem; font-weight:600; display:flex; align-items:center; justify-content:center; gap:10px;">
+        <span>I Have Paid - Proceed</span>
+        <!-- Spinner SVG -->
+        <svg id="paymentLoadingSpinner" width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none; animation: spin 1s linear infinite; fill: none; stroke: currentColor; stroke-width: 3;">
+          <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.2)"/>
+          <path d="M12 2a10 10 0 0 1 10 10" stroke="#fff"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+
+  <!-- Premium Digital Ticket / Booking Confirmed Page -->
+  <div id="bookingConfirmedPage" style="display: none; position: fixed; inset: 0; background: #050807; overflow-y: auto; z-index: 2000; padding: 40px 20px; font-family: var(--font-body); scrollbar-width: thin;">
+    
+    <!-- Background Spotlight Glow -->
+    <div class="spotlight-glow" style="position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(255, 115, 0, 0.02) 50%, transparent 70%); pointer-events: none; z-index: 1;"></div>
+
+    <div class="confirmed-container" style="max-width: 800px; margin: 0 auto; position: relative; z-index: 2; display: flex; flex-direction: column; gap: 40px; align-items: center; padding-bottom: 80px;">
+      
+      <!-- 1. Hero Confirmation Section -->
+      <div style="text-align: center; margin-bottom: 10px; width: 100%;">
+        <div class="success-ringpulse" style="width: 80px; height: 80px; background: rgba(38, 223, 152, 0.1); border: 2px solid #26df98; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; box-shadow: 0 0 25px rgba(38, 223, 152, 0.4); aria-hidden: true;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#26df98" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h1 style="font-family: var(--font-title); font-size: 2.2rem; color: #fff; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 20px rgba(255,255,255,0.15); margin-bottom: 8px;">🎉 Booking Confirmed</h1>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto; font-family: var(--font-quote); font-style: italic;">
+          Your seat has been reserved for the exclusive screening of Avalokana.
+        </p>
+      </div>
+
+      <!-- 2. Main Premium Film Pass Layout -->
+      <div class="premium-cinema-pass" id="printableTicketPass" style="width: 100%; max-width: 450px; background: #0c0f0e; border: 2.5px solid var(--accent-gold); border-radius: 20px; box-shadow: 0 25px 60px rgba(0,0,0,0.9); overflow: hidden; position: relative; display: flex; flex-direction: column;">
+        
+        <!-- Pass Inner Spotlights & Laurel Ornaments -->
+        <div style="position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 300px; height: 300px; background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 60%); pointer-events: none;"></div>
+        
+        <!-- Ticket notches (cuts) -->
+        <div class="pass-notch-left" style="position: absolute; top: 68%; left: -14px; width: 28px; height: 28px; background: #050807; border-radius: 50%; border-right: 2.5px solid var(--accent-gold); z-index: 10; transform: translateY(-50%);"></div>
+        <div class="pass-notch-right" style="position: absolute; top: 68%; right: -14px; width: 28px; height: 28px; background: #050807; border-radius: 50%; border-left: 2.5px solid var(--accent-gold); z-index: 10; transform: translateY(-50%);"></div>
+
+        <!-- Upper Pass Header -->
+        <div style="padding: 30px 30px 20px 30px; text-align: center; border-bottom: 1.5px dashed rgba(212,175,55,0.25); position: relative;">
+          <!-- SVG Laurels -->
+          <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 8px;">
+            <svg width="40" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85;">
+              <path d="M4 19c1.5-1.5 3-1.5 5-1.5M4 15c2-1 3.5-1 5.5-1M4 11c2.5-.5 4.5-.5 6-.5M4 7c3 0 5 .5 6.5.5M12 2v20"></path>
+            </svg>
+            <h2 style="font-family: var(--font-title); font-size: 1.8rem; letter-spacing: 4px; font-weight: 700; color: #fff; margin: 0;">AVALOKANA</h2>
+            <svg width="40" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85; transform: scaleX(-1);">
+              <path d="M4 19c1.5-1.5 3-1.5 5-1.5M4 15c2-1 3.5-1 5.5-1M4 11c2.5-.5 4.5-.5 6-.5M4 7c3 0 5 .5 6.5.5M12 2v20"></path>
+            </svg>
+          </div>
+          <span style="font-family: var(--font-title); font-size: 0.75rem; letter-spacing: 3px; color: var(--accent-gold); text-transform: uppercase; font-weight: 600;">Special Screening Pass</span>
+        </div>
+
+        <!-- Upper Info Grid -->
+        <div style="padding: 25px 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-bottom: 1.5px dashed rgba(212,175,55,0.25); position: relative;">
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Booking ID</span>
+            <strong id="ticketConfirmId" style="font-size: 1rem; color: var(--accent-saffron); font-family: var(--font-body); font-weight: 700;">AVA-000023</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Guest Name</span>
+            <strong id="ticketConfirmName" style="font-size: 0.95rem; color: #fff; font-weight: 600;">Vishal Kampli</strong>
+          </div>
+          <div style="grid-column: 1 / span 2;">
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Venue</span>
+            <strong id="ticketConfirmVenue" style="font-size: 0.95rem; color: #fff; font-weight: 600; line-height: 1.4;">Suchitra Cinema and Cultural Academy</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Date</span>
+            <strong id="ticketConfirmDate" style="font-size: 0.95rem; color: #fff; font-weight: 600;">August 2, 2026</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Time</span>
+            <strong id="ticketConfirmTime" style="font-size: 0.95rem; color: #fff; font-weight: 600;">3:30 PM</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Tickets Count</span>
+            <strong id="ticketConfirmCount" style="font-size: 0.95rem; color: #fff; font-weight: 600;">2 Tickets</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">Seat Type</span>
+            <strong style="font-size: 0.95rem; color: var(--accent-gold); font-weight: 600;">General Admission</strong>
+          </div>
+          <div style="grid-column: 1 / span 2; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: var(--font-title); font-size: 0.85rem; color: #fff; letter-spacing: 0.5px;">Amount Paid</span>
+            <strong id="ticketConfirmAmount" style="font-size: 1.25rem; color: var(--accent-saffron); font-weight: 700;">₹200</strong>
+          </div>
+        </div>
+
+        <!-- Lower QR Barcode Section -->
+        <div style="padding: 30px; text-align: center; background: rgba(7, 13, 10, 0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1;">
+          
+          <!-- Animated QR Wrapper -->
+          <div class="qr-glow-wrap" style="position: relative; padding: 12px; background: #fff; border-radius: 12px; border: 2.5px solid var(--accent-gold); display: inline-block; box-shadow: 0 0 20px var(--accent-gold-glow); overflow: hidden; margin-bottom: 15px;">
+            <img id="ticketConfirmQrImage" src="" alt="Ticket QR Code" style="width: 140px; height: 140px; display: block; border-radius: 6px;">
+            <!-- Laser scanning animation line -->
+            <div class="qr-scanner-line" style="position: absolute; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #26df98, transparent); box-shadow: 0 0 10px #26df98; pointer-events: none;"></div>
+          </div>
+          
+          <p style="font-family: var(--font-title); font-size: 0.75rem; letter-spacing: 1.5px; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 5px;">Present this QR code at the entrance.</p>
+          <span style="font-family: var(--font-quote); font-style: italic; font-size: 0.75rem; color: var(--text-secondary); opacity: 0.75;">"Blessings on your journey into the flow."</span>
+        </div>
+
+      </div>
+
+      <!-- 3. Ticket Status Steps Tracker -->
+      <div class="glass-card" style="width: 100%; max-width: 450px; padding: 20px 25px; border-radius: 12px; border-color: rgba(255,255,255,0.04);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; font-size: 0.8rem;">
+          <div style="display: flex; align-items: center; gap: 6px; color: #26df98;">
+            <span>✓</span>
+            <span>Payment Successful</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; color: #26df98;">
+            <span>✓</span>
+            <span>Ticket Generated</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; color: #26df98;">
+            <span>✓</span>
+            <span>Email Sent</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; color: #26df98;">
+            <span>✓</span>
+            <span>WhatsApp Sent</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Live Countdown Timer -->
+      <div class="glass-card" style="width: 100%; max-width: 450px; padding: 25px; border-radius: 12px; text-align: center; border-color: rgba(212,175,55,0.2);">
+        <span style="font-family: var(--font-title); font-size: 0.8rem; letter-spacing: 2px; color: var(--accent-gold); text-transform: uppercase; display: block; margin-bottom: 15px;">Screening Starts In</span>
+        
+        <div id="screeningCountdownTimer" style="display: flex; justify-content: center; gap: 15px; align-items: center;">
+          <div style="min-width: 70px;">
+            <strong id="timerDays" style="display: block; font-size: 1.8rem; color: #fff; font-weight: 700; font-family: var(--font-body);">00</strong>
+            <span style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Days</span>
+          </div>
+          <span style="font-size: 1.5rem; color: var(--accent-gold); font-weight: 300; margin-top: -15px;">:</span>
+          <div style="min-width: 70px;">
+            <strong id="timerHours" style="display: block; font-size: 1.8rem; color: #fff; font-weight: 700; font-family: var(--font-body);">00</strong>
+            <span style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Hours</span>
+          </div>
+          <span style="font-size: 1.5rem; color: var(--accent-gold); font-weight: 300; margin-top: -15px;">:</span>
+          <div style="min-width: 70px;">
+            <strong id="timerMinutes" style="display: block; font-size: 1.8rem; color: #fff; font-weight: 700; font-family: var(--font-body);">00</strong>
+            <span style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Minutes</span>
+          </div>
+          <span style="font-size: 1.5rem; color: var(--accent-gold); font-weight: 300; margin-top: -15px;">:</span>
+          <div style="min-width: 70px;">
+            <strong id="timerSeconds" style="display: block; font-size: 1.8rem; color: #fff; font-weight: 700; font-family: var(--font-body);">00</strong>
+            <span style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Seconds</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Download Options & Wallet Actions -->
+      <div style="width: 100%; max-width: 450px; display: flex; flex-direction: column; gap: 15px;">
+        <button type="button" class="btn btn-primary" id="btnDownloadPassPdf" style="width: 100%; padding: 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <span>Download Ticket (PDF)</span>
         </button>
-    </header>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay" id="mobileNav">
-        <button class="mobile-nav-close" id="mobileNavClose"><i class="fa-solid fa-xmark"></i></button>
-        <div class="mobile-nav-links">
-            <a href="#hero" class="mobile-nav-item">Home</a>
-            <a href="#teaser" class="mobile-nav-item">Teaser</a>
-            <a href="#synopsis" class="mobile-nav-item">Synopsis</a>
-            <a href="#crew" class="mobile-nav-item">Creative Vision</a>
-            <a href="#feedback" class="mobile-nav-item">Review Corner</a>
-            <a href="#screening" class="mobile-nav-item">Premiere</a>
-            <a href="#booking-section" class="mobile-nav-btn">Book Tickets</a>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+          <button type="button" class="btn btn-secondary" id="btnSaveQrImageOnly" style="padding: 12px; border-radius: 8px; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            <span>Save QR Image</span>
+          </button>
+          
+          <button type="button" class="btn btn-secondary" id="btnSendWhatsAppDelivery" style="padding: 12px; border-radius: 8px; border-color: #25d366; color: #25d366; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            <span>WhatsApp Delivery</span>
+          </button>
         </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+          <button type="button" class="btn btn-secondary" id="btnAddToGoogleWallet" style="padding: 10px 15px; border-radius: 6px; font-size: 0.7rem; background: #000; border-color: #333; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Wallet_Icon_%282022%29.svg" alt="Google Wallet" style="height: 16px;">
+            <span>Google Wallet</span>
+          </button>
+          
+          <button type="button" class="btn btn-secondary" id="btnAddToAppleWallet" style="padding: 10px 15px; border-radius: 6px; font-size: 0.7rem; background: #000; border-color: #333; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Apple_Wallet_Icon.svg" alt="Apple Wallet" style="height: 16px;">
+            <span>Apple Wallet</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 6. Important Information Card -->
+      <div class="glass-card" style="width: 100%; max-width: 450px; padding: 25px; border-radius: 12px; border-color: rgba(255, 51, 68, 0.1); background: rgba(255, 51, 68, 0.015);">
+        <h4 style="font-family: var(--font-title); font-size: 0.85rem; color: var(--accent-saffron); margin-bottom: 12px; letter-spacing: 1px; display: flex; align-items: center; gap: 6px;">
+          <span>ℹ️</span> Important Information
+        </h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.8rem; color: var(--text-secondary); text-align: left; line-height: 1.5;">
+          <li style="display: flex; gap: 8px;">• <span>Please arrive 30 minutes early at the venue.</span></li>
+          <li style="display: flex; gap: 8px;">• <span>Carry your QR ticket (digital or printed) for entry verification.</span></li>
+          <li style="display: flex; gap: 8px;">• <span>Entry gates will close strictly after the screening begins.</span></li>
+          <li style="display: flex; gap: 8px;">• <span>Food and beverages are available for purchase at the venue.</span></li>
+        </ul>
+      </div>
+
+      <!-- 7. Social Sharing & Navigation Bar -->
+      <div style="width: 100%; max-width: 450px; text-align: center;">
+        <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 12px;">Share Your Journey</span>
+        
+        <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 30px;">
+          <button type="button" class="btn btn-secondary" id="btnShareStoryWhatsApp" style="padding: 10px 20px; font-size: 0.75rem; border-radius: 20px; border-color: rgba(255,255,255,0.15);">WhatsApp Share</button>
+          <button type="button" class="btn btn-secondary" id="btnShareStoryInsta" style="padding: 10px 20px; font-size: 0.75rem; border-radius: 20px; border-color: rgba(255,255,255,0.15);">Instagram Story</button>
+          <button type="button" class="btn btn-secondary" id="btnCopyEventLinkOnly" style="padding: 10px 20px; font-size: 0.75rem; border-radius: 20px; border-color: rgba(255,255,255,0.15);">Copy Link</button>
+        </div>
+
+        <button type="button" class="btn btn-secondary" id="btnReturnFromConfirmPage" style="border-radius: 30px; font-size: 0.8rem; padding: 10px 30px; border-color: var(--accent-gold); color: var(--accent-gold); background: none; letter-spacing: 1.5px;">Return to Silence</button>
+      </div>
+
     </div>
+  </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section (Using dramatic char_glow.jpg as main backdrop) -->
-        <section id="hero" class="hero-section">
-            <div class="hero-backdrop" style="background-image: linear-gradient(to bottom, rgba(6, 6, 8, 0.4) 0%, rgba(6, 6, 8, 0.95) 100%), url('assets/char_glow.jpg');"></div>
-            <div class="hero-content">
-                <p class="hero-subtitle red-gradient-text animate-fade-in">AANTHARYA CREATIONS PRESENTS</p>
-                <h1 class="hero-title-container animate-slide-up" style="margin-bottom: 20px;">
-                    <img src="assets/title_logo.png" alt="Anireekshithaa - The Unexpected" class="hero-title-logo" style="width: 540px; max-width: 90%; height: auto; filter: drop-shadow(0 0 30px rgba(217, 35, 42, 0.45)); display: block; margin: 0 auto;">
-                </h1>
-                <p class="hero-meta"><i class="fa-regular fa-clock"></i> 1 Hour | <i class="fa-solid fa-film"></i> Psychological Thriller | Kannada</p>
-                
-                <!-- Premiere Countdown Widget -->
-                <div class="hero-countdown animate-fade-in" id="countdown-container">
-                    <span class="countdown-title"><i class="fa-solid fa-hourglass-half"></i> Premiere begins in</span>
-                    <div class="countdown-grid">
-                        <div class="countdown-card">
-                            <span class="countdown-num" id="countdown-days">14</span>
-                            <span class="countdown-label">Days</span>
-                        </div>
-                        <div class="countdown-card">
-                            <span class="countdown-num" id="countdown-hours">08</span>
-                            <span class="countdown-label">Hours</span>
-                        </div>
-                        <div class="countdown-card">
-                            <span class="countdown-num" id="countdown-minutes">21</span>
-                            <span class="countdown-label">Minutes</span>
-                        </div>
-                        <div class="countdown-card">
-                            <span class="countdown-num" id="countdown-seconds">00</span>
-                            <span class="countdown-label">Seconds</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-ctas animate-scale-up">
-                    <button class="btn-primary" onclick="openBookingModal()">
-                        <i class="fa-solid fa-ticket"></i> Book Premiere Tickets
-                    </button>
-                    <a href="#teaser" class="btn-secondary">
-                        <i class="fa-solid fa-play"></i> Watch Teaser
-                    </a>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <span class="mouse-icon"><span class="mouse-wheel"></span></span>
-                <p>Scroll to Reveal</p>
-            </div>
-        </section>
+  <!-- Sanctuary Organizer Console Modal (Same Website Overlay Option) -->
+  <div class="ticket-modal" id="adminConsoleOverlay" style="display: none; justify-content: center; align-items: flex-start; overflow-y: auto; padding: 40px 20px; z-index: 2500;">
+    <div class="glass-card" style="max-width: 1000px; width: 100%; margin: 20px auto; padding: 30px; border-color: rgba(212,175,55,0.3); background: #070d0a; position: relative;">
+      
+      <!-- Close Console Button -->
+      <button id="closeAdminConsoleBtn" style="position: absolute; right: 25px; top: 25px; background:none; border:none; color:rgba(255,255,255,0.6); font-size:1.8rem; cursor:pointer;">&times;</button>
+      
+      <!-- Header -->
+      <div style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(212,175,55,0.15); padding-bottom: 15px; margin-bottom: 25px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: var(--accent-gold);">
+          <path d="M12,2A10,10,0,0,0,3.65,7.62a1,1,0,0,0,.68,1.26A1,1,0,0,0,5.59,8.2,8,8,0,0,1,12,4a8,8,0,0,1,6.41,4.2,1,1,0,0,0,1.26.68,1,1,0,0,0,.68-1.26A10,10,0,0,0,12,2Zm0,7a3,3,0,1,0,3,3A3,3,0,0,0,12,9Zm0,4.5A1.5,1.5,0,1,1,13.5,12,1.5,1.5,0,0,1,12,13.5Zm7.35.88a1,1,0,0,0-1.26.68,8,8,0,0,1-12.18,0,1,1,0,0,0-1.26-.68,1,1,0,0,0-.68,1.26A10,10,0,0,0,12,22a10,10,0,0,0,9.35-6.38A1,1,0,0,0,19.35,14.38ZM12,16.5A4.5,4.5,0,0,1,8,12a4.5,4.5,0,0,1,8,0A4.5,4.5,0,0,1,12,16.5Z"/>
+        </svg>
+        <span style="font-family: var(--font-title); font-size: 1.3rem; color: #fff; letter-spacing: 1.5px; font-weight: 700;">Sanctuary Console</span>
+      </div>
 
-        <!-- Teaser Section (Using face close up photo as video thumbnail placeholder) -->
-        <section id="teaser" class="teaser-section">
-            <div class="section-container">
-                <span class="section-tag red-gradient-text">PREVIEW</span>
-                <h2 class="section-title text-glow">The Teaser</h2>
-                <div class="teaser-player-wrapper">
-                    <!-- Elegant Custom Cinematic Video Box -->
-                    <div class="video-container" id="videoContainer">
-                        <!-- Custom Poster/Thumb -->
-                        <div class="video-thumbnail" id="videoThumbnail">
-                            <img src="assets/char_face.jpg" alt="Teaser Preview Thumbnail">
-                            <div class="play-overlay">
-                                <span class="play-pulse"></span>
-                                <i class="fa-solid fa-play play-icon"></i>
-                            </div>
-                        </div>
-                        
-                        <!-- Video Frame -->
-                        <div class="video-player-frame" id="videoPlayerFrame" style="display: none;">
-                            <div class="custom-video-player">
-                                <video id="promoVideo" loop muted playsinline src="assets/teaser.mp4"></video>
-                                <div class="player-controls">
-                                    <button class="player-ctrl-btn" id="rewindBtn" title="Rewind 10s"><i class="fa-solid fa-backward"></i></button>
-                                    <button class="player-ctrl-btn" id="playPauseBtn" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
-                                    <button class="player-ctrl-btn" id="forwardBtn" title="Forward 10s"><i class="fa-solid fa-forward"></i></button>
-                                    <div class="progress-bar-wrapper" id="progressBarWrapper">
-                                        <div class="progress-bar" id="progressBar"></div>
-                                    </div>
-                                    <button class="player-ctrl-btn" id="muteBtn" title="Mute/Unmute"><i class="fa-solid fa-volume-xmark"></i></button>
-                                    <button class="player-ctrl-btn" id="fullscreenBtn" title="Fullscreen"><i class="fa-solid fa-expand"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Share Section -->
-                <div class="teaser-share-block animate-fade-in">
-                    <p class="share-prompt">
-                        <i class="fa-solid fa-share-nodes"></i> Share the Thrill with Friends
-                    </p>
-                    <div class="share-buttons-container">
-                        <a href="#" id="share-wa" target="_blank" class="share-btn share-wa">
-                            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                        </a>
-                        <a href="#" id="share-ig" class="share-btn share-ig">
-                            <i class="fa-brands fa-instagram"></i> Instagram
-                        </a>
-                        <a href="#" id="share-fb" target="_blank" class="share-btn share-fb">
-                            <i class="fa-brands fa-facebook-f"></i> Facebook
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Film Synopsis Section -->
-        <section id="synopsis" class="synopsis-section">
-            <div class="section-container">
-                <div class="synopsis-wrapper">
-                    <!-- Left: Stylized Movie Poster -->
-                    <div class="synopsis-graphic">
-                        <a href="#screening" style="display: block; cursor: pointer;" aria-label="Book Premiere Tickets">
-                            <img src="assets/poster.jpg" alt="Anireekshithaa Movie Poster" class="synopsis-img" style="transition: var(--transition-smooth);">
-                        </a>
-                    </div>
-
-                    <!-- Text Content -->
-                    <div class="synopsis-content">
-                        <span class="section-tag red-gradient-text">THE STORY</span>
-                        <h2 class="section-title text-glow">The Synopsis</h2>
-                        
-                        <div class="synopsis-paragraphs">
-                            <p class="lead-paragraph">
-                                <strong class="red-gradient-text">ANIREEKSHITHAA</strong> is a film about the unexpected twists life throws at us. Moments that seem frustrating, suffocating, or unfair at first often reveal their true meaning with time.
-                            </p>
-                            <p>
-                                Through the journey of <strong>Tejas</strong>, the film explores how life's unplanned events shape us in ways we never anticipate. As he navigates a series of unforeseen situations, he gradually realizes that every setback, encounter, and coincidence has a purpose.
-                            </p>
-                            <p>
-                                In the end, Tejas comes to believe that life unfolds according to a greater design—that everything happens for a reason, and we are all simply players in a game guided by a higher force.
-                            </p>
-                            <div class="synopsis-highlight-box">
-                                <i class="fa-solid fa-compass highlight-icon"></i>
-                                <p><strong class="red-gradient-text">ANIREEKSHITHAA</strong> is a reflection on fate, faith, and the beauty hidden within life's uncertainties.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About & Bios Section (Star Cast & Creative Crew) -->
-        <section id="crew" class="crew-section">
-            <div class="section-container">
-                <span class="section-tag red-gradient-text">THE STAR CAST</span>
-                <h2 class="section-title">Meet the Cast</h2>
-                <p class="section-desc">The screen presence and talent that brought the characters of <strong>Anireekshithaa</strong> to life.</p>
-                <div class="crew-grid">
-                    <!-- Crew Card: Swathi -->
-                    <div class="crew-card" data-role="Cast">
-                        <div class="crew-image-wrapper">
-                            <img src="assets/swathi.jpg" alt="Swathi" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
-                        </div>
-                        <div class="crew-info">
-                            <h3 class="crew-name">Swathi</h3>
-                            <p class="crew-bio">Swathi is a South Indian actress celebrated for her remarkable contributions to Kannada cinema and television. Known for her versatility and expressive performances, she has portrayed a wide range of supporting and character roles, earning acclaim for bringing depth, warmth, and authenticity to every character she embodies.</p>
-                        </div>
-                    </div>
-
-                    <!-- Crew Card: Sathish Achar -->
-                    <div class="crew-card" data-role="Cast">
-                        <div class="crew-image-wrapper">
-                            <img src="assets/sathish_achar.jpg" alt="Sathish Achar" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
-                        </div>
-                        <div class="crew-info">
-                            <h3 class="crew-name">Sathish Achar</h3>
-                            <p class="crew-bio">He is a well-known actor in the Kannada film industry, recognized for his remarkable performances in acclaimed films such as Kantara and Kantara: Chapter 1. With his strong screen presence, versatility, and dedication to his craft, he has earned appreciation from audiences and industry professionals alike, establishing himself.</p>
-                        </div>
-                    </div>
-
-                    <!-- Crew Card: Lead Actor (Sharath Raj) -->
-                    <a href="https://www.instagram.com/sharathsharu_actor?igsh=bDFwZDJobWd0cHVn&utm_source=qr" target="_blank" class="crew-card" data-role="Cast" style="text-decoration: none; color: inherit;">
-                        <div class="crew-image-wrapper">
-                            <img src="assets/sharath_raj.jpg" alt="Sharath Raj" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
-                        </div>
-                        <div class="crew-info">
-                             <h3 class="crew-name">Sharath Raj <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
-                             <p class="crew-bio">I am a stage and film actor with experience in theatre, short films, and feature films. I prepare for every role through research, rehearsal, and character understanding to deliver natural, authentic, and engaging performances. I am passionate about storytelling and committed to bringing every character to life with honesty and dedication.</p>
-                        </div>
-                    </a>
-
-                    <!-- Crew Card: Sughosh Ram -->
-                    <a href="https://www.instagram.com/sughosharam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="crew-card" data-role="Cast" style="text-decoration: none; color: inherit;">
-                        <div class="crew-image-wrapper">
-                            <img src="assets/sughosh_ram.jpg" alt="Sughosh Ram" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
-                        </div>
-                        <div class="crew-info">
-                             <h3 class="crew-name">Sughosh Ram <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
-                             <p class="crew-bio">He is a versatile actor known for his strong screen presence and natural performances. He played the lead role in the web series Joint Family and a prominent role in the web series Roommates. Having appeared in several feature films, he continues to impress audiences with his dedication, versatility, and passion for cinema.</p>
-                        </div>
-                    </a>
-
-                    <!-- Crew Card: Swaroop -->
-                    <a href="https://www.instagram.com/naanu_swaroop_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="crew-card" data-role="Cast" style="text-decoration: none; color: inherit;">
-                        <div class="crew-image-wrapper">
-                            <img src="assets/swaroop.jpg" alt="Swaroop" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%;">
-                        </div>
-                        <div class="crew-info">
-                             <h3 class="crew-name">Swaroop <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
-                             <p class="crew-bio">He is an actor, performer, and storyteller known for bringing characters to life with authenticity, emotion, and purpose. Having appeared in several web series and short films, he continues to expand his artistic journey. From stage productions to cinema, he is committed to delivering compelling performances that resonate with audiences and leave a lasting impression.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="crew-divider" style="margin: 60px 0; border-top: 1px solid var(--border-glass);"></div>
-
-                <span class="section-tag red-gradient-text" style="display: block; margin-top: 40px;">THE CREATIVE VISIONARIES</span>
-                <h2 class="section-title">Behind the Camera</h2>
-                <p class="section-desc">The key technical and creative crew shaping the tension and execution of <strong>Anireekshithaa</strong>.</p>
-
-                <div class="crew-grid">
-                    <!-- Crew Card: Director -->
-                    <a href="https://www.instagram.com/aadarsh_r_udupi/" target="_blank" class="crew-card" data-role="Director" style="text-decoration: none; color: inherit;">
-                        <div class="crew-image-wrapper">
-                            <img src="assets/director_adarsh.jpg?v=1.0.5" alt="Aadarsh R Udupi" style="object-position: center 32%;">
-                            <div class="crew-role">Director & Writer</div>
-                        </div>
-                        <div class="crew-info">
-                             <h3 class="crew-name">Aadarsh R Udupi <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
-                             <p class="crew-bio">I am a storyteller who finds cinema in the ordinary and meaning in the unexpected. For me, filmmaking is more than a craft—it's a way of capturing the moments that shape, challenge, and change us. Drawn to themes of love, destiny, human connection, and life's unpredictable turns, I strive to create stories that resonate emotionally and linger long after the screen fades to black.</p>
-                        </div>
-                    </a>
-
-                    <!-- Crew Card: Music Director -->
-                    <a href="https://www.instagram.com/symphonyaamps/?hl=en" target="_blank" class="crew-card" data-role="Music Director" style="text-decoration: none; color: inherit;">
-                        <div class="crew-image-wrapper">
-                            <img src="assets/music_shashikumar.jpg" alt="Shashikumar – SymphoNy Amps" style="object-position: center 35%;">
-                            <div class="crew-role">Music Director</div>
-                        </div>
-                        <div class="crew-info">
-                            <h3 class="crew-name">Shashikumar – SymphoNy Amps <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
-                            <p class="crew-bio" style="margin-bottom: 8px;">Creating music that inspires, moves and connects.</p>
-                            <ul style="list-style-type: disc; margin-left: 18px; margin-bottom: 12px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
-                                <li>From composition to final mastering under one roof.</li>
-                                <li>Dedicated to quality, innovation and artistic excellence.</li>
-                                <li>Trusted partner for films, albums and commercial projects.</li>
-                                <li>Every note crafted with passion and precision.</li>
-                            </ul>
-                        </div>
-                    </a>
-
-                    <!-- Crew Card: DOP -->
-                    <a href="https://www.instagram.com/ajayarnold04/" target="_blank" class="crew-card" data-role="DOP" style="text-decoration: none; color: inherit;">
-                        <div class="crew-image-wrapper">
-                            <img src="assets/dop_ajay.jpg" alt="Ajay Keerthan">
-                            <div class="crew-role">DOP (Cinematography)</div>
-                        </div>
-                        <div class="crew-info">
-                            <h3 class="crew-name">Ajay Keerthan <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
-                            <p class="crew-bio" style="margin-bottom: 8px;">I'm Ajay Keerthan, a Bengaluru-based cinematographer with a passion for visual storytelling and cinematic imagery. I followed my love for cinema into the film industry, where I've been working as an assistant cinematographer for the past three years in 5 Feature films:</p>
-                            <ul style="list-style-type: disc; margin-left: 18px; margin-bottom: 12px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
-                                <li>JC the University</li>
-                                <li>Kothalavaadi</li>
-                                <li>Alpha</li>
-                                <li>#Yesvee4 (Manoranjan Ravichandran as Lead)</li>
-                                <li>One independent film</li>
-                            </ul>
-                            <p class="crew-bio">I believe great work comes from curiosity, collaboration, and enjoying the process along the way.</p>
-                        </div>
-                    </a>
- 
-                    <!-- Crew Card: Editor -->
-                    <div class="crew-card" data-role="Editor">
-                        <div class="crew-image-wrapper">
-                            <img src="assets/editor_ankith.jpg" alt="Ankith GV">
-                            <div class="crew-role">Editor</div>
-                        </div>
-                        <div class="crew-info">
-                            <h3 class="crew-name">Ankith GV</h3>
-                            <p class="crew-bio">I am an amateur video editor interested in the theory and practicality of visual storytelling. I run a small Instagram page called <a href="https://www.instagram.com/everyday.kannadiga/" target="_blank" style="color: var(--red-bright); text-decoration: none;">everyday.kannadiga</a> where I post edits, and have been part of short films in the post-production phases.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Audience Feedback Section (Review Corner) -->
-        <section id="feedback" class="feedback-section">
-            <div class="section-container">
-                <span class="section-tag red-gradient-text">AUDIENCE ECHO</span>
-                <h2 class="section-title text-glow">Review Corner</h2>
-                <p class="section-desc">Watched the premiere of <strong>Anireekshithaa</strong>? Share your cinematic experience with us via text or voice note.</p>
-
-                <div class="feedback-grid">
-                    <!-- Text Feedback Card -->
-                    <div class="feedback-card text-card">
-                        <div class="card-header">
-                            <i class="fa-solid fa-pen-nib header-icon"></i>
-                            <h3>Written Review</h3>
-                        </div>
-                        <form id="textReviewForm" onsubmit="event.preventDefault(); submitTextReview();">
-                            <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 20px;">
-                                <div class="form-group" style="flex: 1; margin-bottom: 0;">
-                                    <label for="reviewName">Your Name <span class="required">*</span></label>
-                                    <input type="text" id="reviewName" placeholder="Enter name" required style="width: 100%;">
-                                </div>
-                                <div class="form-group" style="margin-bottom: 0;">
-                                    <label>Rating <span class="required">*</span></label>
-                                    <div class="rating-picker" id="ratingPicker" style="display: flex; gap: 6px; padding: 10px 0;">
-                                        <i class="fa-regular fa-star star-btn" data-value="1" style="color: var(--text-dark); font-size: 1.25rem; cursor: pointer; transition: var(--transition-smooth);"></i>
-                                        <i class="fa-regular fa-star star-btn" data-value="2" style="color: var(--text-dark); font-size: 1.25rem; cursor: pointer; transition: var(--transition-smooth);"></i>
-                                        <i class="fa-regular fa-star star-btn" data-value="3" style="color: var(--text-dark); font-size: 1.25rem; cursor: pointer; transition: var(--transition-smooth);"></i>
-                                        <i class="fa-regular fa-star star-btn" data-value="4" style="color: var(--text-dark); font-size: 1.25rem; cursor: pointer; transition: var(--transition-smooth);"></i>
-                                        <i class="fa-regular fa-star star-btn" data-value="5" style="color: var(--text-dark); font-size: 1.25rem; cursor: pointer; transition: var(--transition-smooth);"></i>
-                                    </div>
-                                    <input type="hidden" id="reviewRatingInput" value="" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="reviewText">Review Comments <span class="required">*</span></label>
-                                <textarea id="reviewText" placeholder="Write your thoughts about the story, acting, music, and cinematography..." rows="4" required style="width: 100%; resize: none;"></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary btn-full">
-                                <i class="fa-solid fa-paper-plane"></i> Submit Written Review
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Voice Note Feedback Card -->
-                    <div class="feedback-card voice-card" style="text-align: center;">
-                        <div class="card-header" style="text-align: left;">
-                            <i class="fa-solid fa-microphone header-icon"></i>
-                            <h3>Voice Review</h3>
-                        </div>
-                        <div class="voice-recorder-wrapper" style="padding: 10px 0;">
-                            <p class="voice-instructions" id="voiceInstructions" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px;">Click the microphone button to start recording your feedback (Max 60s).</p>
-                            
-                            <!-- Visual Waveform representation -->
-                            <div class="waveform-container" id="waveformContainer" style="display: flex; justify-content: center; align-items: center; gap: 4px; height: 40px; margin-bottom: 20px;">
-                                <div class="wave-bar" style="width: 3px; height: 10px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
-                                <div class="wave-bar" style="width: 3px; height: 15px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
-                                <div class="wave-bar" style="width: 3px; height: 8px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
-                                <div class="wave-bar" style="width: 3px; height: 20px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
-                                <div class="wave-bar" style="width: 3px; height: 12px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
-                                <div class="wave-bar" style="width: 3px; height: 25px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
-                                <div class="wave-bar" style="width: 3px; height: 14px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
-                                <div class="wave-bar" style="width: 3px; height: 18px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
-                                <div class="wave-bar" style="width: 3px; height: 9px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
-                                <div class="wave-bar" style="width: 3px; height: 12px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
-                            </div>
-
-                            <div class="timer-display" id="recordTimer" style="font-size: 1.8rem; font-weight: 700; color: var(--text-white); margin-bottom: 25px; font-family: monospace;">00:00</div>
-
-                            <div class="recorder-controls" style="margin-bottom: 20px; display: flex; justify-content: center; align-items: center; gap: 15px;">
-                                <button class="record-btn" id="recordBtn" aria-label="Record Voice Note" style="width: 70px; height: 70px; border-radius: 50%; background-color: #1a1b22; border: 1px solid var(--border-glass); color: var(--red-bright); font-size: 1.6rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--transition-smooth); box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-                                    <i class="fa-solid fa-microphone microphone-icon"></i>
-                                </button>
-                                <button class="btn-danger" id="stopRecordBtn" style="display: none; padding: 12px 20px; font-size: 0.9rem;" onclick="stopVoiceRecording()">
-                                    <i class="fa-solid fa-square"></i> Stop
-                                </button>
-                            </div>
-
-                            <!-- Recorded audio playback element (Hidden until recorded) -->
-                            <div class="playback-container" id="playbackContainer" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-glass);">
-                                <audio id="voicePlayback" controls style="width: 100%; margin-bottom: 20px; border-radius: 4px;"></audio>
-                                <div class="form-group" style="margin-top: 15px; text-align: left;">
-                                    <label for="voiceReviewName">Your Name <span class="required">*</span></label>
-                                    <input type="text" id="voiceReviewName" placeholder="Enter name" style="width: 100%;">
-                                </div>
-                                <div style="display: flex; gap: 10px;">
-                                    <button class="btn-secondary" style="flex: 1;" onclick="resetVoiceRecorder()">
-                                        <i class="fa-solid fa-rotate-left"></i> Re-record
-                                    </button>
-                                    <button class="btn-success" id="submitVoiceBtn" style="flex: 2;" onclick="submitVoiceReview()">
-                                        <i class="fa-solid fa-cloud-arrow-up"></i> Submit Voice Review
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Screening & Tickets Section -->
-        <section id="screening" class="screening-section">
-            <div class="section-container">
-                <div class="screening-box">
-                    <div class="screening-details">
-                        <span class="live-indicator"><span class="pulse-dot"></span> EXCLUSIVE PREMIERE</span>
-                        <h2 class="screening-title">Grand Screening</h2>
-                        
-                        <div class="detail-rows">
-                            <div class="detail-row">
-                                <div class="detail-icon"><i class="fa-solid fa-calendar-days"></i></div>
-                                <div class="detail-txt">
-                                    <h4>Date & Time</h4>
-                                    <p>Saturday, July 25th, 2026 | 4:00 PM & 6:00 PM</p>
-                                </div>
-                            </div>
-                            <div class="detail-row">
-                                <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <div class="detail-txt">
-                                    <h4>Screening Location</h4>
-                                    <p>Chamundeshwari Studios, 48/3, Millers Tank Bund Rd, Vasanth Nagar, Bengaluru - 560052</p>
-                                </div>
-                            </div>
-                            <div class="detail-row">
-                                <div class="detail-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
-                                <div class="detail-txt">
-                                    <h4>Ticket Price</h4>
-                                    <p>₹99 per seat</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Map Simulation -->
-                    <div class="map-simulation">
-                        <div class="map-header">
-                            <i class="fa-solid fa-map-location-dot"></i> Venue Map
-                        </div>
-                        <div class="map-frame">
-                            <div class="venue-marker">
-                                <i class="fa-solid fa-location-pin venue-pin"></i>
-                                <span class="venue-tooltip">Chamundeshwari Studios</span>
-                            </div>
-                        </div>
-                        <a href="https://share.google/vwN112VVFGlLNPvOU" target="_blank" class="map-link-btn">
-                            <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Highlight booking section right here -->
-                <div class="booking-cta-block" id="booking-section">
-                    <h3>Secure Your Presence</h3>
-                    <p>Limited seats available. Book now to get your instant WhatsApp confirmation.</p>
-                    <button class="btn-primary btn-large" onclick="openBookingModal()">
-                        <i class="fa-solid fa-chair"></i> Book Tickets Now
-                    </button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-logo">
-                <a href="#hero" style="display: flex; align-items: center; text-decoration: none;">
-                    <img src="assets/title_logo.png" alt="Anireekshithaa Logo" style="height: 38px; width: auto; max-width: 100%; filter: drop-shadow(0 0 10px rgba(217, 35, 42, 0.3));">
-                </a>
-                <p>&copy; 2026 Aantharya Creations. All rights reserved.</p>
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px; opacity: 0.8;">Website Updated Successfully - Test</p>
-            </div>
-            <div class="footer-links">
-                <a href="#hero">Home</a>
-                <a href="#teaser">Teaser</a>
-                <a href="#synopsis">Synopsis</a>
-                <a href="#crew">Crew</a>
-                <a href="#feedback">Review Corner</a>
-                <a href="javascript:void(0)" class="contact-trigger-btn" onclick="openContactModal()">
-                    <i class="fa-solid fa-phone"></i> Contact Support
-                </a>
-                <!-- Subtle Admin Trigger -->
-                <a href="javascript:void(0)" class="admin-trigger-btn" onclick="promptAdminAccess()">
-                    <i class="fa-solid fa-lock"></i> Organizer Panel
-                </a>
-            </div>
+      <!-- Lock Screen Panel -->
+      <div id="consoleLockScreen" style="max-width: 400px; margin: 40px auto; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--accent-gold);">🔑</div>
+        <h2 style="font-family: var(--font-title); font-size: 1.4rem; color: #fff; margin-bottom: 10px;">Access Restricted</h2>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 25px;">Enter the passcode to manage bookings and confirm tickets.</p>
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <input type="password" id="consolePasscode" class="form-input" placeholder="Enter Admin Passcode" style="text-align: center; font-size: 1.1rem; letter-spacing: 3px;">
+          <button type="button" id="btnUnlockConsole" class="btn btn-primary" style="width: 100%; padding: 12px; border-radius: 8px;">Unlock Console</button>
+          <p id="consoleLockErrorMsg" style="color: #ff3344; font-size: 0.8rem; margin: 0; display: none;">Invalid passcode. Please try again.</p>
         </div>
-    </footer>
+      </div>
 
-    <!-- LIGHTBOX MODAL -->
-    <div id="lightboxModal" class="modal lightbox-modal">
-        <span class="modal-close" onclick="closeLightbox()">&times;</span>
-        <div class="lightbox-content-wrapper">
-            <img class="lightbox-img" id="lightboxImg">
-            <div class="lightbox-caption" id="lightboxCaption"></div>
+      <!-- Console Dashboard (Hidden by default) -->
+      <div id="consoleDashboard" style="display: none;">
+        
+        <!-- Metrics Row Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 30px;">
+          <div class="glass-card" style="padding: 20px; border-radius: 12px; text-align: center; border-color: rgba(255,255,255,0.04); background: rgba(7, 13, 10, 0.4);">
+            <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Total Bookings</span>
+            <strong id="consoleMetricTotalBookings" style="display: block; font-size: 2.2rem; color: #fff; margin-top: 10px; font-weight: 700;">0</strong>
+          </div>
+          <div class="glass-card" style="padding: 20px; border-radius: 12px; text-align: center; border-color: rgba(212, 175, 55, 0.2); background: rgba(7, 13, 10, 0.4);">
+            <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Total Revenue</span>
+            <strong id="consoleMetricTotalRevenue" style="display: block; font-size: 2.2rem; color: var(--accent-gold); margin-top: 10px; font-weight: 700;">₹0</strong>
+          </div>
+          <div class="glass-card" style="padding: 20px; border-radius: 12px; text-align: center; border-color: rgba(255, 255, 255, 0.04); background: rgba(7, 13, 10, 0.4);">
+            <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Tickets Sold</span>
+            <strong id="consoleMetricTicketsSold" style="display: block; font-size: 2.2rem; color: var(--accent-saffron); margin-top: 10px; font-weight: 700;">0 / 100</strong>
+          </div>
         </div>
+
+        <!-- Search Bar and Refresh -->
+        <div style="display: flex; gap: 15px; margin-bottom: 25px; align-items: center; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 250px; position: relative;">
+            <input type="text" id="consoleSearchInput" class="form-input" placeholder="Search by Booking ID, Customer, or Phone..." style="padding-right: 40px; border-radius: 8px;">
+            <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); opacity: 0.4;">🔍</span>
+          </div>
+          <button type="button" id="consoleBtnOpenManualBooking" class="btn btn-primary" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 20px; background: linear-gradient(135deg, var(--accent-gold), #b38f24); box-shadow: 0 4px 10px rgba(212,175,55,0.2);">➕ Issue Instant Ticket</button>
+          <button type="button" id="consoleBtnRefresh" class="btn btn-secondary" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 20px;">🔄 Refresh Logs</button>
+        </div>
+
+        <!-- Bookings Log Table -->
+        <div class="glass-card" style="padding: 0; overflow: hidden; border-radius: 12px;">
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem; min-width: 800px;">
+              <thead>
+                <tr style="background: rgba(212, 175, 55, 0.08); border-bottom: 1px solid var(--glass-border);">
+                  <th style="padding: 15px 20px; color: var(--accent-gold); font-family: var(--font-title); letter-spacing: 1px;">Booking ID</th>
+                  <th style="padding: 15px 20px;">Customer Name</th>
+                  <th style="padding: 15px 20px;">Phone Number</th>
+                  <th style="padding: 15px 20px;">Tickets</th>
+                  <th style="padding: 15px 20px; color: var(--accent-gold);">Paid Amount</th>
+                  <th style="padding: 15px 20px;">Payment Status</th>
+                  <th style="padding: 15px 20px; text-align: center;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="consoleBookingsTableBody">
+                <!-- JS Inject rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
 
-    <!-- CONTACT SUPPORT MODAL -->
-    <div id="contactModal" class="modal contact-modal">
-        <div class="modal-content" style="max-width: 420px; border: 1px solid var(--border-glass); background: rgba(18, 18, 24, 0.95); backdrop-filter: blur(15px); border-radius: 12px; padding: 25px; position: relative;">
-            <button class="modal-close-btn" onclick="closeContactModal()" style="position: absolute; right: 15px; top: 15px; background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;">&times;</button>
-            <h3 style="color: var(--text-white); font-size: 1.4rem; font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-headset" style="color: var(--red);"></i> Contact Support
-            </h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.4;">If you have any questions, booking confusion, or emergency, please feel free to reach out to us:</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                <!-- Adarsh Card -->
-                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 15px; display: flex; flex-direction: column; gap: 8px;">
-                    <div style="font-weight: 600; color: var(--text-white); font-size: 1.05rem; display: flex; justify-content: space-between; align-items: center;">
-                        <span>Adarsh</span>
-                        <span style="font-size: 0.95rem; color: var(--red); font-family: monospace; font-weight: 700; letter-spacing: 0.5px;">7975783302</span>
-                    </div>
-                    <div style="display: flex; gap: 10px; margin-top: 5px;">
-                        <a href="tel:7975783302" class="btn-primary" style="flex: 1; text-align: center; text-decoration: none; padding: 8px 12px; font-size: 0.85rem; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                            <i class="fa-solid fa-phone"></i> Call
-                        </a>
-                        <a href="https://wa.me/917975783302" class="btn-secondary" target="_blank" style="flex: 1; text-align: center; text-decoration: none; padding: 8px 12px; font-size: 0.85rem; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--text-white);">
-                            <i class="fa-brands fa-whatsapp"></i> Chat
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Sharath Raj Card -->
-                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 15px; display: flex; flex-direction: column; gap: 8px;">
-                    <div style="font-weight: 600; color: var(--text-white); font-size: 1.05rem; display: flex; justify-content: space-between; align-items: center;">
-                        <span>Sharath Raj</span>
-                        <span style="font-size: 0.95rem; color: var(--red); font-family: monospace; font-weight: 700; letter-spacing: 0.5px;">9110656160</span>
-                    </div>
-                    <div style="display: flex; gap: 10px; margin-top: 5px;">
-                        <a href="tel:9110656160" class="btn-primary" style="flex: 1; text-align: center; text-decoration: none; padding: 8px 12px; font-size: 0.85rem; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                            <i class="fa-solid fa-phone"></i> Call
-                        </a>
-                        <a href="https://wa.me/919110656160" target="_blank" class="btn-secondary" style="flex: 1; text-align: center; text-decoration: none; padding: 8px 12px; font-size: 0.85rem; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--text-white);">
-                            <i class="fa-brands fa-whatsapp"></i> Chat
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <!-- Manual Walk-in Booking Modal -->
+  <div class="ticket-modal" id="manualBookingModal" style="display: none; z-index: 2600;">
+    <div class="glass-card" style="max-width: 480px; width: 95%; padding: 25px; border-radius: 16px; border: 1.5px solid var(--accent-gold); background: #0c0f0e;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="font-size: 1.1rem;">🎫</span>
+          <span style="font-family: var(--font-title); color: #fff; font-size: 1.1rem; font-weight: 600; letter-spacing:0.5px;">Issue Walk-in Ticket</span>
         </div>
-    </div>
+        <button id="closeManualBookingModalBtn" style="background:none; border:none; color:rgba(255,255,255,0.5); font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
 
-    <!-- TICKET BOOKING MODAL (WIZARD) -->
-    <div id="bookingModal" class="modal wizard-modal">
-        <div class="modal-content">
-            <button class="modal-close-btn" onclick="closeBookingModal()">&times;</button>
-            
-            <!-- Wizard Steps Indicator -->
-            <div class="wizard-steps">
-                <div class="step-indicator active" id="stepIndicator1">1. Tickets</div>
-                <div class="step-indicator" id="stepIndicator2">2. Details</div>
-                <div class="step-indicator" id="stepIndicator3">3. Payment</div>
-            </div>
-
-            <!-- STEP 1: Seat Selection / Quantity -->
-            <div class="wizard-step-panel active" id="stepPanel1">
-                <h3 class="panel-title">Choose Number of Seats</h3>
-                <p class="panel-subtitle">Select how many tickets you wish to purchase.</p>
-                
-                <div class="ticket-picker-wrapper">
-                    <button class="qty-btn" onclick="adjustTickets(-1)"><i class="fa-solid fa-minus"></i></button>
-                    <span class="qty-display" id="ticketQty">1</span>
-                    <button class="qty-btn" onclick="adjustTickets(1)"><i class="fa-solid fa-plus"></i></button>
-                </div>
-
-                <!-- Showtime Selection Section -->
-                <div class="showtime-picker-section" style="margin: 20px 0; text-align: left;">
-                    <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 8px;">Select Show Time:</span>
-                    <div class="showtime-options" style="display: flex; gap: 12px; width: 100%;">
-                        <label style="flex: 1; cursor: pointer; position: relative;">
-                            <input type="radio" name="showTimeSelect" value="4:00 PM" checked style="position: absolute; opacity: 0; pointer-events: none;" onchange="selectShowTime('4:00 PM')">
-                            <div id="showTimeCard-400" style="background: rgba(217, 35, 42, 0.08); border: 1px solid var(--red); padding: 12px; border-radius: 6px; text-align: center; transition: all 0.2s ease;">
-                                <div style="font-size: 1.15rem; font-weight: 700; color: var(--text-white);">4:00 PM</div>
-                                <div style="font-size: 0.70rem; color: var(--red-bright); font-weight: 600; margin-top: 4px;" id="seatsLeft-400">Checking seats...</div>
-                            </div>
-                        </label>
-                        <label style="flex: 1; cursor: pointer; position: relative;">
-                            <input type="radio" name="showTimeSelect" value="6:00 PM" style="position: absolute; opacity: 0; pointer-events: none;" onchange="selectShowTime('6:00 PM')">
-                            <div id="showTimeCard-600" style="background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-glass); padding: 12px; border-radius: 6px; text-align: center; transition: all 0.2s ease;">
-                                <div style="font-size: 1.15rem; font-weight: 700; color: var(--text-white);">6:00 PM</div>
-                                <div style="font-size: 0.70rem; color: var(--text-muted); font-weight: 600; margin-top: 4px;" id="seatsLeft-600">Checking seats...</div>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="booking-summary-box">
-                    <div class="summary-row">
-                        <span>Price per Ticket</span>
-                        <span>₹99.00</span>
-                    </div>
-                    <div class="summary-row total-row">
-                        <span>Grand Total</span>
-                        <span class="red-gradient-text" id="summaryTotal">₹99.00</span>
-                    </div>
-                </div>
-
-                <div class="wizard-nav-btns">
-                    <span></span> <!-- Spacer -->
-                    <button class="btn-primary" onclick="goToStep(2)">
-                        Continue <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- STEP 2: Audience Details -->
-            <div class="wizard-step-panel" id="stepPanel2">
-                <h3 class="panel-title">Audience Information</h3>
-                <p class="panel-subtitle">Please enter your details to receive your booking confirmation receipt.</p>
-                
-                <form id="bookingForm" onsubmit="event.preventDefault(); submitDetailsForm();">
-                    <div class="form-group">
-                        <label for="bookingName">Full Name <span class="required">*</span></label>
-                        <input type="text" id="bookingName" placeholder="Enter your full name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="bookingPhone">WhatsApp Mobile Number <span class="required">*</span></label>
-                        <div class="input-phone-container">
-                            <span class="phone-prefix">+91</span>
-                            <input type="tel" id="bookingPhone" placeholder="Enter 10-digit number" pattern="[6789][0-9]{9}" required>
-                        </div>
-                        <small class="form-help">Enter a valid 10-digit Indian mobile number.</small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="bookingProfession">Audience Profession <span class="required">*</span></label>
-                        <select id="bookingProfession" required style="width: 100%; padding: 12px; background: rgba(10, 10, 12, 0.95); border: 1px solid var(--border-glass); border-radius: 8px; color: var(--text-white); font-family: 'Outfit', sans-serif; font-size: 0.95rem; cursor: pointer; outline: none; transition: border-color 0.3s; box-sizing: border-box;">
-                            <option value="" disabled selected>Select your profession</option>
-                            <option value="Student">Student</option>
-                            <option value="Public Audience">Public Audience</option>
-                            <option value="Film Maker">Film Maker</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group" id="filmMakerRoleGroup" style="display: none; margin-top: 15px;">
-                        <label for="filmMakerRole">Film Maker Role <span class="required">*</span></label>
-                        <select id="filmMakerRole" style="width: 100%; padding: 12px; background: rgba(10, 10, 12, 0.95); border: 1px solid var(--border-glass); border-radius: 8px; color: var(--text-white); font-family: 'Outfit', sans-serif; font-size: 0.95rem; cursor: pointer; outline: none; transition: border-color 0.3s; box-sizing: border-box;">
-                            <option value="" disabled selected>Select your role</option>
-                            <option value="Actor">Actor</option>
-                            <option value="Director">Director</option>
-                            <option value="Editor">Editor</option>
-                            <option value="Music Director">Music Director</option>
-                            <option value="Colorist">Colorist</option>
-                            <option value="Others">Others</option>
-                        </select>
-                    </div>
-
-                    <div class="wizard-nav-btns">
-                        <button type="button" class="btn-secondary" onclick="goToStep(1)">
-                            <i class="fa-solid fa-arrow-left"></i> Back
-                        </button>
-                        <button type="submit" class="btn-primary">
-                            Proceed to Pay <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <!-- STEP 3: Booking Confirmation & Payment -->
-            <div class="wizard-step-panel" id="stepPanel3" style="position: relative;">
-                <!-- UPI Details Section -->
-                <div class="upi-payment-details" style="background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-glass); border-radius: 8px; padding: 18px; text-align: left; display: flex; flex-direction: column; gap: 14px; margin-top: 5px;">
-                    
-                    <!-- Header with payee name -->
-                    <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.05); padding: 12px; border-radius: 6px; display: flex; flex-direction: column; gap: 10px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-                            <span style="color: var(--text-muted);">Payee Name:</span>
-                            <strong style="color: var(--text-white);">ADARSH R</strong>
-                        </div>
-                        
-                        <!-- Pay via UPI Number (Easiest) -->
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px;">
-                            <div style="display: flex; flex-direction: column;">
-                                <span style="color: var(--text-muted); font-size: 0.8rem;">UPI Number (Recommended):</span>
-                                <strong style="color: var(--text-white); font-family: monospace; font-size: 1rem;">9986048332</strong>
-                            </div>
-                            <button type="button" onclick="copyPayText('9986048332', 'UPI Number')" style="background: var(--red); color: white; border: none; padding: 6px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px;">
-                                <i class="fa-solid fa-copy"></i> Copy
-                            </button>
-                        </div>
-
-                        <!-- Pay via UPI ID -->
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px;">
-                            <div style="display: flex; flex-direction: column;">
-                                <span style="color: var(--text-muted); font-size: 0.8rem;">UPI ID:</span>
-                                <strong style="color: var(--text-white); font-family: monospace; font-size: 0.95rem;">9986048332@ybl</strong>
-                            </div>
-                            <button type="button" onclick="copyPayText('9986048332@ybl', 'UPI ID')" style="background: var(--red); color: white; border: none; padding: 6px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px;">
-                                <i class="fa-solid fa-copy"></i> Copy
-                            </button>
-                        </div>
-                    </div>
-
-
-                    <!-- Dynamic QR Code Section -->
-                    <div style="display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 12px; gap: 8px;">
-                        <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Or Scan QR Code to Pay</span>
-                        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; background: white; border-radius: 8px; width: 130px;">
-                            <img id="upiQrCodeImg" src="" alt="Scan to Pay" style="width: 110px; height: 110px; display: block;">
-                        </div>
-                        <span style="font-size: 0.7rem; color: var(--text-light); text-align: center; line-height: 1.3;">
-                            <strong style="color: #2ecc71;">Desktop:</strong> Scan with any app.<br>
-                            <strong style="color: #f1c40f;">Mobile:</strong> Screenshot & select 'Scan from Gallery'.
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Success Header -->
-                <div class="success-header" style="text-align: center; margin-top: 25px; margin-bottom: 15px;">
-                    <div class="success-icon" style="width: 44px; height: 44px; border-radius: 50%; background: rgba(241, 196, 15, 0.1); border: 1px solid rgba(241, 196, 15, 0.2); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                        <i class="fa-solid fa-clock" style="color: #f1c40f; font-size: 1.3rem;"></i>
-                    </div>
-                    <h3 style="color: var(--text-white); font-size: 1.3rem; font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 6px;">Booking Request Recorded</h3>
-                    <p style="color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; max-width: 420px; margin: 0 auto;">
-                        Please complete the payment of the amount shown in the summary below. Once paid, send us the screenshot on WhatsApp to confirm your seats.
-                    </p>
-                </div>
-
-                <!-- Booking Details Summary Card -->
-                <div class="booking-details-summary-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: 8px; padding: 16px; text-align: left; margin: 15px 0;">
-                    <h4 style="color: var(--text-white); font-size: 0.95rem; margin-bottom: 10px; font-family: 'Outfit', sans-serif; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px;">Request Summary</h4>
-                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: var(--text-light);">
-                        <div style="display: flex; justify-content: space-between;">
-                            <span>Booking ID:</span>
-                            <strong style="color: var(--text-white);" id="displayBookingId">-</strong>
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span>Customer Name:</span>
-                            <strong style="color: var(--text-white);" id="displayCustomerName">-</strong>
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span>Mobile Number:</span>
-                            <strong style="color: var(--text-white);" id="displayCustomerPhone">-</strong>
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span>Show Time:</span>
-                            <strong style="color: var(--text-white);" id="displayShowTime">-</strong>
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span>Number of Tickets:</span>
-                            <strong style="color: var(--text-white);" id="displayTicketsCount">-</strong>
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span>Amount Payable:</span>
-                            <strong style="color: var(--red-bright);" id="displayAmountPaid">-</strong>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 8px;">
-                            <span>Status:</span>
-                            <span style="font-size: 0.75rem; background: rgba(241, 196, 15, 0.1); color: #f1c40f; border: 1px solid rgba(241, 196, 15, 0.2); padding: 3px 8px; border-radius: 4px; font-weight: bold; text-transform: uppercase;" id="displayBookingStatus">Pending Verification</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Action Controls Section -->
-                <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px; width: 100%;">
-                    <!-- WhatsApp Screenshot Button -->
-                    <a id="sendScreenshotBtn" target="_blank" href="#" style="display: flex; align-items: center; justify-content: center; gap: 8px; background-color: #25D366; color: white; border-radius: 6px; padding: 13px 20px; font-weight: 600; text-decoration: none; font-size: 0.95rem; width: 100%; text-align: center; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); transition: background-color 0.2s;">
-                        <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> Send Payment Screenshot on WhatsApp
-                    </a>
-
-                    <!-- Change details and Close Buttons -->
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%;">
-                        <button type="button" class="btn-secondary" onclick="goToStep(2)" style="padding: 12px; font-size: 0.9rem; font-weight: 600; border-radius: 6px; border: 1px solid var(--border-glass); cursor: pointer; background: transparent; color: var(--text-white); width: 100%; transition: var(--transition-smooth); display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                            <i class="fa-solid fa-pen-to-square"></i> Change Details
-                        </button>
-                        <button type="button" class="btn-secondary" onclick="closeBookingModal()" style="padding: 12px; font-size: 0.9rem; font-weight: 600; border-radius: 6px; border: 1px solid var(--border-glass); cursor: pointer; background: rgba(255,255,255,0.05); color: var(--text-white); width: 100%; transition: var(--transition-smooth);">
-                            Close Window
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Safety note -->
-                <div style="text-align: center; font-size: 0.75rem; color: #f1c40f; line-height: 1.4; background: rgba(241, 196, 15, 0.05); border: 1px dashed rgba(241, 196, 15, 0.2); padding: 12px; border-radius: 6px; margin-top: 15px;">
-                    <i class="fa-solid fa-circle-info" style="margin-right: 4px;"></i> 
-                    <span>If your UPI app shows a security decline, please type the UPI number <strong>9986048332</strong> or paste the UPI ID inside your UPI app to pay.</span>
-                </div>
-            </div>
+      <form id="manualBookingForm" style="display: flex; flex-direction: column; gap: 18px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="manualName" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Customer Name *</label>
+          <input type="text" id="manualName" class="form-input" placeholder="Enter full name" required autocomplete="name">
         </div>
-    </div>
 
-    <!-- SECRET ADMIN PASSCODE DIALOG -->
-    <div id="adminPasscodeModal" class="modal simple-modal">
-        <div class="modal-content small-content">
-            <button class="modal-close-btn" onclick="closeAdminPasscode()">&times;</button>
-            <h3>Organizer Authentication</h3>
-            <p class="modal-subtitle">Enter key to access the audience directory.</p>
-            <div class="form-group">
-                <input type="password" id="adminPasskey" placeholder="Enter password">
-                <p class="error-text" id="adminPasskeyError" style="display: none;">Invalid Passkey. Please try again.</p>
-            </div>
-            <button class="btn-primary btn-full" onclick="submitAdminPasskey()">Access Panel</button>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="manualPhone" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Mobile Number *</label>
+          <input type="tel" id="manualPhone" class="form-input" placeholder="Enter 10-digit number" pattern="[0-9]{10}" required autocomplete="tel">
         </div>
-    </div>
 
-    <!-- ADMIN DASHBOARD MODAL -->
-    <div id="adminDashboardModal" class="modal full-modal">
-        <div class="modal-content large-content">
-            <div class="admin-header">
-                <div class="admin-title-area">
-                    <h2><i class="fa-solid fa-gauge-high"></i> Anireekshithaa - Organizer Dashboard</h2>
-                    <p>Real-time booking intelligence and audience demographic metrics.</p>
-                </div>
-                <div class="admin-action-area">
-                    <button class="btn-secondary" onclick="exportDatabaseToCSV()">
-                        <i class="fa-solid fa-file-csv"></i> Export CSV
-                    </button>
-                    <button class="btn-danger" onclick="confirmResetDatabase()">
-                        <i class="fa-solid fa-trash-can"></i> Reset DB
-                    </button>
-                    <button class="modal-close-btn-admin" onclick="closeAdminDashboard()"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-            </div>
-
-            <!-- Stats Row -->
-            <div class="admin-stats-row">
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fa-solid fa-receipt"></i></div>
-                    <div class="stat-data">
-                        <span class="stat-label">Total Bookings</span>
-                        <h3 id="statTotalBookings">0</h3>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fa-solid fa-couch"></i></div>
-                    <div class="stat-data">
-                        <span class="stat-label">Tickets Sold</span>
-                        <h3 id="statTicketsSold">0</h3>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
-                    <div class="stat-data">
-                        <span class="stat-label">Total Revenue</span>
-                        <h3 id="statTotalRevenue">₹0</h3>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
-                    <div class="stat-data">
-                        <span class="stat-label">Pending Requests</span>
-                        <h3 id="statPendingRequests">0</h3>
-                    </div>
-                </div>
-            </div>
- 
-            <!-- Admin Navigation Tabs -->
-            <div class="admin-tabs-nav" style="display: flex; gap: 15px; margin-bottom: 25px; border-bottom: 1px solid var(--border-glass); padding-bottom: 15px;">
-                <button class="btn-tab active" id="tabPendingBtn" onclick="switchAdminTab('pending')" style="background: transparent; border: none; color: var(--text-white); border-bottom: 2px solid var(--red); padding: 8px 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; font-family: inherit;"><i class="fa-solid fa-clock"></i> Pending Bookings</button>
-                <button class="btn-tab" id="tabBookingsBtn" onclick="switchAdminTab('bookings')" style="background: transparent; border: none; color: var(--text-dark); padding: 8px 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; font-family: inherit;"><i class="fa-solid fa-couch"></i> Bookings Directory</button>
-                <button class="btn-tab" id="tabReviewsBtn" onclick="switchAdminTab('reviews')" style="background: transparent; border: none; color: var(--text-dark); padding: 8px 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; font-family: inherit;"><i class="fa-solid fa-comments"></i> Audience Reviews</button>
-            </div>
- 
-            <!-- Pending Bookings Table Area -->
-            <div class="admin-table-section" id="pendingTabContent">
-                <div class="table-controls">
-                    <div class="search-input-wrapper">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="adminPendingSearch" placeholder="Search pending bookings..." onkeyup="filterAdminPendingTable()">
-                    </div>
-                </div>
-
-                <div class="table-responsive">
-                    <table class="admin-table" id="adminPendingBookingsTable">
-                        <thead>
-                            <tr>
-                                <th>Booking ID</th>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Profession / Role</th>
-                                <th>Show Time</th>
-                                <th>Tickets</th>
-                                <th>Amount</th>
-                                <th>Date & Time</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="adminPendingTableBody">
-                        </tbody>
-                    </table>
-                    <div class="no-data-alert" id="noPendingDataAlert" style="display: none;">
-                        <i class="fa-solid fa-circle-exclamation"></i>
-                        <p>No pending booking requests.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Directory Table Area -->
-            <div class="admin-table-section" id="bookingsTabContent" style="display: none;">
-                <div class="table-controls">
-                    <div class="search-input-wrapper">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="adminSearch" placeholder="Search by name, phone or ID..." onkeyup="filterAdminTable()">
-                    </div>
-                    <div class="filter-dropdown-wrapper">
-                        <i class="fa-solid fa-filter"></i>
-                        <select id="adminFilterStatus" onchange="filterAdminTable()">
-                            <option value="all">All Statuses</option>
-                            <option value="Confirmed">Confirmed</option>
-                            <option value="Pending Verification">Pending Verification</option>
-                            <option value="Rejected">Rejected</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="table-responsive">
-                    <table class="admin-table" id="adminBookingsTable">
-                        <thead>
-                            <tr>
-                                <th>Booking ID</th>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Profession / Role</th>
-                                <th>Show Time</th>
-                                <th>Tickets</th>
-                                <th>Paid</th>
-                                <th>Date</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="adminTableBody">
-                        </tbody>
-                    </table>
-                    <div class="no-data-alert" id="noDataAlert" style="display: none;">
-                        <i class="fa-solid fa-circle-exclamation"></i>
-                        <p>No attendee records match the search parameters.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Reviews Table Area (Hidden by Default) -->
-            <div class="admin-table-section" id="reviewsTabContent" style="display: none;">
-                <div class="table-controls">
-                    <div class="search-input-wrapper">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="adminReviewSearch" placeholder="Search reviews by name..." onkeyup="filterReviewsTable()">
-                    </div>
-                </div>
-
-                <div class="table-responsive">
-                    <table class="admin-table" id="adminReviewsTable">
-                        <thead>
-                            <tr>
-                                <th>Attendee Name</th>
-                                <th>Type</th>
-                                <th>Rating</th>
-                                <th>Review / Audio Playback</th>
-                                <th>Date Submitted</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="adminReviewsTableBody">
-                            <!-- Dynamic Review Rows -->
-                        </tbody>
-                    </table>
-                    <div class="no-data-alert" id="noReviewsDataAlert" style="display: none;">
-                        <i class="fa-solid fa-circle-exclamation"></i>
-                        <p>No feedback entries found.</p>
-                    </div>
-                </div>
-            </div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="manualShowTime" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Select Show Time *</label>
+          <select id="manualShowTime" class="form-input" required style="background: rgba(15, 24, 20, 0.9); color: #fff; border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 8px; padding: 10px 14px; font-family: var(--font-body); outline: none;">
+            <option value="3:30 PM">1st Show - 3:30 PM</option>
+            <option value="6:00 PM">2nd Show - 6:00 PM</option>
+          </select>
         </div>
-    </div>
 
-    <!-- Scripts -->
-    <script>
-        // Global helpers defined inline to avoid caching ReferenceErrors
-        window.openContactModal = function() {
-            const modal = document.getElementById('contactModal');
-            if (modal) {
-                modal.classList.add('active');
-            }
-        };
-        window.closeContactModal = function() {
-            const modal = document.getElementById('contactModal');
-            if (modal) {
-                modal.classList.remove('active');
-            }
-        };
-        window.promptAdminAccess = function() {
-            const passkeyInput = document.getElementById('adminPasskey');
-            const passkeyError = document.getElementById('adminPasskeyError');
-            if (passkeyInput) passkeyInput.value = '';
-            if (passkeyError) passkeyError.style.display = 'none';
-            
-            const modal = document.getElementById('adminPasscodeModal');
-            if (modal) {
-                modal.classList.add('active');
-            }
-        };
-        window.closeAdminPasscode = function() {
-            const modal = document.getElementById('adminPasscodeModal');
-            if (modal) {
-                modal.classList.remove('active');
-            }
-        };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="app.js?v=1.0.7"></script>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="manualTickets" style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Number of Tickets *</label>
+          <div style="display: flex; align-items: center; gap: 15px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 8px 15px; border-radius: 8px;">
+            <button type="button" class="counter-btn" id="btnManualMinus" style="width: 30px; height: 30px; font-size: 1rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--text-secondary); background: none; color: #fff; cursor: pointer;">&minus;</button>
+            <span id="manualQtyValue" style="font-size: 1.25rem; font-weight: 700; color: #fff; min-width: 20px; text-align: center;">1</span>
+            <button type="button" class="counter-btn" id="btnManualPlus" style="width: 30px; height: 30px; font-size: 1rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--text-secondary); background: none; color: #fff; cursor: pointer;">&plus;</button>
+          </div>
+        </div>
+
+        <div style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--font-title); font-size: 1.1rem; color: #fff;">Amount to Pay (₹200/ea)</span>
+          <strong id="manualTotalAmount" style="font-size: 1.4rem; color: var(--accent-saffron);">₹200</strong>
+        </div>
+
+        <button type="button" id="btnConfirmManualBooking" class="btn btn-primary" style="width: 100%; border-radius: 8px; padding: 12px; margin-top: 10px; font-weight: 600; display:flex; align-items:center; justify-content:center; gap:8px;">
+          <span>Generate & Confirm Ticket</span>
+          <svg id="manualLoadingSpinner" width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none; animation: spin 1s linear infinite; fill: none; stroke: currentColor; stroke-width: 3;">
+            <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.2)"/>
+            <path d="M12 2a10 10 0 0 1 10 10" stroke="#fff"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="./src/js/main.js"></script>
 </body>
 </html>

@@ -1,27 +1,6 @@
-# Dependencies (none - this is a pure static site)
-node_modules/
-
-# OS files
+node_modules
+dist
 .DS_Store
-Thumbs.db
-desktop.ini
-
-# Editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Logs
-*.log
-npm-debug.log*
-
-# Temp files
-*.tmp
-*.temp
-search_rzp.py
-supabase_sms_setup.md
-
-# Supabase local dev
-supabase/.branches/
-supabase/.temp/
+.env
+.gemini
+package-lock.json
