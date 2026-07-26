@@ -123,6 +123,7 @@ export const fetchAvailableSeats = async (showTime = '3:30 PM') => {
       .from('bookings')
       .select('tickets')
       .eq('paid_status', 'Confirmed')
+      .like('booking_id', 'AVA-%')
       .like('category', `%${showTime}%`);
 
     if (error) throw error;
@@ -186,7 +187,8 @@ export const insertBooking = async (bookingData) => {
     // Count existing bookings to generate sequential booking ID
     const { count, error: countError } = await supabase
       .from('bookings')
-      .select('*', { count: 'exact', head: true });
+      .select('*', { count: 'exact', head: true })
+      .like('booking_id', 'AVA-%');
     
     if (countError) throw countError;
     const nextSeqNum = (count || 0) + 1;
@@ -271,7 +273,8 @@ export const fetchBookingsSummary = async () => {
   try {
     const { data, error } = await supabase
       .from('bookings')
-      .select('*');
+      .select('*')
+      .like('booking_id', 'AVA-%');
 
     if (error) throw error;
     
@@ -317,7 +320,7 @@ export const searchBookings = async (query = '') => {
   }
 
   try {
-    let selectQuery = supabase.from('bookings').select('*');
+    let selectQuery = supabase.from('bookings').select('*').like('booking_id', 'AVA-%');
     if (searchQuery) {
       selectQuery = selectQuery.or(`booking_id.ilike.%${searchQuery}%,phone.ilike.%${searchQuery}%,name.ilike.%${searchQuery}%`);
     }
@@ -370,6 +373,7 @@ export const markCheckin = async (bookingId) => {
       .from('bookings')
       .select('*')
       .eq('booking_id', bookingId)
+      .like('booking_id', 'AVA-%')
       .single();
 
     if (error || !data) {
