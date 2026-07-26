@@ -158,10 +158,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const bookingName = document.getElementById('bookingName');
   const bookingPhone = document.getElementById('bookingPhone');
   const bookingShowTime = document.getElementById('bookingShowTime');
-  const bookingMessage = document.getElementById('bookingMessage');
+  const audienceCategoryRadios = document.querySelectorAll('input[name="audienceCategory"]');
+  const professionContainer = document.getElementById('professionContainer');
+  const bookingProfession = document.getElementById('bookingProfession');
 
-  const TICKET_PRICE = 200; // configurable ticket price
+  const TICKET_PRICE = 1; // configurable ticket price
   let quantity = 1;
+
+  const updateCategoryStyles = () => {
+    document.querySelectorAll('.category-radio-label').forEach(label => {
+      const radio = label.querySelector('input[type="radio"]');
+      if (radio && radio.checked) {
+        label.style.borderColor = 'var(--accent-gold)';
+        label.style.background = 'rgba(212, 175, 55, 0.08)';
+      } else if (label) {
+        label.style.borderColor = 'rgba(212, 175, 55, 0.25)';
+        label.style.background = 'rgba(255,255,255,0.02)';
+      }
+    });
+  };
+
+  if (audienceCategoryRadios && audienceCategoryRadios.length > 0) {
+    audienceCategoryRadios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        updateCategoryStyles();
+        if (professionContainer) {
+          if (e.target.value === 'Film Maker') {
+            professionContainer.style.display = 'flex';
+          } else {
+            professionContainer.style.display = 'none';
+          }
+        }
+      });
+    });
+    updateCategoryStyles();
+  }
   let availableSeats = 100;
 
   // Refresh available seats count
@@ -421,6 +452,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const phone = bookingPhone.value.trim();
         const showTime = bookingShowTime ? bookingShowTime.value : '3:30 PM';
 
+        const checkedCategory = document.querySelector('input[name="audienceCategory"]:checked');
+        const categoryVal = checkedCategory ? checkedCategory.value : 'Public Audience';
+        const professionVal = categoryVal === 'Film Maker' && bookingProfession ? `Film Maker - ${bookingProfession.value}` : 'Public Audience';
+
         // Submit to database
         const booking = await insertBooking({
           customer_name: name,
@@ -430,6 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ticket_price: TICKET_PRICE,
           total_amount: quantity * TICKET_PRICE,
           show_time: showTime,
+          profession: professionVal,
           payment_id: 'pay_upi_' + Math.random().toString(36).substr(2, 9),
           payment_status: 'Success',
           booking_status: 'Confirmed'
@@ -479,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const phone = bookingObj.phone || '';
     const bookingId = bookingObj.booking_id || '';
     const tickets = bookingObj.ticket_count || bookingObj.tickets_count || 1;
-    const amount = bookingObj.total_amount || bookingObj.amount_paid || 200;
+    const amount = bookingObj.total_amount || bookingObj.amount_paid || 1;
     const showTime = bookingObj.show_time || '3:30 PM';
 
     const message = `🎬 *AVALOKANA BOOKING CONFIRMED*\n\nHello *${name}*,\n\nYour booking is confirmed for the exclusive screening of *Avalokana*.\n\n🎟️ *Booking ID:* ${bookingId}\n🎟️ *Tickets:* ${tickets} Seat${tickets > 1 ? 's' : ''}\n💰 *Total Paid:* ₹${amount}\n📍 *Venue:* Suchitra Cinema and Cultural Academy\n📅 *Date:* Sunday, August 2nd, 2026\n🕔 *Time:* ${showTime}\n\nShow your digital pass QR code at the entrance. Please arrive 30 minutes early.\n\nBlessings on your journey into the flow. 🙏`;
