@@ -431,3 +431,35 @@ export const markCheckin = async (bookingId) => {
     return { success: true, status: 'VERIFIED', message: `Ticket checked-in successfully for ${booking.customer_name}!`, booking };
   }
 };
+
+/**
+ * Approve a pending booking (Confirm payment)
+ */
+export const approveBooking = async (id) => {
+  if (isOfflineMode()) {
+    const bookings = getLocalBookings();
+    const booking = bookings.find(b => b.id === id);
+    if (booking) {
+      booking.payment_status = 'Success';
+      booking.booking_status = 'Confirmed';
+      saveLocalBookings(bookings);
+      return { success: true, booking };
+    }
+    return { success: false, message: 'Booking not found' };
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from('bookings')
+      .update({ paid_status: 'Confirmed' })
+      .eq('id', id)
+      .select();
+
+    if (error) throw error;
+    return { success: true, booking: mapSupabaseToLocal(data[0]) };
+  } catch (err) {
+    console.error("Error approving booking:", err);
+    throw err;
+  }
+};
+

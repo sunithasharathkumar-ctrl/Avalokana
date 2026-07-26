@@ -515,6 +515,100 @@
   </div>
 
 
+  <!-- Premium Digital Ticket / Booking Pending Verification Page -->
+  <div id="bookingPendingPage" style="display: none; position: fixed; inset: 0; background: #050807; overflow-y: auto; z-index: 2000; padding: 40px 20px; font-family: var(--font-body); scrollbar-width: thin;">
+    
+    <!-- Background Spotlight Glow -->
+    <div class="spotlight-glow" style="position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(255, 115, 0, 0.02) 50%, transparent 70%); pointer-events: none; z-index: 1;"></div>
+
+    <div class="confirmed-container" style="max-width: 600px; margin: 0 auto; position: relative; z-index: 2; display: flex; flex-direction: column; gap: 30px; align-items: center; padding-bottom: 80px; text-align: center;">
+      
+      <!-- Loading Status Circle -->
+      <div style="margin-top: 40px;">
+        <div style="width: 90px; height: 90px; border: 3px solid rgba(212,175,55,0.15); border-top: 3px solid var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; animation: spin 2s linear infinite; box-shadow: 0 0 20px rgba(212,175,55,0.15);">
+          <span style="font-size: 2rem; transform: rotate(0deg); animation: none; display: inline-block;">⏳</span>
+        </div>
+      </div>
+
+      <div style="width: 100%;">
+        <h1 style="font-family: var(--font-title); font-size: 2rem; color: #fff; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px;">Submission Received</h1>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto; font-family: var(--font-quote); font-style: italic;">
+          Your booking has been submitted. Purity and patience are the ultimate tests. 🙏
+        </p>
+      </div>
+
+      <!-- Pending Details Card -->
+      <div class="glass-card" style="width: 100%; max-width: 450px; background: #0c0f0e; border: 2px solid rgba(212, 175, 55, 0.25); border-radius: 16px; padding: 25px; text-align: left; display: flex; flex-direction: column; gap: 15px;">
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Booking ID</span>
+          <strong id="pendingConfirmId" style="font-size: 1.1rem; color: var(--accent-saffron); font-weight: 700;">AVA-000000</strong>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between;">
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Guest Name</span>
+          <span id="pendingConfirmName" style="color: #fff; font-weight: 600;">Guest</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Seats Reserved</span>
+          <span id="pendingConfirmCount" style="color: #fff; font-weight: 600;">1 Seat</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Show Time</span>
+          <span id="pendingConfirmTime" style="color: #fff; font-weight: 600;">3:30 PM</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px;">
+          <span style="font-size: 0.85rem; color: #fff; font-weight: 600;">Total Ticket Fee</span>
+          <strong id="pendingConfirmAmount" style="color: var(--accent-gold); font-size: 1.1rem; font-weight: 700;">₹1</strong>
+        </div>
+      </div>
+
+      <!-- Payment & WhatsApp Action Panel -->
+      <div class="glass-card" style="width: 100%; max-width: 450px; border-color: var(--accent-gold); background: rgba(7, 13, 10, 0.4); padding: 25px; border-radius: 16px; display: flex; flex-direction: column; gap: 20px;">
+        <h3 style="font-family: var(--font-title); font-size: 1.1rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; margin: 0;">UPI Verification Required</h3>
+        
+        <div style="display: flex; flex-direction: column; gap: 12px; text-align: left;">
+          <!-- Copy UPI ID -->
+          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 10px 14px; border-radius: 8px;">
+            <div>
+              <span style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; display: block; margin-bottom: 2px;">Payable UPI ID</span>
+              <strong style="color: #fff; font-size: 0.9rem;">9964115521@ybl</strong>
+            </div>
+            <button type="button" class="btn btn-secondary" id="btnCopyUpiId" style="padding: 6px 12px; font-size: 0.75rem; border-radius: 6px; cursor: pointer; border: 1px solid rgba(212,175,55,0.3); background: none; color: #fff;">Copy ID</button>
+          </div>
+
+          <!-- Copy UPI Mobile -->
+          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 10px 14px; border-radius: 8px;">
+            <div>
+              <span style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; display: block; margin-bottom: 2px;">Payable Mobile Number</span>
+              <strong style="color: #fff; font-size: 0.9rem;">9964115521</strong>
+            </div>
+            <button type="button" class="btn btn-secondary" id="btnCopyUpiNumber" style="padding: 6px 12px; font-size: 0.75rem; border-radius: 6px; cursor: pointer; border: 1px solid rgba(212,175,55,0.3); background: none; color: #fff;">Copy Number</button>
+          </div>
+        </div>
+
+        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin: 0; text-align: left;">
+          <strong>Steps to complete booking:</strong><br>
+          1. Copy the UPI ID or Number above and complete the payment using PhonePe, GPay, or Paytm.<br>
+          2. Take a screenshot of your successful transaction.<br>
+          3. Click the WhatsApp button below to submit your payment proof screenshot.
+        </p>
+
+        <!-- CTA WhatsApp Redirect -->
+        <button type="button" id="btnSendUpiProofWhatsApp" class="btn" style="width: 100%; border-radius: 8px; padding: 14px; background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; font-weight: 700; border: none; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; transition: all 0.2s;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle;">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.739-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.579 1.966 14.12 1.96 12.008 1.96c-5.44 0-9.866 4.372-9.87 9.802 0 1.714.47 3.393 1.36 4.877l-.994 3.634 3.74-.979zM15.768 13.433c-.325-.163-1.925-.949-2.221-1.058-.297-.11-.513-.163-.73.163-.216.325-.838 1.058-1.027 1.275-.189.217-.378.244-.703.082-.325-.163-1.372-.505-2.613-1.613-.966-.86-1.617-1.923-1.807-2.248-.189-.325-.02-.501.142-.663.146-.146.325-.38.487-.571.163-.189.216-.325.325-.54.109-.217.055-.407-.028-.571-.082-.163-.73-1.76-1.002-2.414-.265-.638-.535-.551-.73-.561-.189-.01-.406-.01-.623-.01-.216 0-.569.082-.867.407-.297.325-1.137 1.111-1.137 2.709 0 1.597 1.164 3.136 1.326 3.354.163.217 2.29 3.497 5.547 4.9.775.334 1.38.533 1.85.682.778.247 1.487.213 2.047.129.624-.093 1.925-.787 2.196-1.547.271-.76.271-1.41.189-1.547-.082-.136-.297-.217-.622-.38z"/>
+          </svg>
+          <span>Submit Payment Proof via WhatsApp</span>
+        </button>
+
+        <a href="/" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.85rem; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Back to Home</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Premium Digital Ticket / Booking Confirmed Page -->
   <div id="bookingConfirmedPage" style="display: none; position: fixed; inset: 0; background: #050807; overflow-y: auto; z-index: 2000; padding: 40px 20px; font-family: var(--font-body); scrollbar-width: thin;">
     

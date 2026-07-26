@@ -1,4 +1,4 @@
-import { fetchAvailableSeats, insertBooking, searchBookings, fetchBookingsSummary, isOfflineMode } from './bookingService';
+import { fetchAvailableSeats, insertBooking, searchBookings, fetchBookingsSummary, isOfflineMode, approveBooking } from './bookingService';
 import { supabase } from './supabaseClient';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -314,6 +314,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const ticketConfirmAmount = document.getElementById('ticketConfirmAmount');
   const ticketConfirmQrImage = document.getElementById('ticketConfirmQrImage');
 
+  // Pending verification page elements
+  const bookingPendingPage = document.getElementById('bookingPendingPage');
+  const pendingConfirmId = document.getElementById('pendingConfirmId');
+  const pendingConfirmName = document.getElementById('pendingConfirmName');
+  const pendingConfirmCount = document.getElementById('pendingConfirmCount');
+  const pendingConfirmTime = document.getElementById('pendingConfirmTime');
+  const pendingConfirmAmount = document.getElementById('pendingConfirmAmount');
+  const btnSendUpiProofWhatsApp = document.getElementById('btnSendUpiProofWhatsApp');
+  const btnCopyUpiId = document.getElementById('btnCopyUpiId');
+  const btnCopyUpiNumber = document.getElementById('btnCopyUpiNumber');
+
   let latestBooking = null;
   let countdownInterval = null;
 
@@ -328,7 +339,25 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
           const booking = JSON.parse(lastBookingStr);
           latestBooking = booking;
-          showConfirmedPage(booking);
+          if (booking.booking_status === 'Pending') {
+            showPendingPage(booking);
+          } else {
+            showConfirmedPage(booking);
+          }
+        } catch (e) {
+          console.error("Error parsing last booking", e);
+          goToHome();
+        }
+      } else {
+        goToHome();
+      }
+    } else if (path === '/booking-pending' || hash === '#booking-pending') {
+      const lastBookingStr = localStorage.getItem('avalokana_last_booking');
+      if (lastBookingStr) {
+        try {
+          const booking = JSON.parse(lastBookingStr);
+          latestBooking = booking;
+          showPendingPage(booking);
         } catch (e) {
           console.error("Error parsing last booking", e);
           goToHome();
@@ -337,28 +366,62 @@ document.addEventListener('DOMContentLoaded', () => {
         goToHome();
       }
     } else {
-      hideConfirmedPage();
+      hidePages();
     }
   };
 
   const goToHome = () => {
     localStorage.removeItem('avalokana_last_booking');
-    if (window.location.pathname === '/booking-confirmed') {
+    if (window.location.pathname === '/booking-confirmed' || window.location.pathname === '/booking-pending') {
       history.pushState(null, '', '/');
-    } else if (window.location.hash === '#booking-confirmed') {
+    } else if (window.location.hash === '#booking-confirmed' || window.location.hash === '#booking-pending') {
       history.pushState(null, '', window.location.pathname);
     }
-    hideConfirmedPage();
+    hidePages();
   };
 
-  const hideConfirmedPage = () => {
+  const hidePages = () => {
     if (bookingConfirmedPage) {
       bookingConfirmedPage.style.display = 'none';
+    }
+    if (bookingPendingPage) {
+      bookingPendingPage.style.display = 'none';
     }
     if (countdownInterval) {
       clearInterval(countdownInterval);
     }
   };
+
+  if (btnCopyUpiId) {
+    btnCopyUpiId.addEventListener('click', () => {
+      navigator.clipboard.writeText('9964115521@ybl');
+      alert('UPI ID copied to clipboard!');
+    });
+  }
+
+  if (btnCopyUpiNumber) {
+    btnCopyUpiNumber.addEventListener('click', () => {
+      navigator.clipboard.writeText('9964115521');
+      alert('UPI Phone Number copied to clipboard!');
+    });
+  }
+
+  if (btnSendUpiProofWhatsApp) {
+    btnSendUpiProofWhatsApp.addEventListener('click', () => {
+      if (latestBooking) {
+        const name = latestBooking.customer_name || latestBooking.name || 'Seeker';
+        const bookingId = latestBooking.booking_id || '';
+        const tickets = latestBooking.ticket_count || latestBooking.tickets_count || 1;
+        const amount = latestBooking.total_amount || latestBooking.amount_paid || 1;
+        const showTime = latestBooking.show_time || '3:30 PM';
+
+        const message = `🎬 *AVALOKANA BOOKING SUBMITTED*\n\nHello, I have submitted a booking and made a UPI payment of *₹${amount}* for my ticket(s).\n\n🎟️ *Booking ID:* ${bookingId}\n👤 *Name:* ${name}\n🎟️ *Tickets:* ${tickets} Seat${tickets > 1 ? 's' : ''}\n🕔 *Show Time:* ${showTime}\n\n[Please attach your payment confirmation screenshot proof here] 🙏`;
+
+        const url = `https://api.whatsapp.com/send?phone=919964115521&text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+      }
+    });
+  }
 
   const startCountdown = () => {
     const targetDate = new Date('2026-08-02T15:30:00+05:30').getTime(); // August 2nd, 2026 at 3:30 PM (1st Show)
@@ -395,6 +458,18 @@ document.addEventListener('DOMContentLoaded', () => {
     
     updateTimer();
     countdownInterval = setInterval(updateTimer, 1000);
+  };
+
+  const showPendingPage = (booking) => {
+    if (!bookingPendingPage) return;
+    
+    if (pendingConfirmId) pendingConfirmId.textContent = booking.booking_id;
+    if (pendingConfirmName) pendingConfirmName.textContent = booking.customer_name;
+    if (pendingConfirmCount) pendingConfirmCount.textContent = `${booking.ticket_count} Ticket${booking.ticket_count > 1 ? 's' : ''}`;
+    if (pendingConfirmTime) pendingConfirmTime.textContent = booking.show_time || '3:30 PM';
+    if (pendingConfirmAmount) pendingConfirmAmount.textContent = `₹${booking.total_amount}`;
+    
+    bookingPendingPage.style.display = 'block';
   };
 
   const showConfirmedPage = (booking) => {
@@ -467,8 +542,8 @@ document.addEventListener('DOMContentLoaded', () => {
           show_time: showTime,
           profession: professionVal,
           payment_id: 'pay_upi_' + Math.random().toString(36).substr(2, 9),
-          payment_status: 'Success',
-          booking_status: 'Confirmed'
+          payment_status: 'Pending',
+          booking_status: 'Pending'
         });
 
         // Set latest booking for WhatsApp share
@@ -484,10 +559,10 @@ document.addEventListener('DOMContentLoaded', () => {
         paymentCheckoutModal.style.display = 'none';
 
         // Use SPA pushState routing
-        history.pushState({ bookingId: booking.booking_id }, '', '/booking-confirmed');
+        history.pushState({ bookingId: booking.booking_id }, '', '/booking-pending');
 
         // Trigger page display
-        showConfirmedPage(booking);
+        showPendingPage(booking);
 
         // Clear inputs
         bookingDetailsForm.reset();
@@ -759,15 +834,36 @@ document.addEventListener('DOMContentLoaded', () => {
         <td style="padding:15px 20px;">${statusPill}</td>
         <td style="padding:15px 20px; text-align:center;">
           <div style="display:flex; justify-content:center; gap:8px;">
-            <button type="button" class="btn-whatsapp-booking btn" data-id="${b.id}" style="padding:6px 12px; font-size:0.7rem; border-radius:4px; border:1px solid #25d366; color:#25d366; background:none; font-family:var(--font-body); letter-spacing:0; text-transform:none;">WhatsApp</button>
-            <button type="button" class="btn-delete-booking btn-secondary" data-id="${b.id}" style="padding:6px 12px; font-size:0.7rem; border-radius:4px; border-color:#ff3344; color:#ff3344; background:none; font-family:var(--font-body); letter-spacing:0; text-transform:none;">Delete</button>
+            ${!isSuccess ? `<button type="button" class="btn-approve-booking btn" data-id="${b.id}" style="padding:6px 12px; font-size:0.7rem; border-radius:4px; border:1px solid var(--accent-gold); color:var(--accent-gold); background:none; font-family:var(--font-body); letter-spacing:0; text-transform:none; cursor:pointer;">Approve</button>` : ''}
+            <button type="button" class="btn-whatsapp-booking btn" data-id="${b.id}" style="padding:6px 12px; font-size:0.7rem; border-radius:4px; border:1px solid #25d366; color:#25d366; background:none; font-family:var(--font-body); letter-spacing:0; text-transform:none; cursor:pointer;">WhatsApp</button>
+            <button type="button" class="btn-delete-booking btn-secondary" data-id="${b.id}" style="padding:6px 12px; font-size:0.7rem; border-radius:4px; border-color:#ff3344; color:#ff3344; background:none; font-family:var(--font-body); letter-spacing:0; text-transform:none; cursor:pointer;">Delete</button>
           </div>
         </td>
       `;
       consoleBookingsTableBody.appendChild(tr);
     });
 
-    // Register button event handlers for delete & WhatsApp in console
+    // Register button event handlers for approve, delete & WhatsApp in console
+    document.querySelectorAll('.btn-approve-booking').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const id = e.target.getAttribute('data-id');
+        if (confirm("Confirm payment received and approve this booking?")) {
+          e.target.disabled = true;
+          e.target.textContent = "Approving...";
+          try {
+            await approveBooking(id);
+            alert("Booking payment approved successfully!");
+            loadConsoleDashboardData();
+            refreshSeats();
+          } catch (err) {
+            alert("Failed to approve booking: " + err.message);
+            e.target.disabled = false;
+            e.target.textContent = "Approve";
+          }
+        }
+      });
+    });
+
     document.querySelectorAll('.btn-whatsapp-booking').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const id = e.target.getAttribute('data-id');
