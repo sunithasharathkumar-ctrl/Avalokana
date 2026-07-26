@@ -1,4 +1,4 @@
-import { fetchAvailableSeats, insertBooking, searchBookings, fetchBookingsSummary } from './bookingService';
+import { fetchAvailableSeats, insertBooking, searchBookings, fetchBookingsSummary, isOfflineMode } from './bookingService';
 import { supabase } from './supabaseClient';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -747,7 +747,7 @@ document.addEventListener('DOMContentLoaded', () => {
           e.target.disabled = true;
           e.target.textContent = "Deleting...";
           try {
-            if (id.startsWith('mock-uuid-')) {
+            if (isOfflineMode() || id.startsWith('mock-uuid-') || id.startsWith('bkg-')) {
               let localBookings = JSON.parse(localStorage.getItem('avalokana_bookings') || '[]');
               localBookings = localBookings.filter(b => b.id !== id);
               localStorage.setItem('avalokana_bookings', JSON.stringify(localBookings));

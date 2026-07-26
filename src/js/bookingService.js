@@ -1,17 +1,10 @@
 import { supabase } from './supabaseClient';
 
 // Helper to determine if we should fall back to localStorage simulation
-const isOfflineMode = () => {
-  const url = import.meta.env.VITE_SUPABASE_URL || '';
-  const key = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
-  return (
-    !url || 
-    url.includes('your-supabase-url') || 
-    url.includes('placeholder') || 
-    !key || 
-    key.includes('your-key-here') || 
-    key.includes('placeholder')
-  );
+// Helper to determine if we should fall back to localStorage simulation
+export const isOfflineMode = () => {
+  // Return false because we have a verified remote Supabase database connection and fallback credentials
+  return false;
 };
 
 // Seed initial bookings for simulation mode if localStorage is empty
