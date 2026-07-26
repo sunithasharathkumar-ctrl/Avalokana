@@ -184,14 +184,25 @@ export const insertBooking = async (bookingData) => {
 
   // Live Supabase Mode
   try {
-    // Count existing bookings to generate sequential booking ID
-    const { count, error: countError } = await supabase
+    // Generate sequential booking ID by finding the maximum existing sequential ID
+    let nextSeqNum = 1;
+    const { data: latestRows, error: latestError } = await supabase
       .from('bookings')
-      .select('*', { count: 'exact', head: true })
-      .like('booking_id', 'AVA-%');
+      .select('booking_id')
+      .like('booking_id', 'AVA-%')
+      .order('booking_id', { ascending: false })
+      .limit(1);
     
-    if (countError) throw countError;
-    const nextSeqNum = (count || 0) + 1;
+    if (latestError) throw latestError;
+    
+    if (latestRows && latestRows.length > 0) {
+      const latestId = latestRows[0].booking_id;
+      const numPart = latestId.replace('AVA-', '');
+      const parsedNum = parseInt(numPart, 10);
+      if (!isNaN(parsedNum)) {
+        nextSeqNum = parsedNum + 1;
+      }
+    }
     const bookingId = 'AVA-' + String(nextSeqNum).padStart(6, '0');
 
     const insertPayload = {
@@ -212,44 +223,13 @@ export const insertBooking = async (bookingData) => {
       .select();
 
     if (error) throw error;
+    if (!data || data.length === 0) {
+      throw new Error("No rows returned from Supabase insert. RLS insert/select policies may be misconfigured.");
+    }
     return mapSupabaseToLocal(data[0]);
   } catch (err) {
-    console.error("Supabase insert error, falling back to simulated localStorage insert:", err);
-    // Local simulation fallback
-    const bookings = getLocalBookings();
-    const nextSeqNum = bookings.length + 1;
-    const bookingId = 'AVA-' + String(nextSeqNum).padStart(6, '0');
-    const qrPayload = {
-      booking_id: bookingId,
-      name: bookingData.customer_name,
-      tickets: bookingData.ticket_count,
-      movie: 'Avalokana',
-      show_time: showTime
-    };
-    const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(JSON.stringify(qrPayload))}`;
-
-    const newBooking = {
-      id: 'mock-uuid-' + Math.random().toString(36).substr(2, 9),
-      booking_id: bookingId,
-      customer_name: bookingData.customer_name,
-      email: bookingData.email,
-      phone: bookingData.phone,
-      ticket_count: bookingData.ticket_count,
-      ticket_price: bookingData.ticket_price,
-      total_amount: bookingData.total_amount,
-      show_time: showTime,
-      payment_id: bookingData.payment_id,
-      payment_status: bookingData.payment_status || 'Success',
-      booking_status: bookingData.booking_status || 'Confirmed',
-      qr_code_url: qrCodeUrl,
-      checked_in: false,
-      checked_in_at: null,
-      created_at: new Date().toISOString()
-    };
-
-    bookings.push(newBooking);
-    saveLocalBookings(bookings);
-    return newBooking;
+    console.error("Supabase insert error:", err);
+    throw err; // Re-throw to caller so front-end alerts the user of failure
   }
 };
 

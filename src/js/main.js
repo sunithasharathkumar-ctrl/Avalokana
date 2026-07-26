@@ -470,10 +470,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pendingConfirmAmount) pendingConfirmAmount.textContent = `₹${booking.total_amount}`;
     
     bookingPendingPage.style.display = 'block';
+    bookingPendingPage.scrollTop = 0;
+    window.scrollTo(0, 0);
   };
 
   const showConfirmedPage = (booking) => {
     if (!bookingConfirmedPage) return;
+    bookingConfirmedPage.scrollTop = 0;
+    window.scrollTo(0, 0);
     
     // Populate elements
     if (ticketConfirmId) ticketConfirmId.textContent = booking.booking_id;
