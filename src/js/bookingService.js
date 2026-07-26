@@ -184,23 +184,28 @@ export const insertBooking = async (bookingData) => {
 
   // Live Supabase Mode
   try {
-    // Generate sequential booking ID by finding the maximum existing sequential ID
+    // Generate sequential booking ID by scanning recent rows to find the latest valid numeric sequence ID
     let nextSeqNum = 1;
-    const { data: latestRows, error: latestError } = await supabase
+    const { data: recentRows, error: latestError } = await supabase
       .from('bookings')
       .select('booking_id')
       .like('booking_id', 'AVA-%')
-      .order('booking_id', { ascending: false })
-      .limit(1);
+      .order('created_at', { ascending: false })
+      .limit(30);
     
     if (latestError) throw latestError;
     
-    if (latestRows && latestRows.length > 0) {
-      const latestId = latestRows[0].booking_id;
-      const numPart = latestId.replace('AVA-', '');
-      const parsedNum = parseInt(numPart, 10);
-      if (!isNaN(parsedNum)) {
-        nextSeqNum = parsedNum + 1;
+    if (recentRows && recentRows.length > 0) {
+      for (const row of recentRows) {
+        const id = row.booking_id;
+        const numPart = id.replace('AVA-', '');
+        if (/^\d+$/.test(numPart)) {
+          const parsedNum = parseInt(numPart, 10);
+          if (!isNaN(parsedNum)) {
+            nextSeqNum = parsedNum + 1;
+            break;
+          }
+        }
       }
     }
     const bookingId = 'AVA-' + String(nextSeqNum).padStart(6, '0');
