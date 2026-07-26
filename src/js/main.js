@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const professionContainer = document.getElementById('professionContainer');
   const bookingProfession = document.getElementById('bookingProfession');
 
-  const TICKET_PRICE = 1; // configurable ticket price
+  const TICKET_PRICE = 150; // configurable ticket price
   let quantity = 1;
 
   const updateCategoryStyles = () => {
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Refresh available seats count
   const refreshSeats = async () => {
     try {
-      const selectedShow = bookingShowTime ? bookingShowTime.value : '3:30 PM';
+      const selectedShow = bookingShowTime ? bookingShowTime.value : '3:45 PM';
       availableSeats = await fetchAvailableSeats(selectedShow);
       availableSeatsDisplay.textContent = `${availableSeats} / 100`;
       
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const selectedShow = bookingShowTime.value;
       const summaryDateTime = document.getElementById('summaryDateTime');
       if (summaryDateTime) {
-        summaryDateTime.innerHTML = `Sunday, August 2nd, 2026<br><span style="font-size:0.8rem; color: var(--accent-gold);">${selectedShow === '3:30 PM' ? '3:30 PM (1st Show)' : '6:00 PM (2nd Show)'}</span>`;
+        summaryDateTime.innerHTML = `Sunday, August 2nd, 2026<br><span style="font-size:0.8rem; color: var(--accent-gold);">${selectedShow === '3:45 PM' ? '3:45 PM (1st Show)' : '5:45 PM (2nd Show)'}</span>`;
       }
       refreshSeats();
     });
@@ -413,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const bookingId = latestBooking.booking_id || '';
         const tickets = latestBooking.ticket_count || latestBooking.tickets_count || 1;
         const amount = latestBooking.total_amount || latestBooking.amount_paid || 1;
-        const showTime = latestBooking.show_time || '3:30 PM';
+        const showTime = latestBooking.show_time || '3:45 PM';
 
         const message = `🎬 *AVALOKANA BOOKING SUBMITTED*\n\nHello, I have submitted a booking and made a UPI payment of *₹${amount}* for my ticket(s).\n\n🎟️ *Booking ID:* ${bookingId}\n👤 *Name:* ${name}\n🎟️ *Tickets:* ${tickets} Seat${tickets > 1 ? 's' : ''}\n🕔 *Show Time:* ${showTime}\n\n[Please attach your payment confirmation screenshot proof here] 🙏`;
 
@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const startCountdown = () => {
-    const targetDate = new Date('2026-08-02T15:30:00+05:30').getTime(); // August 2nd, 2026 at 3:30 PM (1st Show)
+    const targetDate = new Date('2026-08-02T15:45:00+05:30').getTime(); // August 2nd, 2026 at 3:45 PM (1st Show)
     if (countdownInterval) clearInterval(countdownInterval);
     
     const updateTimer = () => {
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pendingConfirmId) pendingConfirmId.textContent = booking.booking_id;
     if (pendingConfirmName) pendingConfirmName.textContent = booking.customer_name;
     if (pendingConfirmCount) pendingConfirmCount.textContent = `${booking.ticket_count} Ticket${booking.ticket_count > 1 ? 's' : ''}`;
-    if (pendingConfirmTime) pendingConfirmTime.textContent = booking.show_time || '3:30 PM';
+    if (pendingConfirmTime) pendingConfirmTime.textContent = booking.show_time || '3:45 PM';
     if (pendingConfirmAmount) pendingConfirmAmount.textContent = `₹${booking.total_amount}`;
     
     bookingPendingPage.style.display = 'block';
@@ -488,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ticketConfirmDate = document.getElementById('ticketConfirmDate');
     if (ticketConfirmDate) ticketConfirmDate.textContent = 'August 2, 2026';
     const ticketConfirmTime = document.getElementById('ticketConfirmTime');
-    if (ticketConfirmTime) ticketConfirmTime.textContent = booking.show_time || '3:30 PM';
+    if (ticketConfirmTime) ticketConfirmTime.textContent = booking.show_time || '3:45 PM';
     
     // Show overlay
     bookingConfirmedPage.style.display = 'block';
@@ -525,7 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const name = bookingName.value.trim();
         const phone = bookingPhone.value.trim();
-        const showTime = bookingShowTime ? bookingShowTime.value : '3:30 PM';
+        const showTime = bookingShowTime ? bookingShowTime.value : '3:45 PM';
 
         const checkedCategory = document.querySelector('input[name="audienceCategory"]:checked');
         const categoryVal = checkedCategory ? checkedCategory.value : 'Public Audience';
@@ -590,8 +590,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const phone = bookingObj.phone || '';
     const bookingId = bookingObj.booking_id || '';
     const tickets = bookingObj.ticket_count || bookingObj.tickets_count || 1;
-    const amount = bookingObj.total_amount || bookingObj.amount_paid || 1;
-    const showTime = bookingObj.show_time || '3:30 PM';
+    const amount = bookingObj.total_amount || bookingObj.amount_paid || 150;
+    const showTime = bookingObj.show_time || '3:45 PM';
 
     const message = `🎬 *AVALOKANA BOOKING CONFIRMED*\n\nHello *${name}*,\n\nYour booking is confirmed for the exclusive screening of *Avalokana*.\n\n🎟️ *Booking ID:* ${bookingId}\n🎟️ *Tickets:* ${tickets} Seat${tickets > 1 ? 's' : ''}\n💰 *Total Paid:* ₹${amount}\n📍 *Venue:* Suchitra Cinema and Cultural Academy\n📅 *Date:* Sunday, August 2nd, 2026\n🕔 *Time:* ${showTime}\n\nShow your digital pass QR code at the entrance. Please arrive 30 minutes early.\n\nBlessings on your journey into the flow. 🙏`;
 
@@ -661,7 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnShareStoryWhatsApp = document.getElementById('btnShareStoryWhatsApp');
   if (btnShareStoryWhatsApp) {
     btnShareStoryWhatsApp.addEventListener('click', () => {
-      const showTime = latestBooking ? (latestBooking.show_time || '3:30 PM') : '3:30 PM';
+      const showTime = latestBooking ? (latestBooking.show_time || '3:45 PM') : '3:45 PM';
       const text = `🎬 I just reserved my seat for the exclusive screening of AVALOKANA at Suchitra Cinema and Cultural Academy! Join me on this spiritual cinematic journey on August 2nd at ${showTime}. Book your seats now at ${window.location.origin}!`;
       window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
     });
@@ -957,7 +957,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = manualName.value.trim();
         const phone = manualPhone.value.trim();
         const manualShowTime = document.getElementById('manualShowTime');
-        const showTime = manualShowTime ? manualShowTime.value : '3:30 PM';
+        const showTime = manualShowTime ? manualShowTime.value : '3:45 PM';
 
         const booking = await insertBooking({
           customer_name: name,

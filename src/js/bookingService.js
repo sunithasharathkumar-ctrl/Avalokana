@@ -16,8 +16,8 @@ const SEED_BOOKINGS = [
     email: 'amit@gmail.com',
     phone: '9876543210',
     ticket_count: 2,
-    ticket_price: 1,
-    total_amount: 2,
+    ticket_price: 150,
+    total_amount: 300,
     payment_id: 'pay_mock_111',
     payment_status: 'Success',
     booking_status: 'Confirmed',
@@ -25,7 +25,7 @@ const SEED_BOOKINGS = [
     checked_in: true,
     checked_in_at: '2026-07-18T10:00:00.000Z',
     created_at: '2026-07-18T09:30:00.000Z',
-    show_time: '3:30 PM'
+    show_time: '3:45 PM'
   },
   {
     id: 'bkg-2',
@@ -34,8 +34,8 @@ const SEED_BOOKINGS = [
     email: 'priya@outlook.com',
     phone: '9123456789',
     ticket_count: 1,
-    ticket_price: 1,
-    total_amount: 1,
+    ticket_price: 150,
+    total_amount: 150,
     payment_id: 'pay_mock_222',
     payment_status: 'Success',
     booking_status: 'Confirmed',
@@ -43,7 +43,7 @@ const SEED_BOOKINGS = [
     checked_in: false,
     checked_in_at: null,
     created_at: '2026-07-18T11:45:00.000Z',
-    show_time: '6:00 PM'
+    show_time: '5:45 PM'
   }
 ];
 
@@ -65,11 +65,11 @@ const mapSupabaseToLocal = (b) => {
   if (!b) return null;
   const checked_in = b.category?.includes('CheckedIn') || false;
   let checked_in_at = null;
-  let show_time = '3:30 PM';
+  let show_time = '3:45 PM';
   
   if (b.category) {
     const parts = b.category.split(' | ');
-    show_time = parts[0] || '3:30 PM';
+    show_time = parts[0] || '3:45 PM';
     if (checked_in && parts.length >= 3) {
       checked_in_at = parts[2];
     }
@@ -82,8 +82,8 @@ const mapSupabaseToLocal = (b) => {
     email: '', // Not collected in database schema
     phone: b.phone,
     ticket_count: b.tickets || 1,
-    ticket_price: b.total_amount && b.tickets ? (Number(b.total_amount) / b.tickets) : 1,
-    total_amount: Number(b.total_amount) || 1,
+    ticket_price: b.total_amount && b.tickets ? (Number(b.total_amount) / b.tickets) : 150,
+    total_amount: Number(b.total_amount) || 150,
     show_time: show_time,
     payment_id: '',
     payment_status: b.paid_status === 'Confirmed' ? 'Success' : 'Pending',
@@ -109,7 +109,7 @@ const mapSupabaseToLocal = (b) => {
  * Fetch available seats count
  * Total capacity is 100 per show. Available seats = Capacity - Confirmed booked tickets count for that show.
  */
-export const fetchAvailableSeats = async (showTime = '3:30 PM') => {
+export const fetchAvailableSeats = async (showTime = '3:45 PM') => {
   if (isOfflineMode()) {
     const bookings = getLocalBookings();
     const confirmedCount = bookings
@@ -143,7 +143,7 @@ export const fetchAvailableSeats = async (showTime = '3:30 PM') => {
  * Submit and insert a booking record
  */
 export const insertBooking = async (bookingData) => {
-  const showTime = bookingData.show_time || '3:30 PM';
+  const showTime = bookingData.show_time || '3:45 PM';
   if (isOfflineMode()) {
     const bookings = getLocalBookings();
     const nextSeqNum = bookings.length + 1;
@@ -397,7 +397,7 @@ export const markCheckin = async (bookingId) => {
 
     // 2. Perform check-in update inside category text column
     const checkinTime = new Date().toISOString();
-    const updatedCategory = `${booking.category || '3:30 PM'} | CheckedIn | ${checkinTime}`;
+    const updatedCategory = `${booking.category || '3:45 PM'} | CheckedIn | ${checkinTime}`;
     const { data: updatedData, error: updateError } = await supabase
       .from('bookings')
       .update({ category: updatedCategory })
