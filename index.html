@@ -244,7 +244,7 @@
             </div>
           </div>
           <p class="profile-bio">
-            "Avalokana is my soul project. Obviously it is my first, but I will definitely bring a creative transformational wave in my future movies." Rakshith Shivakumar infuses his debut feature with intense philosophical depth, exploring cognitive transformation and self-realization with a fresh, visionary approach to Indian art cinema.
+            "Avalokana is my sole project. Obviously it is my first, but I will definitely bring a creative transformational wave in my future movies." Rakshith Shivakumar infuses his debut feature with intense philosophical depth, exploring cognitive transformation and self-realization with a fresh, visionary approach to Indian art cinema.
           </p>
           <div class="profile-quote">
             "Avalokana is a mirror of self-realization. The journey is not outward, but inward."
@@ -526,10 +526,10 @@
 
 
   <!-- Premium Digital Ticket / Booking Pending Verification Page -->
-  <div id="bookingPendingPage" style="display: none; position: fixed; inset: 0; background: #050807; overflow-y: auto; z-index: 2000; padding: 40px 20px; font-family: var(--font-body); scrollbar-width: thin;">
+  <div id="bookingPendingPage" style="display: none; position: fixed; inset: 0; background: #050807; overflow-y: auto; overflow-x: hidden; z-index: 2000; padding: 40px 20px; font-family: var(--font-body); scrollbar-width: thin;">
     
     <!-- Background Spotlight Glow -->
-    <div class="spotlight-glow" style="position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(255, 115, 0, 0.02) 50%, transparent 70%); pointer-events: none; z-index: 1;"></div>
+    <div class="spotlight-glow" style="position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 100%; max-width: 800px; height: 600px; background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(255, 115, 0, 0.02) 50%, transparent 70%); pointer-events: none; z-index: 1;"></div>
 
     <div class="confirmed-container" style="max-width: 600px; margin: 0 auto; position: relative; z-index: 2; display: flex; flex-direction: column; gap: 30px; align-items: center; padding-bottom: 80px; text-align: center;">
       
@@ -544,34 +544,6 @@
       <div>
         <div style="width: 90px; height: 90px; border: 3px solid rgba(212,175,55,0.15); border-top: 3px solid var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; animation: spin 2s linear infinite; box-shadow: 0 0 20px rgba(212,175,55,0.15);">
           <span style="font-size: 2rem; transform: rotate(0deg); animation: none; display: inline-block;">⏳</span>
-        </div>
-      </div>
-
-      <!-- Pending Details Card -->
-      <div class="glass-card" style="width: 100%; max-width: 450px; background: #0c0f0e; border: 2px solid rgba(212, 175, 55, 0.25); border-radius: 16px; padding: 25px; text-align: left; display: flex; flex-direction: column; gap: 15px;">
-        <div style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Booking ID</span>
-          <strong id="pendingConfirmId" style="font-size: 1.1rem; color: var(--accent-saffron); font-weight: 700;">AVA-000000</strong>
-        </div>
-        
-        <div style="display: flex; justify-content: space-between;">
-          <span style="font-size: 0.8rem; color: var(--text-secondary);">Guest Name</span>
-          <span id="pendingConfirmName" style="color: #fff; font-weight: 600;">Guest</span>
-        </div>
-
-        <div style="display: flex; justify-content: space-between;">
-          <span style="font-size: 0.8rem; color: var(--text-secondary);">Seats Reserved</span>
-          <span id="pendingConfirmCount" style="color: #fff; font-weight: 600;">1 Seat</span>
-        </div>
-
-        <div style="display: flex; justify-content: space-between;">
-          <span style="font-size: 0.8rem; color: var(--text-secondary);">Show Time</span>
-          <span id="pendingConfirmTime" style="color: #fff; font-weight: 600;">3:45 PM</span>
-        </div>
-
-        <div style="display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px;">
-          <span style="font-size: 0.85rem; color: #fff; font-weight: 600;">Total Ticket Fee</span>
-          <strong id="pendingConfirmAmount" style="color: var(--accent-gold); font-size: 1.1rem; font-weight: 700;">₹150</strong>
         </div>
       </div>
 
@@ -616,14 +588,42 @@
 
         <a href="/" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.85rem; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Back to Home</a>
       </div>
+
+      <!-- Pending Details Card -->
+      <div class="glass-card" style="width: 100%; max-width: 450px; background: #0c0f0e; border: 2px solid rgba(212, 175, 55, 0.25); border-radius: 16px; padding: 25px; text-align: left; display: flex; flex-direction: column; gap: 15px;">
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Booking ID</span>
+          <strong id="pendingConfirmId" style="font-size: 1.1rem; color: var(--accent-saffron); font-weight: 700;">AVA-000000</strong>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between;">
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Guest Name</span>
+          <span id="pendingConfirmName" style="color: #fff; font-weight: 600;">Guest</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Seats Reserved</span>
+          <span id="pendingConfirmCount" style="color: #fff; font-weight: 600;">1 Seat</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Show Time</span>
+          <span id="pendingConfirmTime" style="color: #fff; font-weight: 600;">3:45 PM</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px;">
+          <span style="font-size: 0.85rem; color: #fff; font-weight: 600;">Total Ticket Fee</span>
+          <strong id="pendingConfirmAmount" style="color: var(--accent-gold); font-size: 1.1rem; font-weight: 700;">₹150</strong>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Premium Digital Ticket / Booking Confirmed Page -->
-  <div id="bookingConfirmedPage" style="display: none; position: fixed; inset: 0; background: #050807; overflow-y: auto; z-index: 2000; padding: 40px 20px; font-family: var(--font-body); scrollbar-width: thin;">
+  <div id="bookingConfirmedPage" style="display: none; position: fixed; inset: 0; background: #050807; overflow-y: auto; overflow-x: hidden; z-index: 2000; padding: 40px 20px; font-family: var(--font-body); scrollbar-width: thin;">
     
     <!-- Background Spotlight Glow -->
-    <div class="spotlight-glow" style="position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(255, 115, 0, 0.02) 50%, transparent 70%); pointer-events: none; z-index: 1;"></div>
+    <div class="spotlight-glow" style="position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 100%; max-width: 800px; height: 600px; background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(255, 115, 0, 0.02) 50%, transparent 70%); pointer-events: none; z-index: 1;"></div>
 
     <div class="confirmed-container" style="max-width: 800px; margin: 0 auto; position: relative; z-index: 2; display: flex; flex-direction: column; gap: 40px; align-items: center; padding-bottom: 80px;">
       
@@ -876,7 +876,6 @@
             <input type="text" id="consoleSearchInput" class="form-input" placeholder="Search by Booking ID, Customer, or Phone..." style="padding-right: 40px; border-radius: 8px;">
             <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); opacity: 0.4;">🔍</span>
           </div>
-          <button type="button" id="consoleBtnOpenManualBooking" class="btn btn-primary" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 20px; background: linear-gradient(135deg, var(--accent-gold), #b38f24); box-shadow: 0 4px 10px rgba(212,175,55,0.2);">➕ Issue Instant Ticket</button>
           <button type="button" id="consoleBtnRefresh" class="btn btn-secondary" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 20px;">🔄 Refresh Logs</button>
           <button type="button" id="consoleBtnExportExcel" class="btn btn-secondary" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 20px; border-color: #26df98; color: #26df98;">📥 Download Excel</button>
         </div>
