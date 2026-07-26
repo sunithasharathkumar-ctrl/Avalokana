@@ -813,7 +813,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!records || records.length === 0) {
       consoleBookingsTableBody.innerHTML = `
         <tr>
-          <td colspan="7" style="text-align:center; padding:30px; color:var(--text-secondary);">
+          <td colspan="8" style="text-align:center; padding:30px; color:var(--text-secondary);">
             No bookings found.
           </td>
         </tr>
@@ -833,6 +833,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <td style="padding:15px 20px; font-weight:700; color:var(--accent-gold);">${b.booking_id || b.id.substring(0,8)}</td>
         <td style="padding:15px 20px; font-weight:600; color:#fff;">${b.customer_name || b.name || 'Walk-in Seeker'}</td>
         <td style="padding:15px 20px; color:#fff;">${b.phone || 'N/A'}</td>
+        <td style="padding:15px 20px; color:var(--text-secondary); font-size:0.8rem;">${b.profession || 'Public Audience'}</td>
         <td style="padding:15px 20px; font-weight:600; color:#fff;">${b.ticket_count || b.tickets_count || 1}</td>
         <td style="padding:15px 20px; font-weight:600; color:var(--accent-gold);">₹${b.total_amount || b.amount_paid || 100}</td>
         <td style="padding:15px 20px;">${statusPill}</td>
@@ -903,6 +904,52 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (consoleBtnRefresh) consoleBtnRefresh.addEventListener('click', loadConsoleDashboardData);
+
+  // ---- Download Excel (CSV) handler ----
+  const consoleBtnExportExcel = document.getElementById('consoleBtnExportExcel');
+  if (consoleBtnExportExcel) {
+    consoleBtnExportExcel.addEventListener('click', async () => {
+      consoleBtnExportExcel.textContent = '⏳ Loading...';
+      consoleBtnExportExcel.disabled = true;
+      try {
+        const records = await searchBookings('');
+        if (!records || records.length === 0) {
+          alert('No bookings to export.');
+          return;
+        }
+        const headers = ['Booking ID', 'Customer Name', 'Phone', 'Occupation', 'Show Time', 'Tickets', 'Total Amount (₹)', 'Payment Status', 'Booking Date'];
+        const rows = records.map(b => [
+          b.booking_id || '',
+          b.customer_name || '',
+          b.phone || '',
+          b.profession || 'Public Audience',
+          b.show_time || '',
+          b.ticket_count || 1,
+          b.total_amount || 0,
+          b.payment_status || '',
+          b.created_at ? new Date(b.created_at).toLocaleDateString('en-IN') : ''
+        ]);
+        const csvContent = [headers, ...rows]
+          .map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(','))
+          .join('\n');
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        const today = new Date().toISOString().split('T')[0];
+        link.href = url;
+        link.download = `Avalokana_Bookings_${today}.csv`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      } catch (err) {
+        alert('Failed to export: ' + err.message);
+      } finally {
+        consoleBtnExportExcel.textContent = '📥 Download Excel';
+        consoleBtnExportExcel.disabled = false;
+      }
+    });
+  }
   if (consoleSearchInput) {
     consoleSearchInput.addEventListener('keyup', () => {
       loadConsoleDashboardData();

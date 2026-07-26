@@ -81,6 +81,7 @@ const mapSupabaseToLocal = (b) => {
     customer_name: b.name,
     email: '', // Not collected in database schema
     phone: b.phone,
+    profession: b.profession || 'Public Audience',
     ticket_count: b.tickets || 1,
     ticket_price: b.total_amount && b.tickets ? (Number(b.total_amount) / b.tickets) : 150,
     total_amount: Number(b.total_amount) || 150,
