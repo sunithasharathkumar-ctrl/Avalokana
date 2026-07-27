@@ -597,7 +597,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const amount = bookingObj.total_amount || bookingObj.amount_paid || 150;
     const showTime = bookingObj.show_time || '3:45 PM';
 
-    const message = `🎬 *AVALOKANA BOOKING CONFIRMED*\n\nHello *${name}*,\n\nYour booking is confirmed for the exclusive screening of *Avalokana*.\n\n🎟️ *Booking ID:* ${bookingId}\n🎟️ *Tickets:* ${tickets} Seat${tickets > 1 ? 's' : ''}\n💰 *Total Paid:* ₹${amount}\n📍 *Venue:* Suchitra Cinema and Cultural Academy\n📅 *Date:* Sunday, August 2nd, 2026\n🕔 *Time:* ${showTime}\n\nShow your digital pass QR code at the entrance. Please arrive 30 minutes early.\n\nBlessings on your journey into the flow. 🙏`;
+    const message = `🎬 *AVALOKANA BOOKING CONFIRMED*\n\nHello *${name}*,\n\nYour booking is confirmed for the exclusive screening of *Avalokana*.\n\n🎟️ *Booking ID:* ${bookingId}\n🎟️ *Tickets:* ${tickets} Seat${tickets > 1 ? 's' : ''}\n💰 *Total Paid:* ₹${amount}\n📍 *Venue:* Suchitra Cinema and Cultural Academy\n📅 *Date:* Sunday, August 2nd, 2026\n🕔 *Time:* ${showTime}\n\nPlease arrive 30 minutes early.\n\nBlessings on your journey into the flow. 🙏`;
 
     // Strip non-numeric characters from phone
     const cleanPhone = phone.replace(/\D/g, '');
