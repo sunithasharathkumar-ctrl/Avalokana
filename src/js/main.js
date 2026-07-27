@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         availableSeatsDisplay.style.color = 'var(--accent-gold)';
         btnTriggerPayment.disabled = false;
-        btnTriggerPayment.textContent = "Proceed to Payment";
+        btnTriggerPayment.textContent = "Submit Booking Request";
       }
     } catch (err) {
       console.error(err);
@@ -266,20 +266,69 @@ document.addEventListener('DOMContentLoaded', () => {
   const cardDetailsContainer = document.getElementById('cardDetailsContainer');
   const upiScannerDetailsContainer = document.getElementById('upiScannerDetailsContainer');
 
-  btnTriggerPayment.addEventListener('click', () => {
+  btnTriggerPayment.addEventListener('click', async () => {
     // Validate inputs programmatically
     if (!bookingDetailsForm.checkValidity()) {
       bookingDetailsForm.reportValidity();
       return;
     }
 
-    // Prepare order details
-    checkoutPayingAmount.textContent = `₹${quantity * TICKET_PRICE}.00`;
-    checkoutOrderId.textContent = `Order ID: pay_order_${Math.floor(1000 + Math.random() * 9000)}`;
+    // Disable interface and show loading state
+    btnTriggerPayment.disabled = true;
+    const originalText = btnTriggerPayment.textContent;
+    btnTriggerPayment.textContent = "Processing Booking...";
 
-    // Show modal
-    paymentCheckoutModal.style.display = 'flex';
-    resetPaymentModalState();
+    try {
+      const name = bookingName.value.trim();
+      const phone = bookingPhone.value.trim();
+      const showTime = bookingShowTime ? bookingShowTime.value : '3:45 PM';
+
+      const checkedCategory = document.querySelector('input[name="audienceCategory"]:checked');
+      const categoryVal = checkedCategory ? checkedCategory.value : 'Public Audience';
+      const professionVal = categoryVal === 'Film Maker' && bookingProfession ? `Film Maker - ${bookingProfession.value}` : 'Public Audience';
+
+      // Submit to database
+      const booking = await insertBooking({
+        customer_name: name,
+        email: 'N/A',
+        phone: phone,
+        ticket_count: quantity,
+        ticket_price: TICKET_PRICE,
+        total_amount: quantity * TICKET_PRICE,
+        show_time: showTime,
+        profession: professionVal,
+        payment_id: 'pay_upi_' + Math.random().toString(36).substr(2, 9),
+        payment_status: 'Pending',
+        booking_status: 'Pending'
+      });
+
+      latestBooking = booking;
+      playSuccessGong();
+      localStorage.setItem('avalokana_last_booking', JSON.stringify(booking));
+
+      // Use SPA pushState routing
+      history.pushState({ bookingId: booking.booking_id }, '', '/booking-pending');
+
+      // Trigger page display
+      showPendingPage(booking);
+
+      // Clear inputs
+      bookingDetailsForm.reset();
+      quantity = 1;
+      updateSummary();
+      refreshSeats();
+
+      if (typeof isConsoleAuthenticated !== 'undefined' && isConsoleAuthenticated) {
+        if (typeof loadConsoleDashboardData === 'function') loadConsoleDashboardData();
+      }
+
+    } catch (err) {
+      console.error(err);
+      alert("Failed to confirm booking: " + err.message);
+    } finally {
+      btnTriggerPayment.disabled = false;
+      btnTriggerPayment.textContent = originalText;
+    }
   });
 
   const resetPaymentModalState = () => {
