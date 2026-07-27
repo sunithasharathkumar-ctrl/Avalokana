@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const resetPaymentModalState = () => {
     btnExecutePayment.disabled = false;
-    btnExecutePayment.querySelector('span').textContent = "Proceed to Payment";
+    btnExecutePayment.querySelector('span').textContent = "I Have Paid - Proceed";
     paymentLoadingSpinner.style.display = 'none';
     cardDetailsContainer.style.display = 'none';
     upiScannerDetailsContainer.style.display = 'none';
